@@ -256,7 +256,7 @@ const App = () => {
             </h2>
             <p className="text-lg text-stone-400 mb-6 max-w-lg leading-relaxed">
               Most digital planners are just endless pages of blank lines. They let you write, but they don't help you build. 
-              <span className="text-white font-medium"> YOUR BLUEPRINT</span> is different. It is a complete Productivity Architecture designed for high-performers.
+              <span className="text-white font-medium"> Your Blueprint</span> is different. It is a complete Productivity Architecture designed for high-performers.
             </p>
             <p className="text-sm text-stone-500 mb-10 max-w-lg leading-relaxed border-l-2 border-stone-700 pl-4">
               Integrates the world’s most effective methodologies—GTD®, OKRs, and Time Blocking—into one seamless, distraction-free workflow.
@@ -344,7 +344,7 @@ const App = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Design Your Days. <span className="text-stone-500">Build Your Legacy.</span></h2>
           <p className="text-lg text-stone-400">
             Success isn’t an accident. It’s a blueprint. The gap between where you are and where you want to be is simply a lack of a system.
-            <span className="text-white"> YOUR BLUEPRINT</span> turns your reMarkable tablet into a strategic command center.
+            <span className="text-white"> Your Blueprint</span> turns your reMarkable tablet into a strategic command center.
           </p>
         </div>
 
