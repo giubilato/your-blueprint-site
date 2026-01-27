@@ -210,7 +210,7 @@ const App = () => {
             <div className="w-8 h-8 border border-stone-500 flex items-center justify-center">
               <div className="w-3 h-3 bg-stone-300"></div>
             </div>
-            <span className="text-xl font-bold tracking-tight text-stone-100 uppercase font-mono">Your Blueprint</span>
+            <span className="text-xl font-bold tracking-tight text-stone-100 font-mono">Your Blueprint</span>
           </div>
           
           <div className="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest text-stone-500">
