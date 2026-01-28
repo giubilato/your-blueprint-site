@@ -13,7 +13,8 @@ import {
   Clock,
   Zap,
   MoveHorizontal,
-  Feather
+  Feather,
+  Layout
 } from 'lucide-react';
 
 const App = () => {
@@ -34,24 +35,28 @@ const App = () => {
       title: "The Strategy Tower",
       icon: <Target className="w-6 h-6" />,
       desc: "Yearly Milestones & Quarterly Roadmaps to keep your vision clear. Don't just work—direct.",
+      longDesc: "Most planners let you write, but they don't help you build. The Strategy Tower aligns your daily grind with your life's biggest ambitions using a top-down architectural approach.",
       details: ["Yearly Milestones", "Quarterly Roadmaps", "OKR Dashboard"]
     },
     {
       title: "The Execution Core",
       icon: <Clock className="w-6 h-6" />,
       desc: "Daily & Weekly layouts optimized for Deep Work and Time Blocking. Separate the Urgent from the Important.",
+      longDesc: "Instantly separate the Urgent from the Important on every daily page. A pure, white-space-dominant environment that forces clarity and protects your attention span.",
       details: ["Weekly Deep Work", "Daily Performance Page", "Eisenhower Matrix"]
     },
     {
       title: "The Management Hub",
       icon: <Briefcase className="w-6 h-6" />,
       desc: "Smart-indexed Meeting Notes and Delegation Trackers to never lose a detail. A command center for your team.",
+      longDesc: "Stop reacting and start orchestrating. Never lose a detail with smart-indexed meeting notes and delegation trackers designed to keep your team accountable.",
       details: ["Indexed Meeting Notes", "Delegation Tracker", "Project Roadmaps"]
     },
     {
       title: "The Growth Engine",
       icon: <TrendingUp className="w-6 h-6" />,
       desc: "Refine your performance. Document your logic to learn from every choice.",
+      longDesc: "Success isn't an accident; it's a blueprint. Track your habits and document your decision logic to refine your performance quarter over quarter.",
       details: ["Decision Logs", "Habit Trackers", "Brain Dump Grid"]
     }
   ];
@@ -61,43 +66,43 @@ const App = () => {
     switch(index) {
       case 0: // Strategy Tower (Roadmap View)
         return (
-          <div className="w-full h-full bg-[#e8e8e5] text-[#121212] p-6 font-serif relative overflow-hidden shadow-inner">
-             <div className="flex justify-between border-b-2 border-black pb-2 mb-4">
+          <div className="w-full h-full bg-[#e8e8e5] text-[#121212] p-8 font-serif relative overflow-hidden shadow-2xl rounded-sm">
+             <div className="flex justify-between border-b-2 border-black pb-4 mb-6">
                <span className="uppercase font-bold tracking-widest text-sm">Q1 Roadmap</span>
-               <span className="font-mono text-xs">2026-2027</span>
+               <span className="font-mono text-xs text-stone-600">2026-2027</span>
              </div>
-             <div className="space-y-4">
+             <div className="space-y-6">
                {/* Objective 1 */}
                <div>
-                 <div className="flex justify-between items-end mb-1">
-                   <span className="font-bold text-xs uppercase">Scale Operations</span>
-                   <span className="font-mono text-[10px]">75%</span>
+                 <div className="flex justify-between items-end mb-2">
+                   <span className="font-bold text-sm uppercase tracking-wide">Scale Operations</span>
+                   <span className="font-mono text-xs">75%</span>
                  </div>
-                 <div className="w-full h-2 bg-stone-300 relative">
+                 <div className="w-full h-3 bg-stone-300 relative">
                    <div className="absolute left-0 top-0 h-full w-3/4 bg-black"></div>
                  </div>
-                 <div className="flex gap-2 mt-2">
-                   <div className="w-1/3 h-8 border border-stone-400 p-1"><div className="w-full h-full bg-stone-200"></div></div>
-                   <div className="w-1/3 h-8 border border-stone-400 p-1"></div>
-                   <div className="w-1/3 h-8 border border-stone-400 p-1"></div>
+                 <div className="flex gap-3 mt-3">
+                   <div className="w-1/3 h-10 border border-stone-400 p-1"><div className="w-full h-full bg-stone-300"></div></div>
+                   <div className="w-1/3 h-10 border border-stone-400 p-1"></div>
+                   <div className="w-1/3 h-10 border border-stone-400 p-1"></div>
                  </div>
                </div>
                {/* Objective 2 */}
                <div>
-                 <div className="flex justify-between items-end mb-1">
-                   <span className="font-bold text-xs uppercase">Launch V2</span>
-                   <span className="font-mono text-[10px]">30%</span>
+                 <div className="flex justify-between items-end mb-2">
+                   <span className="font-bold text-sm uppercase tracking-wide">Launch V2</span>
+                   <span className="font-mono text-xs">30%</span>
                  </div>
-                 <div className="w-full h-2 bg-stone-300 relative">
+                 <div className="w-full h-3 bg-stone-300 relative">
                    <div className="absolute left-0 top-0 h-full w-[30%] bg-black"></div>
                  </div>
                </div>
                {/* OKR Mini Table */}
-               <div className="mt-6 border border-black p-2">
-                  <div className="text-[10px] font-bold uppercase mb-2 border-b border-stone-400 pb-1">Key Results</div>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2"><div className="w-2 h-2 border border-black"></div> <div className="h-1 w-2/3 bg-stone-400"></div></div>
-                    <div className="flex items-center gap-2"><div className="w-2 h-2 border border-black"></div> <div className="h-1 w-1/2 bg-stone-400"></div></div>
+               <div className="mt-8 border border-black p-4">
+                  <div className="text-xs font-bold uppercase mb-3 border-b border-stone-400 pb-2">Key Results</div>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3"><div className="w-2 h-2 border border-black"></div> <div className="h-1.5 w-2/3 bg-stone-400"></div></div>
+                    <div className="flex items-center gap-3"><div className="w-2 h-2 border border-black"></div> <div className="h-1.5 w-1/2 bg-stone-400"></div></div>
                   </div>
                </div>
              </div>
@@ -105,27 +110,29 @@ const App = () => {
         );
       case 1: // Execution Core (Weekly/Daily)
         return (
-          <div className="w-full h-full bg-[#e8e8e5] text-[#121212] p-6 font-serif relative overflow-hidden shadow-inner">
-            <div className="grid grid-cols-2 gap-4 h-full">
-               <div className="border-r border-stone-400 pr-2">
-                 <div className="uppercase font-bold text-xs mb-3 border-b border-black">Mon 12</div>
-                 <div className="space-y-2">
-                    <div className="bg-stone-300 h-6 w-full flex items-center px-1 text-[10px] font-mono">09:00 Strat. Meeting</div>
-                    <div className="h-4 border-b border-stone-300"></div>
-                    <div className="bg-black/10 h-10 w-full flex items-center px-1 text-[10px] font-mono border-l-2 border-black">Deep Work</div>
-                    <div className="h-4 border-b border-stone-300"></div>
-                    <div className="h-4 border-b border-stone-300"></div>
+          <div className="w-full h-full bg-[#e8e8e5] text-[#121212] p-8 font-serif relative overflow-hidden shadow-2xl rounded-sm">
+            <div className="grid grid-cols-2 gap-6 h-full">
+               <div className="border-r border-stone-400 pr-4">
+                 <div className="uppercase font-bold text-sm mb-4 border-b border-black pb-1">Mon 12</div>
+                 <div className="space-y-3">
+                    <div className="bg-stone-300 h-8 w-full flex items-center px-2 text-[10px] font-mono">09:00 Strat. Meeting</div>
+                    <div className="h-6 border-b border-stone-300"></div>
+                    <div className="bg-black/10 h-16 w-full flex items-center px-2 text-[10px] font-mono border-l-4 border-black font-bold">DEEP WORK</div>
+                    <div className="h-6 border-b border-stone-300"></div>
+                    <div className="h-6 border-b border-stone-300"></div>
                  </div>
                </div>
                <div>
-                 <div className="uppercase font-bold text-xs mb-3 border-b border-black">Priorities</div>
-                 <div className="border border-stone-400 h-20 mb-2 p-1">
-                   <span className="text-[8px] uppercase font-bold text-stone-500">Urgent / Important</span>
-                   <div className="mt-1 w-full h-1 bg-black/80"></div>
-                   <div className="mt-1 w-2/3 h-1 bg-black/80"></div>
+                 <div className="uppercase font-bold text-sm mb-4 border-b border-black pb-1">Priorities</div>
+                 <div className="border border-stone-400 h-24 mb-3 p-2 bg-white">
+                   <span className="text-[9px] uppercase font-bold text-stone-500 block mb-2">Urgent / Important</span>
+                   <div className="space-y-2">
+                     <div className="w-full h-1.5 bg-black"></div>
+                     <div className="w-2/3 h-1.5 bg-black"></div>
+                   </div>
                  </div>
-                 <div className="border border-stone-300 h-20 p-1 opacity-60">
-                   <span className="text-[8px] uppercase font-bold text-stone-500">Schedule</span>
+                 <div className="border border-stone-300 h-24 p-2 opacity-60">
+                   <span className="text-[9px] uppercase font-bold text-stone-500">Schedule</span>
                  </div>
                </div>
             </div>
@@ -133,30 +140,35 @@ const App = () => {
         );
       case 2: // Management Hub (Meeting Notes)
         return (
-          <div className="w-full h-full bg-[#e8e8e5] text-[#121212] p-6 font-serif relative overflow-hidden shadow-inner">
-             <div className="flex gap-4 mb-4 border-b border-black pb-2">
-                <div className="w-8 h-8 border border-black flex items-center justify-center font-bold text-sm">M</div>
+          <div className="w-full h-full bg-[#e8e8e5] text-[#121212] p-8 font-serif relative overflow-hidden shadow-2xl rounded-sm">
+             <div className="flex gap-4 mb-6 border-b border-black pb-4">
+                <div className="w-10 h-10 border-2 border-black flex items-center justify-center font-bold text-lg bg-white">M</div>
                 <div>
-                   <div className="text-xs font-bold uppercase">Board Meeting</div>
-                   <div className="text-[10px] text-stone-600">Attendees: CEO, CTO, VP</div>
+                   <div className="text-sm font-bold uppercase tracking-wide">Board Meeting</div>
+                   <div className="text-[10px] text-stone-600 font-mono mt-1">Attendees: CEO, CTO, VP</div>
                 </div>
              </div>
-             <div className="flex h-full gap-4">
-                <div className="w-1/3 border-r border-stone-400 pr-2 space-y-2">
+             <div className="flex h-full gap-6">
+                <div className="w-1/3 border-r border-stone-400 pr-4 space-y-3">
                    <div className="text-[10px] font-bold uppercase text-stone-500">Agenda</div>
-                   <div className="w-full h-1 bg-stone-400"></div>
-                   <div className="w-2/3 h-1 bg-stone-400"></div>
-                   <div className="w-3/4 h-1 bg-stone-400"></div>
+                   <div className="w-full h-1.5 bg-stone-500"></div>
+                   <div className="w-2/3 h-1.5 bg-stone-500"></div>
+                   <div className="w-3/4 h-1.5 bg-stone-500"></div>
+                   <div className="w-1/2 h-1.5 bg-stone-500"></div>
                 </div>
-                <div className="w-2/3 space-y-3">
+                <div className="w-2/3 space-y-4">
                    <div className="text-[10px] font-bold uppercase text-stone-500">Notes & Actions</div>
-                   <div className="w-full h-1 bg-stone-300"></div>
-                   <div className="w-full h-1 bg-stone-300"></div>
-                   <div className="w-full h-1 bg-stone-300"></div>
-                   <div className="mt-4 border border-stone-400 p-2">
-                      <div className="flex gap-2 items-center mb-1">
-                        <div className="w-2 h-2 border border-black"></div>
-                        <div className="w-full h-1 bg-stone-400"></div>
+                   <div className="w-full h-1.5 bg-stone-300"></div>
+                   <div className="w-full h-1.5 bg-stone-300"></div>
+                   <div className="w-full h-1.5 bg-stone-300"></div>
+                   <div className="mt-6 border border-stone-400 p-3 bg-white/50">
+                      <div className="flex gap-3 items-center mb-2">
+                        <div className="w-3 h-3 border border-black"></div>
+                        <div className="w-full h-1.5 bg-stone-600"></div>
+                      </div>
+                      <div className="flex gap-3 items-center">
+                        <div className="w-3 h-3 border border-black"></div>
+                        <div className="w-3/4 h-1.5 bg-stone-600"></div>
                       </div>
                    </div>
                 </div>
@@ -165,31 +177,31 @@ const App = () => {
         );
       case 3: // Growth Engine (Habits)
         return (
-          <div className="w-full h-full bg-[#e8e8e5] text-[#121212] p-6 font-serif relative overflow-hidden shadow-inner">
-             <div className="uppercase font-bold tracking-widest text-sm border-b-2 border-black pb-2 mb-4">Habit Tracker</div>
-             <div className="space-y-4">
-                <div className="flex items-center gap-2">
-                   <span className="w-16 text-[10px] uppercase font-bold text-right">Read</span>
-                   <div className="flex-1 flex gap-1">
+          <div className="w-full h-full bg-[#e8e8e5] text-[#121212] p-8 font-serif relative overflow-hidden shadow-2xl rounded-sm">
+             <div className="uppercase font-bold tracking-widest text-sm border-b-2 border-black pb-3 mb-6">Habit Tracker</div>
+             <div className="space-y-5">
+                <div className="flex items-center gap-4">
+                   <span className="w-20 text-[10px] uppercase font-bold text-right tracking-wider">Read</span>
+                   <div className="flex-1 flex gap-1.5">
                       {[...Array(7)].map((_, i) => (
-                        <div key={i} className={`h-4 w-4 border border-stone-400 ${i < 5 ? 'bg-black' : 'bg-transparent'}`}></div>
+                        <div key={i} className={`h-5 w-5 border border-stone-500 ${i < 5 ? 'bg-black' : 'bg-transparent'}`}></div>
                       ))}
                    </div>
                 </div>
-                <div className="flex items-center gap-2">
-                   <span className="w-16 text-[10px] uppercase font-bold text-right">Deep Work</span>
-                   <div className="flex-1 flex gap-1">
+                <div className="flex items-center gap-4">
+                   <span className="w-20 text-[10px] uppercase font-bold text-right tracking-wider">Deep Work</span>
+                   <div className="flex-1 flex gap-1.5">
                       {[...Array(7)].map((_, i) => (
-                        <div key={i} className={`h-4 w-4 border border-stone-400 ${i % 2 === 0 ? 'bg-stone-400' : 'bg-transparent'}`}></div>
+                        <div key={i} className={`h-5 w-5 border border-stone-500 ${i % 2 === 0 ? 'bg-stone-400' : 'bg-transparent'}`}></div>
                       ))}
                    </div>
                 </div>
-                <div className="mt-6 pt-4 border-t border-stone-400">
-                   <div className="uppercase font-bold text-[10px] mb-2">Decision Log</div>
-                   <div className="bg-white border border-stone-300 p-2 text-[8px] font-mono leading-relaxed">
-                      DECISION: Hire VP of Sales.<br/>
-                      LOGIC: Revenue flat for Q2.<br/>
-                      OUTCOME: TBD.
+                <div className="mt-8 pt-4 border-t border-stone-400">
+                   <div className="uppercase font-bold text-[10px] mb-3 text-stone-600">Decision Log</div>
+                   <div className="bg-white border border-stone-300 p-3 text-[9px] font-mono leading-relaxed shadow-sm">
+                      <span className="font-bold">DECISION:</span> Hire VP of Sales.<br/>
+                      <span className="font-bold">LOGIC:</span> Revenue flat for Q2.<br/>
+                      <span className="font-bold">OUTCOME:</span> TBD.
                    </div>
                 </div>
              </div>
@@ -210,11 +222,10 @@ const App = () => {
             <div className="w-8 h-8 border border-stone-500 flex items-center justify-center">
               <div className="w-3 h-3 bg-stone-300"></div>
             </div>
-            <span className="text-xl font-bold tracking-tight text-stone-100 font-mono">Your Blueprint</span>
+            <span className="text-xl font-bold tracking-tight text-stone-100 uppercase font-mono">Your Blueprint</span>
           </div>
           
           <div className="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest text-stone-500">
-            {/* Menu items removed as requested */}
             <a href="#pricing" className="bg-stone-100 text-[#121212] px-6 py-2 hover:bg-stone-300 transition-colors font-bold">
               Get Access
             </a>
@@ -228,7 +239,6 @@ const App = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="absolute top-full left-0 w-full bg-[#121212] border-b border-stone-800 p-6 flex flex-col gap-6 md:hidden">
-            {/* Mobile menu items removed */}
             <a href="#pricing" onClick={() => setIsMenuOpen(false)} className="bg-stone-100 text-[#121212] px-6 py-3 w-full font-bold text-center block">
               Get Access
             </a>
@@ -236,10 +246,9 @@ const App = () => {
         )}
       </nav>
 
-      {/* Hero Section - "Authority" Frame */}
+      {/* Hero Section */}
       <header className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 border-b border-stone-900">
         <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
-           {/* Grid Background */}
            <div className="w-full h-full" style={{ backgroundImage: 'linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
         </div>
 
@@ -266,21 +275,15 @@ const App = () => {
                 Download Architecture
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
-              <button className="border border-stone-700 text-stone-300 px-8 py-4 font-medium uppercase tracking-wide hover:border-stone-500 hover:text-white transition-all">
-                View Methodology
-              </button>
             </div>
           </div>
 
           {/* Abstract Device Visualization */}
-          <div className="relative h-[600px] w-full hidden md:block">
-             <div className="absolute top-0 right-0 w-[85%] h-full bg-[#1a1a1a] border border-stone-800 shadow-2xl p-6 rotate-[-2deg] hover:rotate-0 transition-all duration-700">
-                {/* Simulated Screen */}
+          <div className="relative h-[650px] w-full hidden md:block">
+             <div className="absolute top-0 right-0 w-[90%] h-full bg-[#1a1a1a] border border-stone-800 shadow-2xl p-6 rotate-[-2deg] hover:rotate-0 transition-all duration-700">
                 <div className="w-full h-full bg-[#e8e8e5] text-[#121212] p-8 flex flex-col relative overflow-hidden font-serif">
-                   {/* E-Ink Texture Overlay - Removed bg-noise to fix error */}
                    <div className="absolute inset-0 pointer-events-none opacity-5"></div>
                    
-                   {/* Header */}
                    <div className="flex justify-between items-end border-b-2 border-black pb-4 mb-8">
                       <div>
                         <h3 className="text-3xl font-bold uppercase tracking-tighter">Daily Performance</h3>
@@ -289,7 +292,6 @@ const App = () => {
                       <div className="text-xs font-mono border border-black px-2 py-1">Q4 / Wk 41</div>
                    </div>
 
-                   {/* Content Mockup */}
                    <div className="grid grid-cols-2 gap-8 h-full">
                       <div className="space-y-6">
                          <div className="space-y-2">
@@ -323,7 +325,6 @@ const App = () => {
                       </div>
                    </div>
                    
-                   {/* Sidebar Mockup */}
                    <div className="absolute left-0 top-0 bottom-0 w-6 bg-stone-200 border-r border-stone-300 flex flex-col gap-4 py-4 items-center">
                       <div className="w-3 h-3 rounded-full bg-black mb-4"></div>
                       <div className="w-3 h-3 border border-stone-500"></div>
@@ -332,8 +333,7 @@ const App = () => {
                    </div>
                 </div>
              </div>
-             {/* Back Layer */}
-             <div className="absolute top-8 right-8 w-[85%] h-full border border-stone-800 -z-10 rotate-2"></div>
+             <div className="absolute top-8 right-8 w-[90%] h-full border border-stone-800 -z-10 rotate-2"></div>
           </div>
         </div>
       </header>
@@ -341,10 +341,10 @@ const App = () => {
       {/* Philosophy Section */}
       <section id="philosophy" className="py-24 px-6 border-b border-stone-900 bg-[#151515]">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Design Your Days. <span className="text-stone-500">Build Your Legacy.</span></h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Silence the Noise. <span className="text-stone-500">Master the Execution.</span></h2>
           <p className="text-lg text-stone-400">
-            Success isn’t an accident. It’s a blueprint. The gap between where you are and where you want to be is simply a lack of a system.
-            <span className="text-white"> Your Blueprint</span> turns your reMarkable tablet into a strategic command center.
+            Your brain is cluttered. Your digital planner shouldn’t be. In a world full of distractions, focus is the new currency. 
+            <span className="text-white"> Your Blueprint</span> is the antidote to chaos.
           </p>
         </div>
 
@@ -353,17 +353,17 @@ const App = () => {
             { 
               icon: <Layers className="w-8 h-8 mb-4 text-stone-100" />,
               title: "Visual Silence",
-              text: "A minimalist design that lowers cognitive load. No stickers. No distractions. Just you and your goals."
+              text: "We stripped away the fluff and decoration to give you a pure, white-space-dominant environment that forces clarity. No stickers. Just you and your goals."
             },
             { 
               icon: <Zap className="w-8 h-8 mb-4 text-stone-100" />,
-              title: "Zero-Lag Navigation",
-              text: "Smart hyperlinks for instant access. Jump from Quarterly Strategy to Daily Execution in two taps."
+              title: "Zero-Lag Architecture",
+              text: "Engineered for speed. Smart hyperlinks connect your Yearly Vision down to your hourly schedule instantly. Reclaim your attention span."
             },
             { 
               icon: <Shield className="w-8 h-8 mb-4 text-stone-100" />,
-              title: "High-Status Logic",
-              text: "From the Yearly Vision down to the hourly schedule, every page is linked by a logic designed to move you forward."
+              title: "Build Your Legacy",
+              text: "The gap between where you are and where you want to be is simply a lack of a system. This aligns your daily grind with your life’s biggest ambitions."
             }
           ].map((item, idx) => (
             <div key={idx} className="bg-[#1a1a1a] p-8 border border-stone-800 hover:border-stone-600 transition-colors group">
@@ -375,14 +375,20 @@ const App = () => {
         </div>
       </section>
 
-      {/* The System (Features) - Interactive Mockups */}
+      {/* The System (Features) - Desktop Interactive / Mobile Stacked */}
       <section id="system" className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row gap-12">
+          
+          <div className="mb-12 md:mb-16">
+             <h2 className="text-xs font-mono uppercase text-stone-500 mb-2 tracking-widest">Productivity Architecture</h2>
+             <h3 className="text-3xl md:text-4xl font-bold text-white">What's Inside the System</h3>
+          </div>
+
+          {/* DESKTOP VIEW: Split Screen Interactive */}
+          <div className="hidden md:flex flex-row gap-12">
             
             {/* Left: Menu */}
-            <div className="md:w-1/3 space-y-2">
-              <h2 className="text-xs font-mono uppercase text-stone-500 mb-8 tracking-widest">What's Inside</h2>
+            <div className="w-1/3 space-y-2">
               {features.map((feature, idx) => (
                 <button
                   key={idx}
@@ -393,24 +399,29 @@ const App = () => {
                       : 'bg-transparent border-stone-800 text-stone-500 hover:border-stone-600 hover:text-stone-300'
                   }`}
                 >
-                  <span className="font-bold tracking-wide">{feature.title}</span>
-                  {activeFeature === idx && <ChevronRight className="w-5 h-5" />}
+                  <div>
+                    <span className="font-bold tracking-wide block text-lg mb-1">{feature.title}</span>
+                    <span className={`text-xs ${activeFeature === idx ? 'text-stone-600' : 'text-stone-600'} block font-normal`}>
+                      {feature.desc}
+                    </span>
+                  </div>
+                  {activeFeature === idx && <ChevronRight className="w-5 h-5 flex-shrink-0" />}
                 </button>
               ))}
             </div>
 
             {/* Right: Content & Mockup */}
-            <div className="md:w-2/3 grid grid-cols-1 md:grid-cols-2 bg-[#1a1a1a] border border-stone-800">
+            <div className="w-2/3 grid grid-cols-2 bg-[#1a1a1a] border border-stone-800 min-h-[600px]">
                {/* Description Side */}
-               <div className="p-8 md:p-12 flex flex-col justify-center border-r border-stone-800/50">
-                  <div className="mb-6 text-stone-500 opacity-50">
+               <div className="p-10 flex flex-col justify-center border-r border-stone-800/50">
+                  <div className="mb-8 text-stone-100">
                     {features[activeFeature].icon}
                   </div>
                   <h3 className="text-3xl font-bold text-white mb-6">{features[activeFeature].title}</h3>
-                  <p className="text-lg text-stone-400 mb-8 leading-relaxed">
-                    {features[activeFeature].desc}
+                  <p className="text-lg text-stone-400 mb-10 leading-relaxed">
+                    {features[activeFeature].longDesc}
                   </p>
-                  <div className="space-y-3">
+                  <div className="space-y-4">
                     {features[activeFeature].details.map((detail, i) => (
                       <div key={i} className="flex items-center gap-3 text-stone-300 border-b border-stone-800 pb-3">
                         <div className="w-1.5 h-1.5 bg-stone-500"></div>
@@ -421,13 +432,46 @@ const App = () => {
                </div>
 
                {/* Visual Mockup Side */}
-               <div className="p-8 flex items-center justify-center bg-[#151515] overflow-hidden">
-                  <div className="w-full aspect-[3/4] shadow-2xl rotate-1 hover:rotate-0 transition-all duration-500">
+               <div className="p-8 flex items-center justify-center bg-[#151515] overflow-hidden relative">
+                  <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #333 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
+                  <div className="w-full aspect-[3/4] shadow-2xl transition-all duration-500 hover:scale-[1.02] z-10">
                      {renderFeatureMockup(activeFeature)}
                   </div>
                </div>
             </div>
           </div>
+
+          {/* MOBILE VIEW: Stacked Vertical Layout */}
+          <div className="md:hidden space-y-16">
+            {features.map((feature, idx) => (
+              <div key={idx} className="border-t border-stone-800 pt-8">
+                 <div className="flex items-center gap-3 mb-4 text-stone-100">
+                    {feature.icon}
+                    <h3 className="text-2xl font-bold text-white">{feature.title}</h3>
+                 </div>
+                 <p className="text-stone-400 mb-6 leading-relaxed">
+                   {feature.longDesc}
+                 </p>
+                 <div className="space-y-3 mb-8">
+                    {feature.details.map((detail, i) => (
+                      <div key={i} className="flex items-center gap-3 text-stone-500 border-b border-stone-800 pb-2">
+                        <div className="w-1 h-1 bg-stone-600"></div>
+                        <span className="font-mono text-xs uppercase tracking-wider">{detail}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* Mobile Mockup Area */}
+                  <div className="w-full bg-[#151515] p-6 border border-stone-800 flex items-center justify-center relative overflow-hidden h-[400px]">
+                     <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #333 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
+                     <div className="w-full h-full shadow-2xl z-10">
+                        {renderFeatureMockup(idx)}
+                     </div>
+                  </div>
+              </div>
+            ))}
+          </div>
+
         </div>
       </section>
 
