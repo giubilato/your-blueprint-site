@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   Target, 
   ChevronRight, 
+  ChevronDown,
   Briefcase, 
   TrendingUp, 
   Layers, 
@@ -14,13 +15,25 @@ import {
   Zap,
   MoveHorizontal,
   Feather,
-  Layout
+  Layout,
+  Tablet,
+  Smartphone,
+  Cpu,
+  Download,
+  HelpCircle,
+  Plus,
+  Minus
 } from 'lucide-react';
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeFeature, setActiveFeature] = useState(0);
   const [scrolled, setScrolled] = useState(false);
+  const [openFaq, setOpenFaq] = useState(null);
+  
+  // Gallery Logic
+  const scrollRef = useRef(null);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,25 +43,53 @@ const App = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Automatic Scroll Effect
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    let animationFrameId;
+
+    const scroll = () => {
+      if (!isPaused) {
+        if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+          // Reset to start seamlessly when we reach half way (since content is duplicated)
+          scrollContainer.scrollLeft = 0;
+        } else {
+          scrollContainer.scrollLeft += 0.5; // Speed: 0.5px per frame
+        }
+      }
+      animationFrameId = requestAnimationFrame(scroll);
+    };
+
+    animationFrameId = requestAnimationFrame(scroll);
+
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [isPaused]);
+
+  const toggleFaq = (index) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
+
   const features = [
     {
       title: "The Strategy Tower",
       icon: <Target className="w-6 h-6 text-blue-400" />,
-      desc: "Yearly Milestones & Quarterly Roadmaps to keep your vision clear. Don't just work—direct.",
+      desc: "Yearly Milestones & Quarterly Roadmaps to keep your vision clear.",
       longDesc: "Most planners let you write, but they don't help you build. The Strategy Tower aligns your daily grind with your life's biggest ambitions using a top-down architectural approach.",
       details: ["Yearly Milestones", "Quarterly Roadmaps", "OKR Dashboard"]
     },
     {
       title: "The Execution Core",
       icon: <Clock className="w-6 h-6 text-blue-400" />,
-      desc: "Daily & Weekly layouts optimized for Deep Work and Time Blocking. Separate the Urgent from the Important.",
+      desc: "Daily & Weekly layouts optimized for Deep Work and Time Blocking.",
       longDesc: "Instantly separate the Urgent from the Important on every daily page. A pure, white-space-dominant environment that forces clarity and protects your attention span.",
       details: ["Weekly Deep Work", "Daily Performance Page", "Eisenhower Matrix"]
     },
     {
       title: "The Management Hub",
       icon: <Briefcase className="w-6 h-6 text-blue-400" />,
-      desc: "Smart-indexed Meeting Notes and Delegation Trackers to never lose a detail. A command center for your team.",
+      desc: "Smart-indexed Meeting Notes and Delegation Trackers.",
       longDesc: "Stop reacting and start orchestrating. Never lose a detail with smart-indexed meeting notes and delegation trackers designed to keep your team accountable.",
       details: ["Indexed Meeting Notes", "Delegation Tracker", "Project Roadmaps"]
     },
@@ -58,6 +99,34 @@ const App = () => {
       desc: "Refine your performance. Document your logic to learn from every choice.",
       longDesc: "Success isn't an accident; it's a blueprint. Track your habits and document your decision logic to refine your performance quarter over quarter.",
       details: ["Decision Logs", "Habit Trackers", "Brain Dump Grid"]
+    }
+  ];
+
+  const specs = [
+    { label: "Yearly Milestone Log", value: "2 Pages" },
+    { label: "Quarterly Strategy", value: "8 Pages" },
+    { label: "Monthly OKR Dashboard", value: "12 Pages" },
+    { label: "Weekly Deep Work", value: "52 Pages" },
+    { label: "Daily Performance", value: "365 Pages" },
+    { label: "Project Gantt Charts", value: "12 Pages" },
+    { label: "Meeting Notes (Indexed)", value: "100 Pages" },
+    { label: "Delegation Tracker", value: "12 Pages" },
+    { label: "Decision Logs", value: "12 Pages" },
+    { label: "Brain Dump Grid", value: "50 Pages" },
+  ];
+
+  const faqs = [
+    {
+      q: "Does this work on reMarkable 1, 2 and Paper Pro?",
+      a: "Yes. The file is a hyperlinked PDF architected specifically for the reMarkable ecosystem. It works flawlessly on rM1, rM2, and the new Paper Pro (color supported)."
+    },
+    {
+      q: "Is this a subscription?",
+      a: "No. You pay once, you own it forever. This is a digital product purchase, not a recurring service."
+    },
+    {
+      q: "How do I install it?",
+      a: "It's simple. After purchase, you'll receive the PDF file. Drag and drop it into your reMarkable app (desktop or mobile), and it will sync to your tablet instantly."
     }
   ];
 
@@ -72,7 +141,6 @@ const App = () => {
                <span className="font-mono text-xs text-blue-700">2026-2027</span>
              </div>
              <div className="space-y-6">
-               {/* Objective 1 */}
                <div>
                  <div className="flex justify-between items-end mb-2">
                    <span className="font-bold text-sm uppercase tracking-wide text-slate-800">Scale Operations</span>
@@ -87,7 +155,6 @@ const App = () => {
                    <div className="w-1/3 h-10 border border-slate-400 p-1"></div>
                  </div>
                </div>
-               {/* Objective 2 */}
                <div>
                  <div className="flex justify-between items-end mb-2">
                    <span className="font-bold text-sm uppercase tracking-wide text-slate-800">Launch V2</span>
@@ -97,7 +164,6 @@ const App = () => {
                    <div className="absolute left-0 top-0 h-full w-[30%] bg-blue-900"></div>
                  </div>
                </div>
-               {/* OKR Mini Table */}
                <div className="mt-8 border border-slate-900 p-4">
                   <div className="text-xs font-bold uppercase mb-3 border-b border-slate-400 pb-2 text-slate-900">Key Results</div>
                   <div className="space-y-3">
@@ -215,12 +281,10 @@ const App = () => {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-slate-300 font-sans selection:bg-blue-900/50 selection:text-blue-200 overflow-x-hidden">
       
-      {/* Navigation - Modified layout for left alignment */}
+      {/* Navigation */}
       <nav className={`fixed w-full z-50 transition-all duration-300 border-b border-transparent ${scrolled ? 'bg-[#0a0a0a]/90 backdrop-blur-md border-slate-800 py-4 shadow-[0_4px_20px_rgba(0,0,0,0.4)]' : 'bg-transparent py-6'}`}>
-        {/* Container aligned with page content */}
         <div className="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
           <div className="flex items-center gap-4">
-            {/* Logo box */}
             <div className="h-12 w-12 bg-blue-600 flex items-center justify-center shadow-[0_0_15px_rgba(37,99,235,0.5)]">
                <Layout className="w-6 h-6 text-white" />
             </div>
@@ -249,9 +313,8 @@ const App = () => {
       </nav>
 
       {/* Hero Section */}
-      <header className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 border-b border-slate-900">
+      <header className="relative pt-32 pb-20 md:pt-48 md:pb-20 px-6 border-b border-slate-900">
         <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
-           {/* Technical Blue Grid Background */}
            <div className="w-full h-full" style={{ backgroundImage: 'linear-gradient(rgba(59, 130, 246, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.15) 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent"></div>
         </div>
@@ -271,9 +334,6 @@ const App = () => {
               Most digital planners are just endless pages of blank lines. They let you write, but they don't help you build. 
               <span className="text-blue-400 font-medium"> Your Blueprint</span> is different. It is a complete Productivity Architecture designed for high-performers.
             </p>
-            <p className="text-sm text-slate-500 mb-10 max-w-lg leading-relaxed border-l-2 border-blue-900 pl-4">
-              Integrates the world’s most effective methodologies—GTD®, OKRs, and Time Blocking—into one seamless, distraction-free workflow.
-            </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#pricing" className="bg-slate-100 text-[#0f172a] px-8 py-4 font-bold uppercase tracking-wide hover:bg-blue-600 hover:text-white transition-all flex items-center justify-center gap-2 group shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(37,99,235,0.4)]">
                 Download Architecture
@@ -285,7 +345,6 @@ const App = () => {
           {/* Abstract Device Visualization */}
           <div className="relative h-[650px] w-full hidden md:block">
              <div className="absolute top-0 right-0 w-[90%] h-full bg-[#0f172a] border border-slate-800 shadow-[0_0_50px_rgba(0,0,0,0.5)] p-6 rotate-[-2deg] hover:rotate-0 transition-all duration-700 group">
-                {/* Glow effect behind */}
                 <div className="absolute -inset-2 bg-blue-600/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 
                 <div className="w-full h-full bg-[#f0f4f8] text-[#0f172a] p-8 flex flex-col relative overflow-hidden font-serif shadow-inner">
@@ -383,19 +442,46 @@ const App = () => {
         </div>
       </section>
 
-      {/* The System (Features) - Desktop Interactive / Mobile Stacked */}
+      {/* 2. SCHEMATIC GALLERY (BLUEPRINT ROLL) */}
+      <section className="py-20 bg-[#0a0a0a] border-b border-slate-900 overflow-hidden">
+         <div className="max-w-7xl mx-auto px-6 mb-10">
+           <h3 className="text-xs font-mono uppercase text-blue-500 tracking-widest mb-2">Technical Schematics</h3>
+           <p className="text-2xl font-bold text-white">Full System Overview</p>
+         </div>
+         {/* Infinite Scroll Container */}
+         <div 
+           ref={scrollRef}
+           className="flex gap-8 px-6 overflow-x-auto pb-8 snap-x no-scrollbar cursor-grab active:cursor-grabbing"
+           onMouseEnter={() => setIsPaused(true)}
+           onMouseLeave={() => setIsPaused(false)}
+           onTouchStart={() => setIsPaused(true)}
+           onTouchEnd={() => setIsPaused(false)}
+         >
+            {/* Duplicated items to allow for scrolling illusion */}
+            {[...Array(12)].map((_, i) => (
+              <div key={i} className="flex-shrink-0 w-[280px] h-[360px] border border-slate-800 bg-[#0d1219] p-4 relative group hover:border-blue-500/50 transition-colors snap-center">
+                 <div className="absolute top-2 right-2 text-[10px] font-mono text-slate-600 group-hover:text-blue-400">FIG 0{(i % 6) + 1}</div>
+                 <div className="w-full h-full border border-dashed border-slate-700 opacity-50 flex items-center justify-center">
+                    <div className="text-center">
+                       <Layout className="w-8 h-8 text-slate-700 mx-auto mb-2"/>
+                       <span className="text-xs font-mono text-slate-700 uppercase">Wireframe View</span>
+                    </div>
+                 </div>
+                 <div className="absolute bottom-4 left-4 text-xs font-bold text-slate-400">Page Layout 0{(i % 6) + 1}</div>
+              </div>
+            ))}
+         </div>
+      </section>
+
+      {/* The System (Features) */}
       <section id="system" className="py-24 px-6 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto">
-          
           <div className="mb-12 md:mb-16">
              <h2 className="text-xs font-mono uppercase text-blue-500 mb-2 tracking-widest">Productivity Architecture</h2>
              <h3 className="text-3xl md:text-4xl font-bold text-white">What's Inside the System</h3>
           </div>
 
-          {/* DESKTOP VIEW: Split Screen Interactive */}
           <div className="hidden md:flex flex-row gap-12">
-            
-            {/* Left: Menu */}
             <div className="w-1/3 space-y-2">
               {features.map((feature, idx) => (
                 <button
@@ -418,12 +504,9 @@ const App = () => {
               ))}
             </div>
 
-            {/* Right: Content & Mockup */}
             <div className="w-2/3 grid grid-cols-2 bg-[#111827] border border-slate-800 min-h-[600px] relative">
-               {/* Background Grid for Content Area */}
                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(59, 130, 246, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.2) 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
                
-               {/* Description Side */}
                <div className="p-10 flex flex-col justify-center border-r border-slate-800/50 relative z-10">
                   <div className="mb-8 text-slate-100">
                     {features[activeFeature].icon}
@@ -442,7 +525,6 @@ const App = () => {
                   </div>
                </div>
 
-               {/* Visual Mockup Side */}
                <div className="p-8 flex items-center justify-center bg-[#0b101b] overflow-hidden relative">
                   <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle, #3b82f6 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
                   <div className="w-full aspect-[3/4] transition-all duration-500 hover:scale-[1.02] z-10">
@@ -452,7 +534,7 @@ const App = () => {
             </div>
           </div>
 
-          {/* MOBILE VIEW: Stacked Vertical Layout */}
+          {/* Mobile Stacked View */}
           <div className="md:hidden space-y-16">
             {features.map((feature, idx) => (
               <div key={idx} className="border-t border-slate-800 pt-8">
@@ -460,9 +542,7 @@ const App = () => {
                     {feature.icon}
                     <h3 className="text-2xl font-bold text-white">{feature.title}</h3>
                  </div>
-                 <p className="text-slate-400 mb-6 leading-relaxed">
-                   {feature.longDesc}
-                 </p>
+                 <p className="text-slate-400 mb-6 leading-relaxed">{feature.longDesc}</p>
                  <div className="space-y-3 mb-8">
                     {feature.details.map((detail, i) => (
                       <div key={i} className="flex items-center gap-3 text-slate-500 border-b border-slate-800 pb-2">
@@ -471,19 +551,55 @@ const App = () => {
                       </div>
                     ))}
                   </div>
-                  
-                  {/* Mobile Mockup Area */}
                   <div className="w-full bg-[#111827] p-6 border border-slate-800 flex items-center justify-center relative overflow-hidden h-[400px]">
                      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #3b82f6 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
-                     <div className="w-full h-full shadow-2xl z-10">
-                        {renderFeatureMockup(idx)}
-                     </div>
+                     <div className="w-full h-full shadow-2xl z-10">{renderFeatureMockup(idx)}</div>
                   </div>
               </div>
             ))}
           </div>
-
         </div>
+      </section>
+
+      {/* 4. EXECUTIVE REVIEWS (High Status) */}
+      <section className="py-24 px-6 bg-[#0d1219] border-t border-slate-900">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-center text-xs font-mono uppercase text-blue-500 mb-16 tracking-widest">Executive Field Reports</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { text: "Finally a system that respects my executive bandwidth. No stickers, no fluff. Just pure strategy execution.", author: "Marco R.", role: "Chief Operating Officer" },
+              { text: "I've tried every digital planner on the market. This is the only one that actually mirrors how a C-Level mind works.", author: "Sarah L.", role: "VP of Engineering" },
+              { text: "The architectural approach to quarterly planning changed how I lead my team. Worth 10x the price.", author: "David K.", role: "Founder & CEO" }
+            ].map((review, i) => (
+              <div key={i} className="bg-[#0a0a0a] border border-slate-800 p-8 relative">
+                 <div className="absolute top-0 left-0 w-full h-1 bg-blue-900/30"></div>
+                 <p className="text-slate-300 leading-relaxed mb-6 italic">"{review.text}"</p>
+                 <div>
+                    <div className="font-bold text-white">{review.author}</div>
+                    <div className="text-xs font-mono text-blue-500 uppercase mt-1">{review.role}</div>
+                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. TECHNICAL SPECS TABLE */}
+      <section className="py-24 px-6 bg-[#0a0a0a] border-t border-slate-900">
+         <div className="max-w-3xl mx-auto">
+            <div className="flex items-center justify-between mb-8">
+               <h3 className="text-xl font-bold text-white">System Specifications</h3>
+               <span className="text-xs font-mono text-slate-500">REF: YBP-2026</span>
+            </div>
+            <div className="border border-slate-800">
+               {specs.map((spec, i) => (
+                 <div key={i} className={`flex justify-between p-4 ${i !== specs.length - 1 ? 'border-b border-slate-800' : ''} hover:bg-slate-900/30 transition-colors`}>
+                    <span className="font-mono text-sm text-slate-400">{spec.label}</span>
+                    <span className="font-mono text-sm text-blue-400 font-bold">{spec.value}</span>
+                 </div>
+               ))}
+            </div>
+         </div>
       </section>
 
       {/* Technical Specs & Pricing */}
@@ -532,12 +648,37 @@ const App = () => {
         </div>
       </section>
 
+      {/* 5. FAQ SECTION */}
+      <section className="py-24 px-6 bg-[#0a0a0a] border-t border-slate-900">
+         <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-white mb-10 text-center">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+               {faqs.map((faq, i) => (
+                  <div key={i} className="border border-slate-800 bg-[#0d1219]">
+                     <button 
+                        onClick={() => toggleFaq(i)}
+                        className="w-full flex justify-between items-center p-6 text-left hover:bg-slate-900/50 transition-colors"
+                     >
+                        <span className="font-bold text-slate-200">{faq.q}</span>
+                        {openFaq === i ? <Minus className="w-5 h-5 text-blue-500"/> : <Plus className="w-5 h-5 text-slate-500"/>}
+                     </button>
+                     {openFaq === i && (
+                        <div className="px-6 pb-6 text-slate-400 text-sm leading-relaxed border-t border-slate-900 pt-4">
+                           {faq.a}
+                        </div>
+                     )}
+                  </div>
+               ))}
+            </div>
+         </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-slate-900 text-slate-600 text-sm bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
-            <div className="w-4 h-4 border border-slate-700 flex items-center justify-center bg-blue-900/20">
-              <div className="w-1.5 h-1.5 bg-blue-500"></div>
+            <div className="h-6 w-6 bg-blue-600 flex items-center justify-center shadow-[0_0_10px_rgba(37,99,235,0.5)]">
+              <Layout className="w-3 h-3 text-white" />
             </div>
             <span className="font-bold uppercase tracking-widest font-mono text-slate-400">Your Blueprint</span>
           </div>
