@@ -52,11 +52,12 @@ const App = () => {
 
     const scroll = () => {
       if (!isPaused) {
+        // We assume content is duplicated (first half == second half)
+        // Reset to 0 when we reach half of the scrollable width
         if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
-          // Reset to start seamlessly when we reach half way (since content is duplicated)
           scrollContainer.scrollLeft = 0;
         } else {
-          scrollContainer.scrollLeft += 0.5; // Speed: 0.5px per frame
+          scrollContainer.scrollLeft += 1; // Increased speed for better visibility
         }
       }
       animationFrameId = requestAnimationFrame(scroll);
@@ -66,6 +67,15 @@ const App = () => {
 
     return () => cancelAnimationFrame(animationFrameId);
   }, [isPaused]);
+
+  // Smooth Scroll Function
+  const scrollToPricing = (e) => {
+    e.preventDefault();
+    const pricingSection = document.getElementById('pricing');
+    if (pricingSection) {
+      pricingSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const toggleFaq = (index) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -292,7 +302,7 @@ const App = () => {
           </div>
           
           <div className="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest text-slate-400">
-            <a href="#pricing" className="bg-slate-100 text-[#0f172a] px-6 py-2 hover:bg-blue-600 hover:text-white transition-all duration-300 font-bold shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(37,99,235,0.5)]">
+            <a href="#pricing" onClick={scrollToPricing} className="bg-slate-100 text-[#0f172a] px-6 py-2 hover:bg-blue-600 hover:text-white transition-all duration-300 font-bold shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(37,99,235,0.5)] cursor-pointer">
               Get Access
             </a>
           </div>
@@ -305,7 +315,7 @@ const App = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="absolute top-full left-0 w-full bg-[#0a0a0a] border-b border-slate-800 p-6 flex flex-col gap-6 md:hidden">
-            <a href="#pricing" onClick={() => setIsMenuOpen(false)} className="bg-slate-100 text-[#0f172a] px-6 py-3 w-full font-bold text-center block shadow-lg">
+            <a href="#pricing" onClick={(e) => { setIsMenuOpen(false); scrollToPricing(e); }} className="bg-slate-100 text-[#0f172a] px-6 py-3 w-full font-bold text-center block shadow-lg cursor-pointer">
               Get Access
             </a>
           </div>
@@ -335,7 +345,7 @@ const App = () => {
               <span className="text-blue-400 font-medium"> Your Blueprint</span> is different. It is a complete Productivity Architecture designed for high-performers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#pricing" className="bg-slate-100 text-[#0f172a] px-8 py-4 font-bold uppercase tracking-wide hover:bg-blue-600 hover:text-white transition-all flex items-center justify-center gap-2 group shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(37,99,235,0.4)]">
+              <a href="#pricing" onClick={scrollToPricing} className="bg-slate-100 text-[#0f172a] px-8 py-4 font-bold uppercase tracking-wide hover:bg-blue-600 hover:text-white transition-all flex items-center justify-center gap-2 group shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(37,99,235,0.4)] cursor-pointer">
                 Download Architecture
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
