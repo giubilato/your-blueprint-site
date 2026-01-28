@@ -52,12 +52,12 @@ const App = () => {
 
     const scroll = () => {
       if (!isPaused) {
-        // We assume content is duplicated (first half == second half)
         // Reset to 0 when we reach half of the scrollable width
+        // Using >= is safer than ===
         if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
           scrollContainer.scrollLeft = 0;
         } else {
-          scrollContainer.scrollLeft += 1; // Increased speed for better visibility
+          scrollContainer.scrollLeft += 1; 
         }
       }
       animationFrameId = requestAnimationFrame(scroll);
@@ -459,9 +459,10 @@ const App = () => {
            <p className="text-2xl font-bold text-white">Full System Overview</p>
          </div>
          {/* Infinite Scroll Container */}
+         {/* Removed snap-x class to fix jerky scrolling on mobile */}
          <div 
            ref={scrollRef}
-           className="flex gap-8 px-6 overflow-x-auto pb-8 snap-x no-scrollbar cursor-grab active:cursor-grabbing"
+           className="flex gap-8 px-6 overflow-x-auto pb-8 no-scrollbar cursor-grab active:cursor-grabbing"
            onMouseEnter={() => setIsPaused(true)}
            onMouseLeave={() => setIsPaused(false)}
            onTouchStart={() => setIsPaused(true)}
@@ -469,7 +470,8 @@ const App = () => {
          >
             {/* Duplicated items to allow for scrolling illusion */}
             {[...Array(12)].map((_, i) => (
-              <div key={i} className="flex-shrink-0 w-[280px] h-[360px] border border-slate-800 bg-[#0d1219] p-4 relative group hover:border-blue-500/50 transition-colors snap-center">
+              // Removed snap-center class
+              <div key={i} className="flex-shrink-0 w-[280px] h-[360px] border border-slate-800 bg-[#0d1219] p-4 relative group hover:border-blue-500/50 transition-colors">
                  <div className="absolute top-2 right-2 text-[10px] font-mono text-slate-600 group-hover:text-blue-400">FIG 0{(i % 6) + 1}</div>
                  <div className="w-full h-full border border-dashed border-slate-700 opacity-50 flex items-center justify-center">
                     <div className="text-center">
