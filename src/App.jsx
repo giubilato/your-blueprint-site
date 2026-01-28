@@ -217,10 +217,10 @@ const App = () => {
       
       {/* Navigation - Modified layout for left alignment */}
       <nav className={`fixed w-full z-50 transition-all duration-300 border-b border-transparent ${scrolled ? 'bg-[#0a0a0a]/90 backdrop-blur-md border-slate-800 py-4 shadow-[0_4px_20px_rgba(0,0,0,0.4)]' : 'bg-transparent py-6'}`}>
-        {/* Full width container, no padding on left, padding right for menu */}
-        <div className="w-full flex justify-between items-center pl-0 pr-6">
+        {/* Container aligned with page content */}
+        <div className="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
           <div className="flex items-center gap-4">
-            {/* Logo box touches the edge */}
+            {/* Logo box */}
             <div className="h-12 w-12 bg-blue-600 flex items-center justify-center shadow-[0_0_15px_rgba(37,99,235,0.5)]">
                <Layout className="w-6 h-6 text-white" />
             </div>
