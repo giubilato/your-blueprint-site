@@ -1,0 +1,16 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Blue Box (bg-blue-600) -->
+  <rect width="48" height="48" fill="#2563EB" />
+  
+  <!-- Icon (Layout from Lucide) scaled and centered -->
+  <!-- Original Lucide is 24x24. We scale it up to 24x24 in the center of 48x48 box -->
+  <g transform="translate(12, 12)">
+    <path d="M3 3H21V21H3V3Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M3 9H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M9 21V9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Optional: Rounded corners for the icon outline to match Lucide style perfectly -->
+    <!-- Replaced simple rect path with rect element for rounding if preferred, 
+         but paths above represent the 'Layout' structure: Header + Sidebar -->
+  </g>
+</svg>
