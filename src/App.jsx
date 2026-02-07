@@ -22,8 +22,60 @@ import {
   Download,
   HelpCircle,
   Plus,
-  Minus
+  Minus,
+  FileText,
+  ArrowLeft,
+  Calendar
 } from 'lucide-react';
+
+// --- MOCK BLOG DATA ---
+const BLOG_POSTS = [
+  {
+    id: 1,
+    title: "Why Paper Tablets Are The Future of Deep Work",
+    excerpt: "In a world of constant notifications, the reMarkable ecosystem offers a sanctuary for focused thought. Here is how to leverage it.",
+    date: "OCT 12, 2025",
+    readTime: "5 MIN READ",
+    content: (
+      <>
+        <p className="mb-6">The modern workspace is a minefield of distractions. Slack pings, email notifications, and browser tabs are the enemies of deep work. This is why devices like the reMarkable 2 and the new Paper Pro are not just gadgets; they are productivity moats.</p>
+        <h3 className="text-xl font-bold text-white mb-4">The Cost of Context Switching</h3>
+        <p className="mb-6">Research shows it takes an average of 23 minutes to regain focus after an interruption. If you check your email every 10 minutes, you are effectively never working at your cognitive peak.</p>
+        <h3 className="text-xl font-bold text-white mb-4">Analog Feel, Digital Power</h3>
+        <p className="mb-6">The tactile sensation of writing on e-ink triggers different cognitive processes than typing. It slows you down just enough to think, but the digital nature allows for infinite editing. Our Blueprint system is built on this paradox: structured like a paper planner, but architected with hyperlinks for speed.</p>
+      </>
+    )
+  },
+  {
+    id: 2,
+    title: "The Quarterly Roadmap: Stop Planning Day-to-Day",
+    excerpt: "Most people fail because they plan their days before they plan their quarters. Learn the top-down architectural approach.",
+    date: "SEP 28, 2025",
+    readTime: "8 MIN READ",
+    content: (
+      <>
+        <p className="mb-6">Micro-management is a trap. If you wake up every morning wondering "what should I do today?", you have already lost. High performance requires a separation of Strategy and Execution.</p>
+        <h3 className="text-xl font-bold text-white mb-4">The Strategy Tower Concept</h3>
+        <p className="mb-6">Think of your productivity system as a building. The foundation is your Yearly Vision. The floors are your Quarterly Roadmaps. The rooms are your Weekly Sprints. The furniture is your Daily Task list.</p>
+        <p className="mb-6">You cannot arrange the furniture if you haven't built the floor. Our system forces you to define the Q1 Roadmap before you ever touch a Monday morning schedule.</p>
+      </>
+    )
+  },
+  {
+    id: 3,
+    title: "Eisenhower Matrix 2.0: Beyond Urgent & Important",
+    excerpt: "The classic matrix is useful, but we've adapted it for the executive mind. How to categorize tasks when everything seems critical.",
+    date: "SEP 10, 2025",
+    readTime: "4 MIN READ",
+    content: (
+      <>
+        <p className="mb-6">General Dwight D. Eisenhower famously said: 'What is important is seldom urgent, and what is urgent is seldom important.' But in a startup or high-stakes corporate environment, everything feels urgent.</p>
+        <h3 className="text-xl font-bold text-white mb-4">The Delete Quadrant</h3>
+        <p className="mb-6">The most underused quadrant in our Blueprint is 'Delete'. We often feel compelled to do things simply because they are on a list. The highest leverage skill you can develop is the ability to look at a task and simply decide it will not happen.</p>
+      </>
+    )
+  }
+];
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,6 +83,16 @@ const App = () => {
   const [scrolled, setScrolled] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
   
+  // NAVIGATION STATE
+  // 'home' = Landing Page
+  // 'blog' = List of articles
+  // 'post' = Single article view
+  const [currentView, setCurrentView] = useState('home');
+  const [activePost, setActivePost] = useState(null);
+
+  // CONFIGURATION: Replace this URL with your actual Lemon Squeezy / Gumroad / Stripe link
+  const CHECKOUT_URL = "https://your-checkout-link.com/buy/blueprint-2026"; 
+
   // Gallery Logic
   const scrollRef = useRef(null);
   const [isPaused, setIsPaused] = useState(false);
@@ -43,8 +105,10 @@ const App = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Automatic Scroll Effect
+  // Automatic Scroll Effect (Only active on Home)
   useEffect(() => {
+    if (currentView !== 'home') return;
+    
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
 
@@ -52,8 +116,6 @@ const App = () => {
 
     const scroll = () => {
       if (!isPaused) {
-        // Reset to 0 when we reach half of the scrollable width
-        // Using >= is safer than ===
         if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
           scrollContainer.scrollLeft = 0;
         } else {
@@ -66,21 +128,54 @@ const App = () => {
     animationFrameId = requestAnimationFrame(scroll);
 
     return () => cancelAnimationFrame(animationFrameId);
-  }, [isPaused]);
+  }, [isPaused, currentView]); // Added currentView to deps
 
   // Smooth Scroll Function
   const scrollToPricing = (e) => {
     e.preventDefault();
-    const pricingSection = document.getElementById('pricing');
-    if (pricingSection) {
-      pricingSection.scrollIntoView({ behavior: 'smooth' });
+    if (currentView !== 'home') {
+      setCurrentView('home');
+      // Wait for render then scroll
+      setTimeout(() => {
+        const pricingSection = document.getElementById('pricing');
+        if (pricingSection) pricingSection.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      const pricingSection = document.getElementById('pricing');
+      if (pricingSection) pricingSection.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handlePurchase = () => {
+    window.open(CHECKOUT_URL, '_blank');
   };
 
   const toggleFaq = (index) => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
+  // --- NAVIGATION HANDLERS ---
+  const goToHome = () => {
+    setCurrentView('home');
+    setActivePost(null);
+    setIsMenuOpen(false);
+    window.scrollTo(0, 0);
+  };
+
+  const goToBlog = () => {
+    setCurrentView('blog');
+    setActivePost(null);
+    setIsMenuOpen(false);
+    window.scrollTo(0, 0);
+  };
+
+  const goToPost = (post) => {
+    setActivePost(post);
+    setCurrentView('post');
+    window.scrollTo(0, 0);
+  };
+
+  // --- CONTENT DATA ---
   const features = [
     {
       title: "The Strategy Tower",
@@ -288,40 +383,11 @@ const App = () => {
     }
   }
 
-  return (
-    <div className="min-h-screen bg-[#0a0a0a] text-slate-300 font-sans selection:bg-blue-900/50 selection:text-blue-200 overflow-x-hidden">
-      
-      {/* Navigation */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 border-b border-transparent ${scrolled ? 'bg-[#0a0a0a]/90 backdrop-blur-md border-slate-800 py-4 shadow-[0_4px_20px_rgba(0,0,0,0.4)]' : 'bg-transparent py-6'}`}>
-        <div className="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
-          <div className="flex items-center gap-4">
-            <div className="h-12 w-12 bg-blue-600 flex items-center justify-center shadow-[0_0_15px_rgba(37,99,235,0.5)]">
-               <Layout className="w-6 h-6 text-white" />
-            </div>
-            <span className="text-xl font-bold tracking-tight text-slate-100 uppercase font-mono">Your Blueprint</span>
-          </div>
-          
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest text-slate-400">
-            <a href="#pricing" onClick={scrollToPricing} className="bg-slate-100 text-[#0f172a] px-6 py-2 hover:bg-blue-600 hover:text-white transition-all duration-300 font-bold shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(37,99,235,0.5)] cursor-pointer">
-              Get Access
-            </a>
-          </div>
+  // --- RENDER VIEWS ---
 
-          <button className="md:hidden text-slate-300 hover:text-blue-400 transition-colors" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X /> : <Menu />}
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="absolute top-full left-0 w-full bg-[#0a0a0a] border-b border-slate-800 p-6 flex flex-col gap-6 md:hidden">
-            <a href="#pricing" onClick={(e) => { setIsMenuOpen(false); scrollToPricing(e); }} className="bg-slate-100 text-[#0f172a] px-6 py-3 w-full font-bold text-center block shadow-lg cursor-pointer">
-              Get Access
-            </a>
-          </div>
-        )}
-      </nav>
-
+  // 1. HOME VIEW (LANDING PAGE)
+  const renderHome = () => (
+    <>
       {/* Hero Section */}
       <header className="relative pt-32 pb-20 md:pt-48 md:pb-20 px-6 border-b border-slate-900">
         <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
@@ -345,10 +411,13 @@ const App = () => {
               <span className="text-blue-400 font-medium"> Your Blueprint</span> is different. It is a complete Productivity Architecture designed for high-performers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#pricing" onClick={scrollToPricing} className="bg-slate-100 text-[#0f172a] px-8 py-4 font-bold uppercase tracking-wide hover:bg-blue-600 hover:text-white transition-all flex items-center justify-center gap-2 group shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(37,99,235,0.4)] cursor-pointer">
+              <button 
+                onClick={handlePurchase}
+                className="bg-slate-100 text-[#0f172a] px-8 py-4 font-bold uppercase tracking-wide hover:bg-blue-600 hover:text-white transition-all flex items-center justify-center gap-2 group shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(37,99,235,0.4)] cursor-pointer"
+              >
                 Download Architecture
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
+              </button>
             </div>
           </div>
 
@@ -459,7 +528,6 @@ const App = () => {
            <p className="text-2xl font-bold text-white">Full System Overview</p>
          </div>
          {/* Infinite Scroll Container */}
-         {/* Removed snap-x class to fix jerky scrolling on mobile */}
          <div 
            ref={scrollRef}
            className="flex gap-8 px-6 overflow-x-auto pb-8 no-scrollbar cursor-grab active:cursor-grabbing"
@@ -470,7 +538,6 @@ const App = () => {
          >
             {/* Duplicated items to allow for scrolling illusion */}
             {[...Array(12)].map((_, i) => (
-              // Removed snap-center class
               <div key={i} className="flex-shrink-0 w-[280px] h-[360px] border border-slate-800 bg-[#0d1219] p-4 relative group hover:border-blue-500/50 transition-colors">
                  <div className="absolute top-2 right-2 text-[10px] font-mono text-slate-600 group-hover:text-blue-400">FIG 0{(i % 6) + 1}</div>
                  <div className="w-full h-full border border-dashed border-slate-700 opacity-50 flex items-center justify-center">
@@ -652,7 +719,10 @@ const App = () => {
                 <li className="flex gap-3"><CheckSquare className="w-5 h-5 text-white" /> Instant PDF Delivery</li>
               </ul>
 
-              <button className="w-full bg-slate-100 text-[#0f172a] py-4 font-bold uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-all shadow-[0_0_15px_rgba(255,255,255,0.05)] hover:shadow-[0_0_25px_rgba(37,99,235,0.5)]">
+              <button 
+                onClick={handlePurchase}
+                className="w-full bg-slate-100 text-[#0f172a] py-4 font-bold uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-all shadow-[0_0_15px_rgba(255,255,255,0.05)] hover:shadow-[0_0_25px_rgba(37,99,235,0.5)]"
+              >
                 Purchase Blueprint
               </button>
               <p className="mt-4 text-xs text-slate-600">Compatible with reMarkable 1, 2 & Paper Pro. Also works on Supernote & Boox.</p>
@@ -684,17 +754,143 @@ const App = () => {
             </div>
          </div>
       </section>
+    </>
+  );
+
+  // 2. BLOG INDEX VIEW
+  const renderBlog = () => (
+    <div className="pt-32 pb-24 px-6 min-h-screen bg-[#0a0a0a]">
+       <div className="max-w-4xl mx-auto">
+          <div className="mb-16 text-center">
+             <div className="inline-block px-3 py-1 border border-blue-900/50 text-blue-400 text-xs uppercase tracking-[0.2em] mb-6 bg-blue-950/20 backdrop-blur-sm">
+                Architect's Log
+             </div>
+             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Thoughts on <span className="text-blue-500">Execution</span></h1>
+             <p className="text-lg text-slate-400 max-w-xl mx-auto">Strategies, systems, and philosophies for the high-performance mind.</p>
+          </div>
+
+          <div className="grid gap-8">
+             {BLOG_POSTS.map(post => (
+                <article key={post.id} className="group bg-[#0d1219] border border-slate-800 hover:border-blue-500/50 transition-all p-8 flex flex-col md:flex-row gap-8 relative overflow-hidden cursor-pointer" onClick={() => goToPost(post)}>
+                   <div className="absolute top-0 right-0 w-20 h-20 bg-blue-500/5 rounded-full blur-2xl group-hover:bg-blue-500/10 transition-colors"></div>
+                   
+                   <div className="flex-1">
+                      <div className="flex items-center gap-4 text-xs font-mono uppercase tracking-widest text-slate-500 mb-4">
+                         <span>{post.date}</span>
+                         <span className="w-1 h-1 bg-blue-600 rounded-full"></span>
+                         <span>{post.readTime}</span>
+                      </div>
+                      <h2 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">{post.title}</h2>
+                      <p className="text-slate-400 leading-relaxed mb-6">{post.excerpt}</p>
+                      <span className="text-blue-500 font-bold uppercase text-xs tracking-wider flex items-center gap-2 group-hover:gap-4 transition-all">
+                         Read Article <ArrowRight className="w-4 h-4"/>
+                      </span>
+                   </div>
+                </article>
+             ))}
+          </div>
+       </div>
+    </div>
+  );
+
+  // 3. SINGLE POST VIEW
+  const renderPost = () => (
+     <div className="pt-32 pb-24 px-6 min-h-screen bg-[#0a0a0a]">
+        <article className="max-w-3xl mx-auto">
+           <button onClick={goToBlog} className="group flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-slate-500 mb-8 hover:text-blue-400 transition-colors">
+              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Log
+           </button>
+
+           <header className="mb-12 border-b border-slate-800 pb-12">
+              <div className="flex items-center gap-4 text-xs font-mono uppercase tracking-widest text-blue-500 mb-6">
+                  <span>{activePost.date}</span>
+                  <span className="w-1 h-1 bg-slate-600 rounded-full"></span>
+                  <span>{activePost.readTime}</span>
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-8">{activePost.title}</h1>
+              <p className="text-xl text-slate-400 leading-relaxed">{activePost.excerpt}</p>
+           </header>
+
+           <div className="prose prose-invert prose-lg prose-headings:font-bold prose-headings:text-white prose-p:text-slate-400 prose-p:leading-8 prose-strong:text-slate-200">
+              {activePost.content}
+           </div>
+
+           <div className="mt-16 pt-16 border-t border-slate-800">
+              <div className="bg-[#111827] border border-slate-800 p-8 text-center">
+                 <h3 className="text-xl font-bold text-white mb-4">Ready to build your system?</h3>
+                 <p className="text-slate-400 mb-6">This concept is built directly into the Blueprint architecture.</p>
+                 <button 
+                    onClick={handlePurchase}
+                    className="bg-slate-100 text-[#0f172a] px-8 py-3 font-bold uppercase tracking-wide hover:bg-blue-600 hover:text-white transition-all inline-flex items-center justify-center gap-2"
+                 >
+                    Get the Blueprint
+                 </button>
+              </div>
+           </div>
+        </article>
+     </div>
+  );
+
+  return (
+    <div className="min-h-screen bg-[#0a0a0a] text-slate-300 font-sans selection:bg-blue-900/50 selection:text-blue-200 overflow-x-hidden">
+      
+      {/* Navigation */}
+      <nav className={`fixed w-full z-50 transition-all duration-300 border-b border-transparent ${scrolled ? 'bg-[#0a0a0a]/90 backdrop-blur-md border-slate-800 py-4 shadow-[0_4px_20px_rgba(0,0,0,0.4)]' : 'bg-transparent py-6'}`}>
+        <div className="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
+          <div className="flex items-center gap-4 cursor-pointer" onClick={goToHome}>
+            <div className="h-12 w-12 bg-blue-600 flex items-center justify-center shadow-[0_0_15px_rgba(37,99,235,0.5)]">
+               <Layout className="w-6 h-6 text-white" />
+            </div>
+            <span className="text-xl font-bold tracking-tight text-slate-100 uppercase font-mono">Your Blueprint</span>
+          </div>
+          
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest text-slate-400">
+            {/* CONDITIONAL MENU ITEM: Only show News/Blog if NOT on Home (or if preferred to always allow access) */}
+            {currentView !== 'home' && (
+              <button onClick={goToBlog} className="hover:text-white transition-colors">
+                News
+              </button>
+            )}
+
+            <a href="#pricing" onClick={scrollToPricing} className="bg-slate-100 text-[#0f172a] px-6 py-2 hover:bg-blue-600 hover:text-white transition-all duration-300 font-bold shadow-[0_0_10px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(37,99,235,0.5)] cursor-pointer">
+              Get Access
+            </a>
+          </div>
+
+          <button className="md:hidden text-slate-300 hover:text-blue-400 transition-colors" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? <X /> : <Menu />}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="absolute top-full left-0 w-full bg-[#0a0a0a] border-b border-slate-800 p-6 flex flex-col gap-6 md:hidden">
+            {currentView !== 'home' && (
+               <button onClick={goToBlog} className="text-left font-bold text-slate-300 py-2 border-b border-slate-800">News</button>
+            )}
+            <a href="#pricing" onClick={(e) => { setIsMenuOpen(false); scrollToPricing(e); }} className="bg-slate-100 text-[#0f172a] px-6 py-3 w-full font-bold text-center block shadow-lg cursor-pointer">
+              Get Access
+            </a>
+          </div>
+        )}
+      </nav>
+
+      {/* RENDER CONTENT BASED ON VIEW STATE */}
+      {currentView === 'home' && renderHome()}
+      {currentView === 'blog' && renderBlog()}
+      {currentView === 'post' && activePost && renderPost()}
 
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-slate-900 text-slate-600 text-sm bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 cursor-pointer" onClick={goToHome}>
             <div className="h-6 w-6 bg-blue-600 flex items-center justify-center shadow-[0_0_10px_rgba(37,99,235,0.5)]">
               <Layout className="w-3 h-3 text-white" />
             </div>
             <span className="font-bold uppercase tracking-widest font-mono text-slate-400">Your Blueprint</span>
           </div>
           <div className="flex gap-6">
+             <button onClick={goToBlog} className="hover:text-blue-400 transition-colors">Articles</button>
              <a href="#" className="hover:text-blue-400 transition-colors">Support</a>
              <a href="#" className="hover:text-blue-400 transition-colors">Installation Guide</a>
              <a href="#" className="hover:text-blue-400 transition-colors">Privacy</a>
