@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { 
   Target, ChevronRight, Briefcase, TrendingUp, Layers, CheckSquare, 
-  ArrowRight, Shield, Clock, Zap, MoveHorizontal, Feather, Layout, Plus, Minus 
+  ArrowRight, Shield, Clock, Zap, MoveHorizontal, Feather, Layout, Plus, Minus, Mail 
 } from 'lucide-react';
 
 const Home = () => {
@@ -10,19 +10,54 @@ const Home = () => {
   const [isPaused, setIsPaused] = useState(false);
   const scrollRef = useRef(null);
 
-  const CHECKOUT_URL = "https://your-checkout-link.com/buy/blueprint-2026"; 
+  // STATO PER LA WAITLIST
+  const [email, setEmail] = useState('');
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handlePurchase = () => {
-    window.open(CHECKOUT_URL, '_blank');
+  // LOGICA FORMSPREE (COLLEGATA AL TUO ID)
+  const handleJoinWaitlist = async (e) => {
+    e.preventDefault();
+    if (email) {
+      try {
+        const response = await fetch("https://formspree.io/f/xzdaekyy", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({ email: email })
+        });
+
+        if (response.ok) {
+          setIsSubmitted(true);
+          setEmail(''); // Pulisce il campo dopo l'invio
+        } else {
+          alert("Something went wrong. Please try again.");
+        }
+      } catch (error) {
+        alert("Network error. Please try again.");
+      }
+    }
+  };
+
+  // Funzione per scorrere fino alla waitlist (usata dai pulsanti)
+  const handleScrollToWaitlist = (e) => {
+    if(e) e.preventDefault();
+    const element = document.getElementById('waitlist-section');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const toggleFaq = (index) => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
+  // Effetto Scroll Automatico per la Galleria
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
+
     let animationFrameId;
     const scroll = () => {
       if (!isPaused) {
@@ -38,7 +73,7 @@ const Home = () => {
     return () => cancelAnimationFrame(animationFrameId);
   }, [isPaused]);
 
-  // DATA
+  // --- DATI CONTENUTO ---
   const features = [
     {
       title: "The Strategy Tower",
@@ -115,6 +150,20 @@ const Home = () => {
                  <div className="w-full h-3 bg-slate-300 relative">
                    <div className="absolute left-0 top-0 h-full w-3/4 bg-blue-900"></div>
                  </div>
+                 <div className="flex gap-3 mt-3">
+                   <div className="w-1/3 h-10 border border-slate-400 p-1"><div className="w-full h-full bg-slate-300"></div></div>
+                   <div className="w-1/3 h-10 border border-slate-400 p-1"></div>
+                   <div className="w-1/3 h-10 border border-slate-400 p-1"></div>
+                 </div>
+               </div>
+               <div>
+                 <div className="flex justify-between items-end mb-2">
+                   <span className="font-bold text-sm uppercase tracking-wide text-slate-800">Launch V2</span>
+                   <span className="font-mono text-xs text-slate-600">30%</span>
+                 </div>
+                 <div className="w-full h-3 bg-slate-300 relative">
+                   <div className="absolute left-0 top-0 h-full w-[30%] bg-blue-900"></div>
+                 </div>
                </div>
              </div>
           </div>
@@ -132,6 +181,13 @@ const Home = () => {
                </div>
                <div>
                  <div className="uppercase font-bold text-sm mb-4 border-b border-slate-900 pb-1 text-slate-900">Priorities</div>
+                 <div className="border border-slate-400 h-24 mb-3 p-2 bg-white">
+                   <span className="text-[9px] uppercase font-bold text-slate-500 block mb-2">Urgent / Important</span>
+                   <div className="space-y-2">
+                     <div className="w-full h-1.5 bg-slate-900"></div>
+                     <div className="w-2/3 h-1.5 bg-slate-900"></div>
+                   </div>
+                 </div>
                </div>
             </div>
           </div>
@@ -142,6 +198,20 @@ const Home = () => {
                 <div className="w-10 h-10 border-2 border-slate-900 flex items-center justify-center font-bold text-lg bg-white text-slate-900">M</div>
                 <div>
                    <div className="text-sm font-bold uppercase tracking-wide text-slate-900">Board Meeting</div>
+                   <div className="text-[10px] text-blue-700 font-mono mt-1">Attendees: CEO, CTO, VP</div>
+                </div>
+             </div>
+             <div className="flex h-full gap-6">
+                <div className="w-1/3 border-r border-slate-400 pr-4 space-y-3">
+                   <div className="text-[10px] font-bold uppercase text-slate-500">Agenda</div>
+                   <div className="w-full h-1.5 bg-slate-600"></div>
+                   <div className="w-2/3 h-1.5 bg-slate-600"></div>
+                   <div className="w-3/4 h-1.5 bg-slate-600"></div>
+                </div>
+                <div className="w-2/3 space-y-4">
+                   <div className="text-[10px] font-bold uppercase text-slate-500">Notes & Actions</div>
+                   <div className="w-full h-1.5 bg-slate-300"></div>
+                   <div className="w-full h-1.5 bg-slate-300"></div>
                 </div>
              </div>
           </div>
@@ -149,6 +219,24 @@ const Home = () => {
       case 3: return (
           <div className="w-full h-full bg-[#f0f4f8] text-[#0f172a] p-8 font-serif relative overflow-hidden shadow-[0_0_30px_rgba(59,130,246,0.2)] border border-blue-200/50 rounded-sm">
              <div className="uppercase font-bold tracking-widest text-sm border-b-2 border-slate-900 pb-3 mb-6 text-slate-900">Habit Tracker</div>
+             <div className="space-y-5">
+                <div className="flex items-center gap-4">
+                   <span className="w-20 text-[10px] uppercase font-bold text-right tracking-wider text-slate-700">Read</span>
+                   <div className="flex-1 flex gap-1.5">
+                      {[...Array(7)].map((_, i) => (
+                        <div key={i} className={`h-5 w-5 border border-slate-500 ${i < 5 ? 'bg-blue-900' : 'bg-transparent'}`}></div>
+                      ))}
+                   </div>
+                </div>
+                <div className="mt-8 pt-4 border-t border-slate-400">
+                   <div className="uppercase font-bold text-[10px] mb-3 text-slate-600">Decision Log</div>
+                   <div className="bg-white border border-slate-300 p-3 text-[9px] font-mono leading-relaxed shadow-sm text-slate-800">
+                      <span className="font-bold">DECISION:</span> Hire VP of Sales.<br/>
+                      <span className="font-bold">LOGIC:</span> Revenue flat for Q2.<br/>
+                      <span className="font-bold">OUTCOME:</span> TBD.
+                   </div>
+                </div>
+             </div>
           </div>
       );
       default: return null;
@@ -157,6 +245,7 @@ const Home = () => {
 
   return (
     <>
+      {/* Hero Section */}
       <header className="relative pt-32 pb-20 md:pt-48 md:pb-20 px-6 border-b border-slate-900">
         <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
            <div className="w-full h-full" style={{ backgroundImage: 'linear-gradient(rgba(59, 130, 246, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.15) 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
@@ -180,24 +269,31 @@ const Home = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
-                onClick={handlePurchase}
+                onClick={handleScrollToWaitlist}
                 className="bg-slate-100 text-[#0f172a] px-8 py-4 font-bold uppercase tracking-wide hover:bg-blue-600 hover:text-white transition-all flex items-center justify-center gap-2 group shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(37,99,235,0.4)] cursor-pointer"
               >
-                Download Architecture
+                Join Waitlist
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
           </div>
 
+          {/* Abstract Device Visualization */}
           <div className="relative h-[650px] w-full hidden md:block">
              <div className="absolute top-0 right-0 w-[90%] h-full bg-[#0f172a] border border-slate-800 shadow-[0_0_50px_rgba(0,0,0,0.5)] p-6 rotate-[-2deg] hover:rotate-0 transition-all duration-700 group">
                 <div className="absolute -inset-2 bg-blue-600/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                
                 <div className="w-full h-full bg-[#f0f4f8] text-[#0f172a] p-8 flex flex-col relative overflow-hidden font-serif shadow-inner">
                    <div className="absolute inset-0 pointer-events-none opacity-5"></div>
+                   
                    <div className="flex justify-between items-end border-b-2 border-slate-900 pb-4 mb-8">
-                      <div><h3 className="text-3xl font-bold uppercase tracking-tighter text-slate-900">Daily Performance</h3><p className="text-sm italic text-slate-600">October 12, Tuesday</p></div>
+                      <div>
+                        <h3 className="text-3xl font-bold uppercase tracking-tighter text-slate-900">Daily Performance</h3>
+                        <p className="text-sm italic text-slate-600">October 12, Tuesday</p>
+                      </div>
                       <div className="text-xs font-mono border border-slate-900 px-2 py-1 text-slate-900">Q4 / Wk 41</div>
                    </div>
+
                    <div className="grid grid-cols-2 gap-8 h-full">
                       <div className="space-y-6">
                          <div className="space-y-2">
@@ -217,16 +313,33 @@ const Home = () => {
         </div>
       </header>
 
+      {/* Philosophy Section */}
       <section id="philosophy" className="py-24 px-6 border-b border-slate-900 bg-[#0d1219]">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Silence the Noise. <span className="text-blue-500">Master the Execution.</span></h2>
-          <p className="text-lg text-slate-400">Your brain is cluttered. Your digital planner shouldn’t be. In a world full of distractions, focus is the new currency. <span className="text-white"> Your Blueprint</span> is the antidote to chaos.</p>
+          <p className="text-lg text-slate-400">
+            Your brain is cluttered. Your digital planner shouldn’t be. In a world full of distractions, focus is the new currency. 
+            <span className="text-white"> Your Blueprint</span> is the antidote to chaos.
+          </p>
         </div>
+
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
           {[
-            { icon: <Layers className="w-8 h-8 mb-4 text-blue-400" />, title: "Visual Silence", text: "We stripped away the fluff and decoration to give you a pure, white-space-dominant environment that forces clarity." },
-            { icon: <Zap className="w-8 h-8 mb-4 text-blue-400" />, title: "Zero-Lag Architecture", text: "Engineered for speed. Smart hyperlinks connect your Yearly Vision down to your hourly schedule instantly." },
-            { icon: <Shield className="w-8 h-8 mb-4 text-blue-400" />, title: "Build Your Legacy", text: "The gap between where you are and where you want to be is simply a lack of a system." }
+            { 
+              icon: <Layers className="w-8 h-8 mb-4 text-blue-400" />,
+              title: "Visual Silence",
+              text: "We stripped away the fluff and decoration to give you a pure, white-space-dominant environment that forces clarity. No stickers. Just you and your goals."
+            },
+            { 
+              icon: <Zap className="w-8 h-8 mb-4 text-blue-400" />,
+              title: "Zero-Lag Architecture",
+              text: "Engineered for speed. Smart hyperlinks connect your Yearly Vision down to your hourly schedule instantly. Reclaim your attention span."
+            },
+            { 
+              icon: <Shield className="w-8 h-8 mb-4 text-blue-400" />,
+              title: "Build Your Legacy",
+              text: "The gap between where you are and where you want to be is simply a lack of a system. This aligns your daily grind with your life’s biggest ambitions."
+            }
           ].map((item, idx) => (
             <div key={idx} className="bg-[#111827] p-8 border border-slate-800 hover:border-blue-500/50 transition-all duration-300 group hover:shadow-[0_0_20px_rgba(37,99,235,0.15)] relative overflow-hidden">
               <div className="absolute top-0 right-0 w-20 h-20 bg-blue-500/5 rounded-full blur-2xl group-hover:bg-blue-500/10 transition-colors"></div>
@@ -238,17 +351,29 @@ const Home = () => {
         </div>
       </section>
 
+      {/* 2. SCHEMATIC GALLERY (BLUEPRINT ROLL) */}
       <section className="py-20 bg-[#0a0a0a] border-b border-slate-900 overflow-hidden">
          <div className="max-w-7xl mx-auto px-6 mb-10">
            <h3 className="text-xs font-mono uppercase text-blue-500 tracking-widest mb-2">Technical Schematics</h3>
            <p className="text-2xl font-bold text-white">Full System Overview</p>
          </div>
-         <div ref={scrollRef} className="flex gap-8 px-6 overflow-x-auto pb-8 no-scrollbar cursor-grab active:cursor-grabbing" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} onTouchStart={() => setIsPaused(true)} onTouchEnd={() => setIsPaused(false)}>
+         {/* Infinite Scroll Container */}
+         <div 
+           ref={scrollRef}
+           className="flex gap-8 px-6 overflow-x-auto pb-8 no-scrollbar cursor-grab active:cursor-grabbing"
+           onMouseEnter={() => setIsPaused(true)}
+           onMouseLeave={() => setIsPaused(false)}
+           onTouchStart={() => setIsPaused(true)}
+           onTouchEnd={() => setIsPaused(false)}
+         >
             {[...Array(12)].map((_, i) => (
               <div key={i} className="flex-shrink-0 w-[280px] h-[360px] border border-slate-800 bg-[#0d1219] p-4 relative group hover:border-blue-500/50 transition-colors">
                  <div className="absolute top-2 right-2 text-[10px] font-mono text-slate-600 group-hover:text-blue-400">FIG 0{(i % 6) + 1}</div>
                  <div className="w-full h-full border border-dashed border-slate-700 opacity-50 flex items-center justify-center">
-                    <div className="text-center"><Layout className="w-8 h-8 text-slate-700 mx-auto mb-2"/><span className="text-xs font-mono text-slate-700 uppercase">Wireframe View</span></div>
+                    <div className="text-center">
+                       <Layout className="w-8 h-8 text-slate-700 mx-auto mb-2"/>
+                       <span className="text-xs font-mono text-slate-700 uppercase">Wireframe View</span>
+                    </div>
                  </div>
                  <div className="absolute bottom-4 left-4 text-xs font-bold text-slate-400">Page Layout 0{(i % 6) + 1}</div>
               </div>
@@ -256,45 +381,84 @@ const Home = () => {
          </div>
       </section>
 
+      {/* The System (Features) */}
       <section id="system" className="py-24 px-6 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 md:mb-16">
              <h2 className="text-xs font-mono uppercase text-blue-500 mb-2 tracking-widest">Productivity Architecture</h2>
              <h3 className="text-3xl md:text-4xl font-bold text-white">What's Inside the System</h3>
           </div>
+
           <div className="hidden md:flex flex-row gap-12">
             <div className="w-1/3 space-y-2">
               {features.map((feature, idx) => (
-                <button key={idx} onClick={() => setActiveFeature(idx)} className={`w-full text-left p-6 border transition-all duration-300 flex items-center justify-between group relative overflow-hidden ${activeFeature === idx ? 'bg-slate-900 border-blue-500 text-white shadow-[inset_3px_0_0_0_#3b82f6]' : 'bg-transparent border-slate-800 text-slate-500 hover:border-slate-700 hover:text-slate-300'}`}>
-                  <div className="relative z-10"><span className="font-bold tracking-wide block text-lg mb-1">{feature.title}</span><span className={`text-xs ${activeFeature === idx ? 'text-slate-400' : 'text-slate-600'} block font-normal`}>{feature.desc}</span></div>
+                <button
+                  key={idx}
+                  onClick={() => setActiveFeature(idx)}
+                  className={`w-full text-left p-6 border transition-all duration-300 flex items-center justify-between group relative overflow-hidden ${
+                    activeFeature === idx 
+                      ? 'bg-slate-900 border-blue-500 text-white shadow-[inset_3px_0_0_0_#3b82f6]' 
+                      : 'bg-transparent border-slate-800 text-slate-500 hover:border-slate-700 hover:text-slate-300'
+                  }`}
+                >
+                  <div className="relative z-10">
+                    <span className="font-bold tracking-wide block text-lg mb-1">{feature.title}</span>
+                    <span className={`text-xs ${activeFeature === idx ? 'text-slate-400' : 'text-slate-600'} block font-normal`}>
+                      {feature.desc}
+                    </span>
+                  </div>
                   {activeFeature === idx && <ChevronRight className="w-5 h-5 flex-shrink-0 text-blue-500" />}
                 </button>
               ))}
             </div>
+
             <div className="w-2/3 grid grid-cols-2 bg-[#111827] border border-slate-800 min-h-[600px] relative">
                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(59, 130, 246, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.2) 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
+               
                <div className="p-10 flex flex-col justify-center border-r border-slate-800/50 relative z-10">
-                  <div className="mb-8 text-slate-100">{features[activeFeature].icon}</div>
+                  <div className="mb-8 text-slate-100">
+                    {features[activeFeature].icon}
+                  </div>
                   <h3 className="text-3xl font-bold text-white mb-6">{features[activeFeature].title}</h3>
-                  <p className="text-lg text-slate-400 mb-10 leading-relaxed">{features[activeFeature].longDesc}</p>
+                  <p className="text-lg text-slate-400 mb-10 leading-relaxed">
+                    {features[activeFeature].longDesc}
+                  </p>
                   <div className="space-y-4">
                     {features[activeFeature].details.map((detail, i) => (
-                      <div key={i} className="flex items-center gap-3 text-slate-300 border-b border-slate-800 pb-3"><div className="w-1.5 h-1.5 bg-blue-500"></div><span className="font-mono text-sm uppercase tracking-wider">{detail}</span></div>
+                      <div key={i} className="flex items-center gap-3 text-slate-300 border-b border-slate-800 pb-3">
+                        <div className="w-1.5 h-1.5 bg-blue-500"></div>
+                        <span className="font-mono text-sm uppercase tracking-wider">{detail}</span>
+                      </div>
                     ))}
                   </div>
                </div>
+
                <div className="p-8 flex items-center justify-center bg-[#0b101b] overflow-hidden relative">
                   <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle, #3b82f6 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
-                  <div className="w-full aspect-[3/4] transition-all duration-500 hover:scale-[1.02] z-10">{renderFeatureMockup(activeFeature)}</div>
+                  <div className="w-full aspect-[3/4] transition-all duration-500 hover:scale-[1.02] z-10">
+                     {renderFeatureMockup(activeFeature)}
+                  </div>
                </div>
             </div>
           </div>
+
+          {/* Mobile Stacked View */}
           <div className="md:hidden space-y-16">
             {features.map((feature, idx) => (
               <div key={idx} className="border-t border-slate-800 pt-8">
-                 <div className="flex items-center gap-3 mb-4 text-slate-100">{feature.icon}<h3 className="text-2xl font-bold text-white">{feature.title}</h3></div>
+                 <div className="flex items-center gap-3 mb-4 text-slate-100">
+                    {feature.icon}
+                    <h3 className="text-2xl font-bold text-white">{feature.title}</h3>
+                 </div>
                  <p className="text-slate-400 mb-6 leading-relaxed">{feature.longDesc}</p>
-                 <div className="space-y-3 mb-8">{feature.details.map((detail, i) => (<div key={i} className="flex items-center gap-3 text-slate-500 border-b border-slate-800 pb-2"><div className="w-1 h-1 bg-blue-600"></div><span className="font-mono text-xs uppercase tracking-wider">{detail}</span></div>))}</div>
+                 <div className="space-y-3 mb-8">
+                    {feature.details.map((detail, i) => (
+                      <div key={i} className="flex items-center gap-3 text-slate-500 border-b border-slate-800 pb-2">
+                        <div className="w-1 h-1 bg-blue-600"></div>
+                        <span className="font-mono text-xs uppercase tracking-wider">{detail}</span>
+                      </div>
+                    ))}
+                  </div>
                   <div className="w-full bg-[#111827] p-6 border border-slate-800 flex items-center justify-center relative overflow-hidden h-[400px]">
                      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #3b82f6 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
                      <div className="w-full h-full shadow-2xl z-10">{renderFeatureMockup(idx)}</div>
@@ -305,59 +469,104 @@ const Home = () => {
         </div>
       </section>
 
+      {/* 4. EXECUTIVE REVIEWS (High Status) */}
       <section className="py-24 px-6 bg-[#0d1219] border-t border-slate-900">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-center text-xs font-mono uppercase text-blue-500 mb-16 tracking-widest">Executive Field Reports</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            {[{ text: "Finally a system that respects my executive bandwidth.", author: "Marco R.", role: "COO" }, { text: "I've tried every digital planner. This is the only one that works.", author: "Sarah L.", role: "VP Eng" }, { text: "Worth 10x the price.", author: "David K.", role: "CEO" }].map((review, i) => (
+            {[
+              { text: "Finally a system that respects my executive bandwidth. No stickers, no fluff. Just pure strategy execution.", author: "Marco R.", role: "Chief Operating Officer" },
+              { text: "I've tried every digital planner on the market. This is the only one that actually mirrors how a C-Level mind works.", author: "Sarah L.", role: "VP of Engineering" },
+              { text: "The architectural approach to quarterly planning changed how I lead my team. Worth 10x the price.", author: "David K.", role: "Founder & CEO" }
+            ].map((review, i) => (
               <div key={i} className="bg-[#0a0a0a] border border-slate-800 p-8 relative">
                  <div className="absolute top-0 left-0 w-full h-1 bg-blue-900/30"></div>
                  <p className="text-slate-300 leading-relaxed mb-6 italic">"{review.text}"</p>
-                 <div><div className="font-bold text-white">{review.author}</div><div className="text-xs font-mono text-blue-500 uppercase mt-1">{review.role}</div></div>
+                 <div>
+                    <div className="font-bold text-white">{review.author}</div>
+                    <div className="text-xs font-mono text-blue-500 uppercase mt-1">{review.role}</div>
+                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* 3. TECHNICAL SPECS TABLE */}
       <section className="py-24 px-6 bg-[#0a0a0a] border-t border-slate-900">
          <div className="max-w-3xl mx-auto">
-            <div className="flex items-center justify-between mb-8"><h3 className="text-xl font-bold text-white">System Specifications</h3><span className="text-xs font-mono text-slate-500">REF: YBP-2026</span></div>
+            <div className="flex items-center justify-between mb-8">
+               <h3 className="text-xl font-bold text-white">System Specifications</h3>
+               <span className="text-xs font-mono text-slate-500">REF: YBP-2026</span>
+            </div>
             <div className="border border-slate-800">
-               {specs.map((spec, i) => (<div key={i} className={`flex justify-between p-4 ${i !== specs.length - 1 ? 'border-b border-slate-800' : ''} hover:bg-slate-900/30 transition-colors`}><span className="font-mono text-sm text-slate-400">{spec.label}</span><span className="font-mono text-sm text-blue-400 font-bold">{spec.value}</span></div>))}
+               {specs.map((spec, i) => (
+                 <div key={i} className={`flex justify-between p-4 ${i !== specs.length - 1 ? 'border-b border-slate-800' : ''} hover:bg-slate-900/30 transition-colors`}>
+                    <span className="font-mono text-sm text-slate-400">{spec.label}</span>
+                    <span className="font-mono text-sm text-blue-400 font-bold">{spec.value}</span>
+                 </div>
+               ))}
             </div>
          </div>
       </section>
 
-      <section id="pricing" className="py-24 px-6 bg-[#0d1219] border-t border-slate-900">
+      {/* EMAIL WAITLIST SECTION (REPLACES PRICING) */}
+      <section id="waitlist-section" className="py-24 px-6 bg-[#0d1219] border-t border-slate-900">
         <div className="max-w-4xl mx-auto text-center">
-           <h2 className="text-4xl font-bold text-white mb-4">Don’t just plan your day.</h2>
-           <h2 className="text-4xl font-bold text-slate-500 mb-12">Design your year.</h2>
-           <div className="bg-[#0a0a0a] border border-slate-800 p-10 max-w-lg mx-auto relative overflow-hidden shadow-[0_0_40px_rgba(59,130,246,0.1)] group">
-              <div className="absolute inset-0 border-2 border-transparent group-hover:border-blue-900/50 transition-colors pointer-events-none"></div>
-              <div className="absolute top-0 right-0 bg-blue-900/30 text-blue-300 text-xs px-3 py-1 font-mono uppercase backdrop-blur-md border-l border-b border-blue-900/50">2026-2027 Edition</div>
-              <div className="text-left mb-8">
-                <p className="text-blue-500 text-sm uppercase tracking-widest mb-2 font-bold">The Full Architecture</p>
-                <div className="flex items-baseline gap-2"><span className="text-5xl font-bold text-white">$29</span><span className="text-slate-600 line-through">$49</span></div>
+            <h2 className="text-4xl font-bold text-white mb-6">The Blueprint is coming.</h2>
+            <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+              We are finalizing the architecture. Join the waitlist to receive a <span className="text-blue-400 font-bold">special launch price</span> when we go live.
+            </p>
+
+            {!isSubmitted ? (
+              <form onSubmit={handleJoinWaitlist} className="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
+                <div className="relative flex-1">
+                  <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-500 w-5 h-5" />
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="w-full bg-[#0a0a0a] border border-slate-700 text-white pl-12 pr-6 py-4 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder-slate-600 font-sans"
+                  />
+                </div>
+                <button type="submit" className="bg-slate-100 text-[#0f172a] px-8 py-4 font-bold uppercase tracking-wide hover:bg-blue-600 hover:text-white transition-all whitespace-nowrap shadow-[0_0_15px_rgba(255,255,255,0.05)] hover:shadow-[0_0_25px_rgba(37,99,235,0.4)]">
+                  Notify Me
+                </button>
+              </form>
+            ) : (
+              <div className="bg-blue-900/10 border border-blue-900/50 text-blue-400 p-8 max-w-md mx-auto backdrop-blur-sm animate-fade-in">
+                 <p className="font-bold text-lg mb-2">You're on the list!</p>
+                 <p className="text-sm text-slate-300">We'll be in touch soon with your early access invite.</p>
               </div>
-              <ul className="text-left space-y-4 mb-10 text-slate-400">
-                <li className="flex gap-3"><CheckSquare className="w-5 h-5 text-white" /> Fully Dated (Jan - Dec)</li>
-                <li className="flex gap-3"><CheckSquare className="w-5 h-5 text-white" /> Smart Navigation Sidebar</li>
-                <li className="flex gap-3"><CheckSquare className="w-5 h-5 text-white" /> 630+ Architectural Pages</li>
-              </ul>
-              <button onClick={handlePurchase} className="w-full bg-slate-100 text-[#0f172a] py-4 font-bold uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-all shadow-[0_0_15px_rgba(255,255,255,0.05)] hover:shadow-[0_0_25px_rgba(37,99,235,0.5)]">Purchase Blueprint</button>
-           </div>
+            )}
+
+            <p className="mt-8 text-xs text-slate-600 uppercase tracking-widest flex items-center justify-center gap-2">
+              <Shield className="w-3 h-3" /> No spam. Only product availability notifications.
+            </p>
         </div>
       </section>
 
+      {/* 5. FAQ SECTION */}
       <section className="py-24 px-6 bg-[#0a0a0a] border-t border-slate-900">
          <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-white mb-10 text-center">Frequently Asked Questions</h2>
             <div className="space-y-4">
                {faqs.map((faq, i) => (
                   <div key={i} className="border border-slate-800 bg-[#0d1219]">
-                     <button onClick={() => toggleFaq(i)} className="w-full flex justify-between items-center p-6 text-left hover:bg-slate-900/50 transition-colors"><span className="font-bold text-slate-200">{faq.q}</span>{openFaq === i ? <Minus className="w-5 h-5 text-blue-500"/> : <Plus className="w-5 h-5 text-slate-500"/>}</button>
-                     {openFaq === i && (<div className="px-6 pb-6 text-slate-400 text-sm leading-relaxed border-t border-slate-900 pt-4">{faq.a}</div>)}
+                     <button 
+                        onClick={() => toggleFaq(i)}
+                        className="w-full flex justify-between items-center p-6 text-left hover:bg-slate-900/50 transition-colors"
+                     >
+                        <span className="font-bold text-slate-200">{faq.q}</span>
+                        {openFaq === i ? <Minus className="w-5 h-5 text-blue-500"/> : <Plus className="w-5 h-5 text-slate-500"/>}
+                     </button>
+                     {openFaq === i && (
+                        <div className="px-6 pb-6 text-slate-400 text-sm leading-relaxed border-t border-slate-900 pt-4">
+                           {faq.a}
+                        </div>
+                     )}
                   </div>
                ))}
             </div>
