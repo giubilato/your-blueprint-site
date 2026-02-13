@@ -1,1 +1,23 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* IMPOSTAZIONI GLOBALI */
+body {
+  font-family: 'Inter', sans-serif; /* Applica Inter ovunque */
+  background-color: #0a0a0a;       /* Sfondo scuro */
+  color: #cbd5e1;                  /* Testo grigio chiaro */
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* UTILITY PER NASCONDERE SCROLLBAR (usata nella galleria orizzontale) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
