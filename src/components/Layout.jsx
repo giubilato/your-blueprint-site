@@ -6,6 +6,8 @@ const Layout = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  
+  // Questa variabile ci dice se siamo in Home Page
   const isHome = location.pathname === '/';
 
   useEffect(() => {
@@ -30,7 +32,7 @@ const Layout = () => {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-slate-300 font-sans selection:bg-blue-900/50 selection:text-blue-200 overflow-x-hidden flex flex-col">
       
-      {/* NAVBAR */}
+      {/* --- NAVBAR (Menu Alto) --- */}
       <nav className={`fixed w-full z-50 transition-all duration-300 border-b border-transparent ${scrolled ? 'bg-[#0a0a0a]/90 backdrop-blur-md border-slate-800 py-4 shadow-[0_4px_20px_rgba(0,0,0,0.4)]' : 'bg-transparent py-6'}`}>
         <div className="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
           <Link to="/" className="flex items-center gap-4 cursor-pointer group">
@@ -41,9 +43,11 @@ const Layout = () => {
           </Link>
           
           <div className="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest text-slate-400">
+            {/* LOGICA MENU ALTO: Nascondi Articles se siamo in Home */}
             {!isHome && (
               <Link to="/articles" className="hover:text-white transition-colors">ARTICLES</Link>
             )}
+            
             <Link 
               to={isHome ? "#waitlist-section" : "/#waitlist-section"} 
               onClick={handlePricingClick}
@@ -58,8 +62,10 @@ const Layout = () => {
           </button>
         </div>
 
+        {/* Menu Mobile */}
         {isMenuOpen && (
           <div className="absolute top-full left-0 w-full bg-[#0a0a0a] border-b border-slate-800 p-6 flex flex-col gap-6 md:hidden shadow-2xl">
+            {/* Anche qui nascondiamo Articles se siamo in home */}
             {!isHome && (
                <Link to="/articles" className="text-left font-bold text-slate-300 py-2 border-b border-slate-800">ARTICLES</Link>
             )}
@@ -78,7 +84,7 @@ const Layout = () => {
         <Outlet />
       </main>
 
-      {/* FOOTER */}
+      {/* --- FOOTER (Menu Basso) --- */}
       <footer className="py-12 px-6 border-t border-slate-900 text-slate-600 text-sm bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <Link to="/" className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity">
@@ -87,11 +93,13 @@ const Layout = () => {
             </div>
             <span className="font-bold uppercase tracking-widest font-mono text-slate-400">Your Blueprint</span>
           </Link>
+          
           <div className="flex gap-6">
-             {!isHome && <Link to="/articles" className="hover:text-blue-400 transition-colors">Articles</Link>}
-             <a href="#" className="hover:text-blue-400 transition-colors">Support</a>
+             {/* QUI Articles SI VEDE SEMPRE (Ho rimosso la condizione !isHome) */}
+             <Link to="/articles" className="hover:text-blue-400 transition-colors">Articles</Link>
              <Link to="/privacy" className="hover:text-blue-400 transition-colors">Privacy Policy</Link>
           </div>
+          
           <div>&copy; 2026 Blueprint Systems.</div>
         </div>
       </footer>

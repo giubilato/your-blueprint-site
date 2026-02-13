@@ -1,15 +1,14 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { BLOG_POSTS } from '../data/posts';
 
 const BlogPost = () => {
   // Legge l'URL per capire quale articolo mostrare
   const { slug } = useParams();
   const post = BLOG_POSTS.find(p => p.slug === slug);
-  const CHECKOUT_URL = "https://your-checkout-link.com/buy/blueprint-2026"; 
 
-  // Se l'articolo non esiste (es. URL sbagliato), torna alla lista
+  // Se l'articolo non esiste, torna alla lista
   if (!post) {
     return <Navigate to="/articles" replace />;
   }
@@ -36,17 +35,24 @@ const BlogPost = () => {
               {post.content}
            </div>
 
-           {/* CALL TO ACTION FINALE */}
+           {/* CALL TO ACTION FINALE (Aggiornata) */}
            <div className="mt-16 pt-16 border-t border-slate-800">
-              <div className="bg-[#111827] border border-slate-800 p-8 text-center">
-                 <h3 className="text-xl font-bold text-white mb-4">Ready to build your system?</h3>
-                 <p className="text-slate-400 mb-6">This concept is built directly into the Blueprint architecture.</p>
-                 <button 
-                    onClick={() => window.open(CHECKOUT_URL, '_blank')}
-                    className="bg-slate-100 text-[#0f172a] px-8 py-3 font-bold uppercase tracking-wide hover:bg-blue-600 hover:text-white transition-all inline-flex items-center justify-center gap-2"
+              <div className="bg-[#0d1219] border border-blue-900/30 p-10 text-center relative overflow-hidden group">
+                 {/* Effetto background */}
+                 <div className="absolute inset-0 bg-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                 
+                 <h3 className="text-2xl font-bold text-white mb-4 relative z-10">Stop patching together random PDF templates.</h3>
+                 <p className="text-slate-400 mb-8 max-w-lg mx-auto relative z-10">
+                    Your reMarkable can be more than just a digital notebook. Upgrade to a complete <strong>Productivity Architecture</strong> designed for high-performance execution.
+                 </p>
+                 
+                 {/* Pulsante che rimanda alla Home */}
+                 <Link 
+                    to="/"
+                    className="relative z-10 bg-slate-100 text-[#0f172a] px-8 py-3 font-bold uppercase tracking-wide hover:bg-blue-600 hover:text-white transition-all inline-flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(255,255,255,0.05)] hover:shadow-[0_0_25px_rgba(37,99,235,0.4)]"
                  >
-                    Get the Blueprint
-                 </button>
+                    Explore The Blueprint <ArrowRight className="w-4 h-4"/>
+                 </Link>
               </div>
            </div>
         </article>
