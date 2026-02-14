@@ -2,21 +2,150 @@ import React from 'react';
 
 export const BLOG_POSTS = [
   {
-    id: 2,
-    slug: "remarkable-2-paper-pro-templates-2026-guide",
-    title: "The Ultimate Guide to reMarkable 2 & Paper Pro Templates (2026/27 Edition)",
-    excerpt: "Discover how to transform your reMarkable experience with custom templates. From 2026/27 hyperlinked planners to color-optimized layouts for the Paper Pro, this is the definitive technical guide.",
-    date: "Feb 13, 2026",
-    readTime: "8 min read",
+    id: 1,
+    slug: "ultimate-remarkable-2-paper-pro-calendar-guide-2026-2028",
+    title: "The Ultimate Guide to reMarkable 2 & Paper Pro Calendars (2026-2028 Edition)",
+    excerpt: "Upgrade your reMarkable experience with hyperlinked PDF calendars. Discover why native notes aren't enough and how to install 2026-2028 planners for the reMarkable 2 and Paper Pro.",
+    date: "Feb 14, 2026",
+    readTime: "7 min read",
     content: (
       <>
-        <h1 className="text-4xl font-extrabold text-white mb-8 tracking-tighter">The Ultimate Guide to reMarkable 2 & Paper Pro Templates (2026/27 Edition)</h1>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          You bought the reMarkable to replace your clutter, not your schedule. While the <strong>reMarkable 2</strong> and the new color-enabled <strong>reMarkable Paper Pro</strong> offer an unrivaled distraction-free writing experience, they don't come with a fully functional, interactive agenda out of the box.
+        </p>
+        
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          If you are tired of manually writing dates on blank pages or losing track of your weekly goals in a sea of "Quick Sheets," you are looking for a <strong>hyperlinked PDF calendar</strong>. This guide explores the transition into the 2026-2028 planning cycle, ensuring your workflow remains seamless across the next three years.
+        </p>
+        
+        <div className="my-12 p-8 border-2 border-dashed border-slate-800 rounded-3xl bg-slate-900/40 flex flex-col items-center text-center group hover:border-blue-500/50 transition-colors">
+          <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center mb-4 group-hover:bg-blue-500/10 transition-colors">
+            <svg className="w-6 h-6 text-slate-500 group-hover:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <p className="text-sm font-semibold text-slate-400 uppercase tracking-widest mb-1">
+            Suggested Visual
+          </p>
+          <p className="text-xs text-slate-500 max-w-sm">
+            [DESCRIPTION: A sleek hero image showing the reMarkable Paper Pro displaying a multi-colored 2026 planner with the Marker Plus resting on its bezel, highlighting the new color capabilities of the Paper Pro.]
+          </p>
+        </div>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          Native Calendar vs. PDF Planners: What’s the Difference?
+        </h3>
+        
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          With the release of the Paper Pro and recent software updates including Type Folio support, the reMarkable ecosystem is more powerful than ever. However, there is still a massive gap between the device's native note-taking features and a dedicated planning system.
+        </p>
+        
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          <strong>The Native Software Experience:</strong> Using the built-in templates means managing a linear series of pages. There is no automated way to jump from a monthly view to a specific daily page. While the new "Checklist" and "Heading" features make manual notes cleaner, they don't provide the structural framework required for long-term time management.
+        </p>
+        
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          <strong>The Hyperlinked PDF Planner:</strong> These are custom-built documents with thousands of invisible "buttons." When you tap a specific date on a calendar grid, the device instantly renders the page for that day. This turns your tablet into a responsive application, bridging the gap between digital speed and the tactile feel of paper.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          Top Features to Look for in a 2026-2028 Calendar
+        </h3>
+        
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          Not all planners are created equal. When selecting a template for the next three years, look for these key performance indicators:
+        </p>
+        
+        <ul className="list-disc pl-6 mb-8 space-y-3 text-slate-300">
+          <li className="leading-relaxed">
+            <strong>Smart Hyperlinks:</strong> Every date, week number, and month tab should be interactive. A high-quality planner will have over 10,000 internal links.
+          </li>
+          <li className="leading-relaxed">
+            <strong>Orientation Options:</strong> Do you prefer <strong>Landscape</strong> (best for desk work and split-screen feel) or <strong>Portrait</strong> (best for holding like a traditional notebook)?
+          </li>
+          <li className="leading-relaxed">
+            <strong>Multi-Year Bundles:</strong> To maintain consistency, choose a planner that includes 2026, 2027, and 2028 in a single file or a coordinated set.
+          </li>
+          <li className="leading-relaxed">
+            <strong>Paper Pro Optimization:</strong> If you own the Paper Pro, ensure the PDF supports color highlights and has high-contrast lines that pop on the new 11.8-inch display.
+          </li>
+        </ul>
+
+        <div className="my-12 p-8 border-2 border-dashed border-slate-800 rounded-3xl bg-slate-900/40 flex flex-col items-center text-center group hover:border-blue-500/50 transition-colors">
+          <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center mb-4 group-hover:bg-blue-500/10 transition-colors">
+            <svg className="w-6 h-6 text-slate-500 group-hover:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <p className="text-sm font-semibold text-slate-400 uppercase tracking-widest mb-1">
+            Suggested Visual
+          </p>
+          <p className="text-xs text-slate-500 max-w-sm">
+            [DESCRIPTION: An infographic showing a hand tapping a 'Weekly View' tab on the screen and the interface instantly updating to a pre-filled grid layout, demonstrating the speed of hyperlinks.]
+          </p>
+        </div>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          How to Install Digital Planners on reMarkable (Step-by-Step)
+        </h3>
+        
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          Installing your new 2026-2028 calendar is straightforward, but it requires the official reMarkable companion app. Follow these steps:
+        </p>
+        
+        <ul className="list-disc pl-6 mb-8 space-y-3 text-slate-300">
+          <li className="leading-relaxed">
+            <strong>Step 1: Download your PDF.</strong> Save your purchased or free calendar file to your computer or mobile device.
+          </li>
+          <li className="leading-relaxed">
+            <strong>Step 2: Open the reMarkable App.</strong> Open the desktop app (Mac/PC) or the mobile app (iOS/Android).
+          </li>
+          <li className="leading-relaxed">
+            <strong>Step 3: Import the File.</strong> Click the "Import" button (or the '+' icon) and select your calendar PDF.
+          </li>
+          <li className="leading-relaxed">
+            <strong>Step 4: Syncing.</strong> Ensure your tablet is connected to Wi-Fi. The file will appear in your "My Files" section almost instantly.
+          </li>
+          <li className="leading-relaxed">
+            <strong>Paper Pro Tip:</strong> If the file looks slightly dim, use the Paper Pro's front-light settings to enhance the contrast of the digital ink.
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          Frequently Asked Questions
+        </h3>
+        
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          <strong>Do hyperlinks work on reMarkable 2?</strong> Yes, perfectly. Ensure you are in "Read Mode" (the finger icon) to click links, or simply tap with your finger instead of the Marker.
+        </p>
+        
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          <strong>Can I sync my Google Calendar to reMarkable?</strong> You cannot live-sync a Google Calendar into a PDF. These planners are static documents that you write on manually. However, you can view your Google Calendar on the device via the 'Integrations' tab, but it won't be editable like these PDF planners.
+        </p>
+        
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          <strong>Will my 2026 calendar work on the 2028 hardware?</strong> Absolutely. Standard PDF formats are universal across the reMarkable lineup, including the reMarkable 1, reMarkable 2, and Paper Pro.
+        </p>
+      </>
+    )
+  },
+
+  {
+    id: 2,
+    slug: "remarkable-2-paper-pro-templates-2026-guide",
+    title: "The Ultimate Guide to reMarkable 2 & Paper Pro Templates (2026-2028 Edition)",
+    excerpt: "Discover how to transform your reMarkable experience with custom templates. From 2026-2028 hyperlinked planners to color-optimized layouts for the Paper Pro, this is the definitive technical guide.",
+    date: "Feb 13, 2026",
+    readTime: "6 min read",
+    content: (
+      <>
+        <h1 className="text-4xl font-extrabold text-white mb-8 tracking-tighter">The Ultimate Guide to reMarkable 2 & Paper Pro Templates (2026-2028 Edition)</h1>
         
         <p className="mb-6 text-slate-300 leading-relaxed text-lg">
           You bought a reMarkable to escape the noise, not to get lost searching for the right tools. If you’ve browsed the web recently, you’ve likely been frustrated by results showing generic project management software rather than actual, downloadable files for your e-ink tablet.
         </p>
         <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          <strong>This guide is different.</strong> We aren't talking about SaaS workflows; we are talking about the specific <strong>.pdf and .png files</strong> you need to transform your device into a productivity powerhouse, specifically optimized for the hardware cycles of 2026 and 2027.
+          <strong>This guide is different.</strong> We aren't talking about SaaS workflows; we are talking about the specific <strong>.pdf and .png files</strong> you need to transform your device into a productivity powerhouse, specifically optimized for the hardware cycles of 2026, 2027 and 2028.
         </p>
 
         {/* Visual Placeholder */}
@@ -88,7 +217,7 @@ export const BLOG_POSTS = [
           </table>
         </div>
 
-        <h2 className="text-3xl font-bold text-white mt-12 mb-6 tracking-tight">Essential 2026/27 Templates (Free Downloads)</h2>
+        <h2 className="text-3xl font-bold text-white mt-12 mb-6 tracking-tight">Essential 2026-2028 Templates (Free Downloads)</h2>
         <p className="mb-6 text-slate-300 leading-relaxed text-lg">
           We have consolidated our library to the two most requested layouts for the new year.
         </p>
@@ -154,5 +283,5 @@ export const BLOG_POSTS = [
         </div>
       </>
     )
-  }
+  },
 ];
