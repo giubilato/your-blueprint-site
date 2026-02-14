@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sostituisci con il tuo dominio reale quando lo avrai
+Sitemap: https://www.yourblueprint.co/sitemap.xml
