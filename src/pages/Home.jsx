@@ -79,6 +79,24 @@ const Home = () => {
     return () => cancelAnimationFrame(animationFrameId);
   }, [isPaused]);
 
+  // IMMAGINI CAROSELLO
+  const carouselImages = [
+    "/images/1-yearly-milestone.png",
+    "/images/2-monthly-planner.png",
+    "/images/3-weekly-planner.png",
+    "/images/4-daily-performance.png",
+    "/images/5-important-notes.png"
+  ];
+
+  // Nomi personalizzati per le etichette del carosello
+  const carouselLabels = [
+    "Yearly Milestone",
+    "Monthly Planner",
+    "Weekly Planner",
+    "Daily Performance",
+    "Important Notes"
+  ];
+
   // DATI CONTENUTO
   const features = [
     {
@@ -284,29 +302,19 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="relative h-[650px] w-full hidden md:block">
-             <div className="absolute top-0 right-0 w-[90%] h-full bg-[#0f172a] border border-slate-800 shadow-[0_0_50px_rgba(0,0,0,0.5)] p-6 rotate-[-2deg] hover:rotate-0 transition-all duration-700 group">
-                <div className="absolute -inset-2 bg-blue-600/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                <div className="w-full h-full bg-[#f0f4f8] text-[#0f172a] p-8 flex flex-col relative overflow-hidden font-serif shadow-inner">
-                   <div className="absolute inset-0 pointer-events-none opacity-5"></div>
-                   <div className="flex justify-between items-end border-b-2 border-slate-900 pb-4 mb-8">
-                      <div><h3 className="text-3xl font-bold uppercase tracking-tighter text-slate-900">Daily Performance</h3><p className="text-sm italic text-slate-600">October 12, Tuesday</p></div>
-                      <div className="text-xs font-mono border border-slate-900 px-2 py-1 text-slate-900">Q4 / Wk 41</div>
-                   </div>
-                   <div className="grid grid-cols-2 gap-8 h-full">
-                      <div className="space-y-6">
-                         <div className="space-y-2">
-                           <h4 className="font-bold uppercase text-xs tracking-widest border-b border-slate-900 pb-1 text-slate-900">Eisenhower Matrix</h4>
-                           <div className="grid grid-cols-2 gap-2 h-32">
-                              <div className="border border-slate-400 bg-slate-200/50 p-2 text-xs text-slate-800">Do First</div>
-                              <div className="border border-slate-300 p-2 text-xs text-slate-500">Schedule</div>
-                              <div className="border border-slate-300 p-2 text-xs text-slate-500">Delegate</div>
-                              <div className="border border-slate-300 p-2 text-xs text-slate-500">Delete</div>
-                           </div>
-                         </div>
-                      </div>
-                   </div>
-                </div>
+          {/* Immagine Daily Performance - Pura senza box o sfondi scuri */}
+          <div className="relative h-[650px] w-full hidden md:flex items-center justify-center">
+             <div className="absolute top-[5%] right-0 w-[85%] h-[90%] shadow-[0_0_50px_rgba(0,0,0,0.5)] rotate-[-2deg] hover:rotate-0 transition-all duration-700 group rounded-xl">
+                
+                {/* Effetto luce blu dietro l'immagine (z-0) */}
+                <div className="absolute -inset-2 bg-blue-600/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-xl z-0 pointer-events-none"></div>
+                
+                {/* Immagine senza container blu/grigio */}
+                <img 
+                   src="/images/daily-performance.png" 
+                   alt="Daily Performance Layout" 
+                   className="w-full h-full object-cover object-top rounded-xl opacity-90 group-hover:opacity-100 transition-opacity duration-500 relative z-10"
+                />
              </div>
           </div>
         </div>
@@ -333,23 +341,44 @@ const Home = () => {
         </div>
       </section>
 
+      {/* --- CAROSELLO --- */}
       <section className="py-20 bg-[#0a0a0a] border-b border-slate-900 overflow-hidden">
          <div className="max-w-7xl mx-auto px-6 mb-10">
            <h3 className="text-xs font-mono uppercase text-blue-500 tracking-widest mb-2">Technical Schematics</h3>
            <p className="text-2xl font-bold text-white">Full System Overview</p>
          </div>
-         <div ref={scrollRef} className="flex gap-8 px-6 overflow-x-auto pb-8 no-scrollbar cursor-grab active:cursor-grabbing" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} onTouchStart={() => setIsPaused(true)} onTouchEnd={() => setIsPaused(false)}>
-            {[...Array(12)].map((_, i) => (
-              <div key={i} className="flex-shrink-0 w-[280px] h-[360px] border border-slate-800 bg-[#0d1219] p-4 relative group hover:border-blue-500/50 transition-colors">
-                 <div className="absolute top-2 right-2 text-[10px] font-mono text-slate-600 group-hover:text-blue-400">FIG 0{(i % 6) + 1}</div>
-                 <div className="w-full h-full border border-dashed border-slate-700 opacity-50 flex items-center justify-center">
-                    <div className="text-center"><Layout className="w-8 h-8 text-slate-700 mx-auto mb-2"/><span className="text-xs font-mono text-slate-700 uppercase">Wireframe View</span></div>
+         <div 
+           ref={scrollRef} 
+           className="flex gap-8 px-6 overflow-x-auto pb-8 no-scrollbar cursor-grab active:cursor-grabbing" 
+           onMouseEnter={() => setIsPaused(true)} 
+           onMouseLeave={() => setIsPaused(false)} 
+           onTouchStart={() => setIsPaused(true)} 
+           onTouchEnd={() => setIsPaused(false)}
+         >
+            {/* Array duplicato 3 volte (15 elementi totali) per un effetto di scorrimento infinito più fluido */}
+            {[...carouselImages, ...carouselImages, ...carouselImages].map((imgSrc, i) => (
+              <div key={i} className="flex-shrink-0 w-[280px] h-[360px] border border-slate-800 bg-[#0d1219] p-4 relative group hover:border-blue-500/50 transition-colors overflow-hidden">
+                 
+                 {/* Immagine */}
+                 <div className="w-full h-full opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                    <img 
+                      src={imgSrc} 
+                      alt={`Layout ${(i % 5) + 1}`} 
+                      className="w-full h-full object-cover object-top rounded-sm bg-white/5"
+                      loading="lazy"
+                    />
                  </div>
-                 <div className="absolute bottom-4 left-4 text-xs font-bold text-slate-400">Page Layout 0{(i % 6) + 1}</div>
+                 
+                 {/* Nome Layout in basso a sinistra */}
+                 <div className="absolute bottom-4 left-4 z-10 bg-[#0d1219]/90 px-3 py-1.5 text-xs font-bold text-slate-300 rounded shadow-xl backdrop-blur-sm border border-slate-800">
+                    {carouselLabels[i % 5]}
+                 </div>
+                 
               </div>
             ))}
          </div>
       </section>
+      {/* --- FINE CAROSELLO --- */}
 
       <section id="system" className="py-24 px-6 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto">
@@ -452,7 +481,7 @@ const Home = () => {
                   </button>
                 </div>
 
-                {/* CHECKBOX AGGIORNATA */}
+                {/* CHECKBOX PRIVACY */}
                 <div className="flex items-start justify-center gap-3 text-left">
                   <input
                     type="checkbox"
