@@ -2,7 +2,146 @@ import React from 'react';
 
 export const BLOG_POSTS = [
     {
-    id: 1,
+        id: 1,
+        slug: "remarkable-2-experience-2026-review",
+        title: "My Experience with reMarkable 2 After 1 Year: The Honest Truth (2026 Update)",
+        excerpt: "A deep-dive review of the reMarkable 2 after twelve months of daily professional use. Does it still hold up in 2026, or is the new Paper Pro a mandatory upgrade?",
+        date: "Feb 21, 2026",
+        readTime: "12 min read",
+        content: (
+          <>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        <strong>Disclaimer:</strong> <em>This review is not sponsored. I purchased the reMarkable 2 and the Marker Plus with my own money. I have used this device daily for 12 months as a copywriter and project manager.</em>
+      </p>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        If you are reading this, you are likely stuck in the same "analysis paralysis" loop I was in last year. You have watched the slick marketing videos showing the reMarkable 2 as the ultimate cure for digital distraction. You have seen the Instagram ads of perfectly organized notes. But you are hesitating because $299 (plus accessories) is a steep price for a device that essentially does only one thing.
+      </p>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        Is it a glorified etch-a-sketch, or is it actually a productivity game-changer? After one full year of using the reMarkable 2 for client meetings, drafting articles, and journaling, the honeymoon phase is over. Here is my unfiltered experience regarding the "paper feel," the software quirks, and whether it can actually replace your Moleskine in 2026.
+      </p>
+      
+      <h2 className="text-3xl font-bold text-white mt-12 mb-6 tracking-tight">The "Paper" Promise vs. Reality</h2>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        The entire value proposition of the reMarkable 2 hinges on a single claim: it feels just like paper. If it fails at this, it fails as a product, because an iPad can do everything else better.
+      </p>
+      
+      <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+        The Unboxing & Setup (Is it actually simple?)
+      </h3>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        At 4.7mm thin, the device feels impossibly sleek—thinner than any notepad I own. It feels premium, dense, and sturdy. However, the "simplicity" hit a small speed bump during setup. While booting up is fast, pairing it with the desktop and mobile apps requires creating a reMarkable account and navigating the "Connect" subscription options immediately.
+      </p>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        <strong>Key Takeaway:</strong> You do <em>not</em> need to subscribe to Connect during setup to use the device, though the UI pushes you toward the free trial. If you are tech-averse, the initial cloud syncing verification might feel slightly tedious compared to opening a physical notebook.
+      </p>
+
+      {/* PRIMA IMMAGINE INSERITA QUI */}
+      <div className="my-12">
+        <img 
+          src="/images/blog/remarkable-2-pro-templates-your-blueprint-desk-setup.jpg" 
+          alt="reMarkable 2 thinness comparison next to a physical notebook on a desk setup" 
+          className="w-full h-auto rounded-xl border border-slate-800 shadow-2xl"
+        />
+        <p className="text-center text-sm text-slate-500 mt-4 italic">
+          The 4.7mm profile of the reMarkable 2 next to a traditional notebook.
+        </p>
+      </div>
+
+      <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+        The Writing Feel: Friction, Latency, and the "Scratch"
+      </h3>
+      <ul className="list-disc pl-6 mb-8 space-y-3 text-slate-300">
+        <li className="leading-relaxed">
+          <strong>The Friction:</strong> Unlike the slippery glass of an iPad, the reMarkable screen has a textured matte finish that creates genuine physical friction.
+        </li>
+        <li className="leading-relaxed">
+          <strong>The Latency:</strong> At 21ms, the ink flows directly from the tip of the pen. There is no "lag" that breaks the immersion.
+        </li>
+        <li className="leading-relaxed">
+          <strong>The Reality Check (Nib Wear):</strong> I went through about one nib every 6 weeks with heavy daily use. They become blunt and mushy, so you must factor the cost of replacements into your long-term budget.
+        </li>
+      </ul>
+      
+      <h2 className="text-3xl font-bold text-white mt-12 mb-6 tracking-tight">Workflow & Ecosystem: Where it Shines and Fails</h2>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        After a year, I have found that the reMarkable is a specialist tool, not a generalist one. It excels at deep work but struggles with modern file management.
+      </p>
+      
+      <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+        Reading PDFs & E-books
+      </h3>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        Annotating PDFs is a dream. If you are a lawyer, academic, or manager who needs to sign contracts or mark up drafts, this is the best device on the market. However, EPUB (e-book) support is mediocre. Formatting is often broken, and the lack of a built-in dictionary or fast-scrolling makes it a poor choice for leisure reading compared to a Kindle.
+      </p>
+      
+      <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+        The Connect Subscription: Is $2.99/mo worth it?
+      </h3>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        In 2026, the Connect subscription offers unlimited cloud storage and the ability to take notes on the mobile/desktop apps. Without it, your files only sync if they have been opened in the last 50 days. For professional use, the $2.99 is a necessary evil to ensure your notes are always backed up and available on your phone for quick reference.
+      </p>
+
+      {/* SECONDA IMMAGINE INSERITA QUI */}
+      <div className="my-12">
+        <img 
+          src="/images/blog/remarkable-2-pro-digital-planner-templates-menu.jpg" 
+          alt="reMarkable 2 desktop app syncing notes in real time" 
+          className="w-full h-auto rounded-xl border border-slate-800 shadow-2xl"
+        />
+        <p className="text-center text-sm text-slate-500 mt-4 italic">
+          Syncing handwritten templates to the desktop app is instantaneous with a Connect subscription.
+        </p>
+      </div>
+
+      <h2 className="text-3xl font-bold text-white mt-12 mb-6 tracking-tight">The Pain Points (Why people return it)</h2>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        It is not all digital-paper bliss. There are three major reasons you might hate this device after two weeks:
+      </p>
+      <ul className="list-disc pl-6 mb-8 space-y-3 text-slate-300">
+        <li className="leading-relaxed">
+          <strong>Lack of Backlight:</strong> This is the dealbreaker. If you like writing in bed or in dim cafes, you can't. You need a physical lamp. For a $300 device, this feels archaic.
+        </li>
+        <li className="leading-relaxed">
+          <strong>The Ghosting Effect:</strong> E-ink screens leave faint traces of previous pages until the screen performs a full refresh (a black flash). It is normal for the tech, but annoying for new users.
+        </li>
+        <li className="leading-relaxed">
+          <strong>OCR Accuracy:</strong> The handwriting-to-text conversion is about 85% accurate for me. If you have "doctor's handwriting," expect to spend more time correcting typos than it’s worth.
+        </li>
+      </ul>
+      
+      <h2 className="text-3xl font-bold text-white mt-12 mb-6 tracking-tight">reMarkable 2 vs. reMarkable Paper Pro</h2>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        With the release of the Paper Pro, many are wondering if the RM2 is obsolete. The Paper Pro adds a backlight and color ink, but it is significantly heavier and thicker. If you prioritize portability and that specific pencil-on-paper feel, the RM2 remains the superior pure writing instrument. If you need to read technical diagrams in color, the upgrade is mandatory.
+      </p>
+      
+      <h2 className="text-3xl font-bold text-white mt-12 mb-6 tracking-tight">Verdict: Who is this actually for?</h2>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        After a year, I am keeping mine. It has fundamentally changed my ability to focus on long-form writing without the temptation of browser tabs. 
+      </p>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div className="p-6 bg-slate-900 border border-slate-800 rounded-2xl">
+          <h4 className="text-green-400 font-bold mb-3">Buy if...</h4>
+          <ul className="text-sm text-slate-400 space-y-2">
+            <li>• You are easily distracted by notifications.</li>
+            <li>• You fill more than 2 physical notebooks a year.</li>
+            <li>• You need to sign and return PDFs regularly.</li>
+          </ul>
+        </div>
+        <div className="p-6 bg-slate-900 border border-slate-800 rounded-2xl">
+          <h4 className="text-red-400 font-bold mb-3">Avoid if...</h4>
+          <ul className="text-sm text-slate-400 space-y-2">
+            <li>• You do most of your work in the evening/dark.</li>
+            <li>• You want a device for reading Kindle books.</li>
+            <li>• You expect seamless, high-speed web browsing.</li>
+          </ul>
+        </div>
+      </div>
+    </>
+        )
+  },
+    {
+    id: 2,
     slug: "ultimate-guide-remarkable-2-planners-2026-2028",
     title: "The Ultimate Guide to reMarkable 2 Planners: Best Templates for 2026, 2027 & 2028",
     excerpt: "Unlock the full potential of your reMarkable 2 or Paper Pro with hyperlinked digital planners. Discover the best templates for professional organization through 2028.",
@@ -133,7 +272,7 @@ export const BLOG_POSTS = [
   },
 
   {
-    id: 2,
+    id: 3,
     slug: "ultimate-remarkable-2-paper-pro-calendar-guide-2026-2028",
     title: "The Ultimate Guide to reMarkable 2 & Paper Pro Calendars (2026-2028 Edition)",
     excerpt: "Upgrade your reMarkable experience with hyperlinked PDF calendars. Discover why native notes aren't enough and how to install 2026-2028 planners for the reMarkable 2 and Paper Pro.",

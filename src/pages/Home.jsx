@@ -97,49 +97,56 @@ const Home = () => {
     "Important Notes"
   ];
 
-  // DATI CONTENUTO
+  // DATI CONTENUTO AGGIORNATI CON LE 5 PAGINE REALI E LE IMMAGINI
   const features = [
     {
-      title: "The Strategy Tower",
+      title: "Yearly Milestone Log",
       icon: <Target className="w-6 h-6 text-blue-400" />,
-      desc: "Yearly Milestones & Quarterly Roadmaps to keep your vision clear.",
-      longDesc: "Most planners let you write, but they don't help you build. The Strategy Tower aligns your daily grind with your life's biggest ambitions using a top-down architectural approach.",
-      details: ["Yearly Milestones", "Quarterly Roadmaps", "OKR Dashboard"]
+      desc: "Map your long-term vision and track major objectives on a single page.",
+      longDesc: "Stop losing sight of the big picture. The Yearly Milestone Log lets you plot out massive goals across 12 months, ensuring your daily grind aligns with your true north.",
+      details: ["Yearly Objectives", "Macro Planning", "Progress Tracking"],
+      image: "/images/1-yearly-milestone.png"
     },
     {
-      title: "The Execution Core",
-      icon: <Clock className="w-6 h-6 text-blue-400" />,
-      desc: "Daily & Weekly layouts optimized for Deep Work and Time Blocking.",
-      longDesc: "Instantly separate the Urgent from the Important on every daily page. A pure, white-space-dominant environment that forces clarity and protects your attention span.",
-      details: ["Weekly Deep Work", "Daily Performance Page", "Eisenhower Matrix"]
+      title: "Monthly Planner & OKRs",
+      icon: <Layers className="w-6 h-6 text-blue-400" />,
+      desc: "Break down your yearly goals into actionable monthly metrics.",
+      longDesc: "Bridge the gap between vision and execution. Set monthly Objectives and Key Results, review past performance, and meticulously align your next 30 days.",
+      details: ["Monthly OKRs", "Habit Tracking Setup", "Performance Review"],
+      image: "/images/2-monthly-planner.png"
     },
     {
-      title: "The Management Hub",
+      title: "Weekly Deep Work",
       icon: <Briefcase className="w-6 h-6 text-blue-400" />,
-      desc: "Smart-indexed Meeting Notes and Delegation Trackers.",
-      longDesc: "Stop reacting and start orchestrating. Never lose a detail with smart-indexed meeting notes and delegation trackers designed to keep your team accountable.",
-      details: ["Indexed Meeting Notes", "Delegation Tracker", "Project Roadmaps"]
+      desc: "Time-block your week to protect your most valuable asset: attention.",
+      longDesc: "A visual schedule to allocate Deep Work blocks, manage recurring meetings, and identify bottlenecks before the week even begins. Protect your focus at all costs.",
+      details: ["Time Blocking", "Weekly Priorities", "Capacity Planning"],
+      image: "/images/3-weekly-planner.png"
     },
     {
-      title: "The Growth Engine",
-      icon: <TrendingUp className="w-6 h-6 text-blue-400" />,
-      desc: "Refine your performance. Document your logic to learn from every choice.",
-      longDesc: "Success isn't an accident; it's a blueprint. Track your habits and document your decision logic to refine your performance quarter over quarter.",
-      details: ["Decision Logs", "Habit Trackers", "Brain Dump Grid"]
+      title: "Daily Performance",
+      icon: <Clock className="w-6 h-6 text-blue-400" />,
+      desc: "Instantly separate the Urgent from the Important every single day.",
+      longDesc: "A pure, white-space-dominant environment that forces clarity. Prioritize tasks with the Eisenhower Matrix and track daily progress without digital distraction.",
+      details: ["Eisenhower Matrix", "Schedule Sync", "Daily Debrief"],
+      image: "/images/4-daily-performance.png"
+    },
+    {
+      title: "Brain Dump Grid (Notes)",
+      icon: <Feather className="w-6 h-6 text-blue-400" />,
+      desc: "Unstructured space for structured thinking. Capture ideas instantly.",
+      longDesc: "Don't let brilliant ideas slip away. A dedicated, dot-grid environment for meeting notes, spontaneous brain dumps, and project sketching, seamlessly indexed.",
+      details: ["Indexed Notes", "Dot-Grid Layout", "Idea Capture"],
+      image: "/images/5-important-notes.png"
     }
   ];
 
   const specs = [
     { label: "Yearly Milestone Log", value: "2 Pages" },
-    { label: "Quarterly Strategy", value: "8 Pages" },
-    { label: "Monthly OKR Dashboard", value: "12 Pages" },
+    { label: "Monthly Planner & OKR Dashboard", value: "12 Pages" },
     { label: "Weekly Deep Work", value: "52 Pages" },
     { label: "Daily Performance", value: "365 Pages" },
-    { label: "Project Gantt Charts", value: "12 Pages" },
-    { label: "Meeting Notes (Indexed)", value: "100 Pages" },
-    { label: "Delegation Tracker", value: "12 Pages" },
-    { label: "Decision Logs", value: "12 Pages" },
-    { label: "Brain Dump Grid", value: "50 Pages" },
+    { label: "Brain Dump Grid (Notes)", value: "20 Pages" },
   ];
 
   const faqs = [
@@ -156,116 +163,6 @@ const Home = () => {
       a: "It's simple. After purchase, you'll receive the PDF file. Drag and drop it into your reMarkable app (desktop or mobile), and it will sync to your tablet instantly."
     }
   ];
-
-  const renderFeatureMockup = (index) => {
-    switch(index) {
-      case 0: return (
-          <div className="w-full h-full bg-[#f0f4f8] text-[#0f172a] p-8 font-serif relative overflow-hidden shadow-[0_0_30px_rgba(59,130,246,0.2)] border border-blue-200/50 rounded-sm">
-             <div className="flex justify-between border-b-2 border-slate-900 pb-4 mb-6">
-               <span className="uppercase font-bold tracking-widest text-sm text-slate-900">Q1 Roadmap</span>
-               <span className="font-mono text-xs text-blue-700">2026-2027</span>
-             </div>
-             <div className="space-y-6">
-               <div>
-                 <div className="flex justify-between items-end mb-2">
-                   <span className="font-bold text-sm uppercase tracking-wide text-slate-800">Scale Operations</span>
-                   <span className="font-mono text-xs text-slate-600">75%</span>
-                 </div>
-                 <div className="w-full h-3 bg-slate-300 relative">
-                   <div className="absolute left-0 top-0 h-full w-3/4 bg-blue-900"></div>
-                 </div>
-                 <div className="flex gap-3 mt-3">
-                   <div className="w-1/3 h-10 border border-slate-400 p-1"><div className="w-full h-full bg-slate-300"></div></div>
-                   <div className="w-1/3 h-10 border border-slate-400 p-1"></div>
-                   <div className="w-1/3 h-10 border border-slate-400 p-1"></div>
-                 </div>
-               </div>
-               <div>
-                 <div className="flex justify-between items-end mb-2">
-                   <span className="font-bold text-sm uppercase tracking-wide text-slate-800">Launch V2</span>
-                   <span className="font-mono text-xs text-slate-600">30%</span>
-                 </div>
-                 <div className="w-full h-3 bg-slate-300 relative">
-                   <div className="absolute left-0 top-0 h-full w-[30%] bg-blue-900"></div>
-                 </div>
-               </div>
-             </div>
-          </div>
-      );
-      case 1: return (
-          <div className="w-full h-full bg-[#f0f4f8] text-[#0f172a] p-8 font-serif relative overflow-hidden shadow-[0_0_30px_rgba(59,130,246,0.2)] border border-blue-200/50 rounded-sm">
-            <div className="grid grid-cols-2 gap-6 h-full">
-               <div className="border-r border-slate-400 pr-4">
-                 <div className="uppercase font-bold text-sm mb-4 border-b border-slate-900 pb-1 text-slate-900">Mon 12</div>
-                 <div className="space-y-3">
-                    <div className="bg-slate-300 h-8 w-full flex items-center px-2 text-[10px] font-mono text-slate-700">09:00 Strat. Meeting</div>
-                    <div className="h-6 border-b border-slate-300"></div>
-                    <div className="bg-blue-900/10 h-16 w-full flex items-center px-2 text-[10px] font-mono border-l-4 border-blue-900 font-bold text-blue-900">DEEP WORK</div>
-                 </div>
-               </div>
-               <div>
-                 <div className="uppercase font-bold text-sm mb-4 border-b border-slate-900 pb-1 text-slate-900">Priorities</div>
-                 <div className="border border-slate-400 h-24 mb-3 p-2 bg-white">
-                   <span className="text-[9px] uppercase font-bold text-slate-500 block mb-2">Urgent / Important</span>
-                   <div className="space-y-2">
-                     <div className="w-full h-1.5 bg-slate-900"></div>
-                     <div className="w-2/3 h-1.5 bg-slate-900"></div>
-                   </div>
-                 </div>
-               </div>
-            </div>
-          </div>
-      );
-      case 2: return (
-          <div className="w-full h-full bg-[#f0f4f8] text-[#0f172a] p-8 font-serif relative overflow-hidden shadow-[0_0_30px_rgba(59,130,246,0.2)] border border-blue-200/50 rounded-sm">
-             <div className="flex gap-4 mb-6 border-b border-slate-900 pb-4">
-                <div className="w-10 h-10 border-2 border-slate-900 flex items-center justify-center font-bold text-lg bg-white text-slate-900">M</div>
-                <div>
-                   <div className="text-sm font-bold uppercase tracking-wide text-slate-900">Board Meeting</div>
-                   <div className="text-[10px] text-blue-700 font-mono mt-1">Attendees: CEO, CTO, VP</div>
-                </div>
-             </div>
-             <div className="flex h-full gap-6">
-                <div className="w-1/3 border-r border-slate-400 pr-4 space-y-3">
-                   <div className="text-[10px] font-bold uppercase text-slate-500">Agenda</div>
-                   <div className="w-full h-1.5 bg-slate-600"></div>
-                   <div className="w-2/3 h-1.5 bg-slate-600"></div>
-                   <div className="w-3/4 h-1.5 bg-slate-600"></div>
-                </div>
-                <div className="w-2/3 space-y-4">
-                   <div className="text-[10px] font-bold uppercase text-slate-500">Notes & Actions</div>
-                   <div className="w-full h-1.5 bg-slate-300"></div>
-                   <div className="w-full h-1.5 bg-slate-300"></div>
-                </div>
-             </div>
-          </div>
-      );
-      case 3: return (
-          <div className="w-full h-full bg-[#f0f4f8] text-[#0f172a] p-8 font-serif relative overflow-hidden shadow-[0_0_30px_rgba(59,130,246,0.2)] border border-blue-200/50 rounded-sm">
-             <div className="uppercase font-bold tracking-widest text-sm border-b-2 border-slate-900 pb-3 mb-6 text-slate-900">Habit Tracker</div>
-             <div className="space-y-5">
-                <div className="flex items-center gap-4">
-                   <span className="w-20 text-[10px] uppercase font-bold text-right tracking-wider text-slate-700">Read</span>
-                   <div className="flex-1 flex gap-1.5">
-                      {[...Array(7)].map((_, i) => (
-                        <div key={i} className={`h-5 w-5 border border-slate-500 ${i < 5 ? 'bg-blue-900' : 'bg-transparent'}`}></div>
-                      ))}
-                   </div>
-                </div>
-                <div className="mt-8 pt-4 border-t border-slate-400">
-                   <div className="uppercase font-bold text-[10px] mb-3 text-slate-600">Decision Log</div>
-                   <div className="bg-white border border-slate-300 p-3 text-[9px] font-mono leading-relaxed shadow-sm text-slate-800">
-                      <span className="font-bold">DECISION:</span> Hire VP of Sales.<br/>
-                      <span className="font-bold">LOGIC:</span> Revenue flat for Q2.<br/>
-                      <span className="font-bold">OUTCOME:</span> TBD.
-                   </div>
-                </div>
-             </div>
-          </div>
-      );
-      default: return null;
-    }
-  }
 
   return (
     <>
@@ -302,18 +199,12 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Immagine Daily Performance - Pura senza box o sfondi scuri */}
           <div className="relative h-[650px] w-full hidden md:flex items-center justify-center">
-             <div className="absolute top-[5%] right-0 w-[85%] h-[90%] shadow-[0_0_50px_rgba(0,0,0,0.5)] rotate-[-2deg] hover:rotate-0 transition-all duration-700 group rounded-xl">
-                
-                {/* Effetto luce blu dietro l'immagine (z-0) */}
-                <div className="absolute -inset-2 bg-blue-600/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-xl z-0 pointer-events-none"></div>
-                
-                {/* Immagine senza container blu/grigio */}
+             <div className="absolute top-[5%] right-0 w-[85%] h-[90%] rotate-[-2deg] hover:rotate-0 transition-transform duration-700 group">
                 <img 
                    src="/images/daily-performance.png" 
                    alt="Daily Performance Layout" 
-                   className="w-full h-full object-cover object-top rounded-xl opacity-90 group-hover:opacity-100 transition-opacity duration-500 relative z-10"
+                   className="w-full h-full object-cover object-top rounded-xl opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                 />
              </div>
           </div>
@@ -355,11 +246,8 @@ const Home = () => {
            onTouchStart={() => setIsPaused(true)} 
            onTouchEnd={() => setIsPaused(false)}
          >
-            {/* Array duplicato 3 volte (15 elementi totali) per un effetto di scorrimento infinito più fluido */}
             {[...carouselImages, ...carouselImages, ...carouselImages].map((imgSrc, i) => (
               <div key={i} className="flex-shrink-0 w-[280px] h-[360px] border border-slate-800 bg-[#0d1219] p-4 relative group hover:border-blue-500/50 transition-colors overflow-hidden">
-                 
-                 {/* Immagine */}
                  <div className="w-full h-full opacity-60 group-hover:opacity-100 transition-opacity duration-300">
                     <img 
                       src={imgSrc} 
@@ -368,61 +256,90 @@ const Home = () => {
                       loading="lazy"
                     />
                  </div>
-                 
-                 {/* Nome Layout in basso a sinistra */}
                  <div className="absolute bottom-4 left-4 z-10 bg-[#0d1219]/90 px-3 py-1.5 text-xs font-bold text-slate-300 rounded shadow-xl backdrop-blur-sm border border-slate-800">
                     {carouselLabels[i % 5]}
                  </div>
-                 
               </div>
             ))}
          </div>
       </section>
-      {/* --- FINE CAROSELLO --- */}
 
+      {/* --- ARCHITECTURE SECTION --- */}
       <section id="system" className="py-24 px-6 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 md:mb-16">
              <h2 className="text-xs font-mono uppercase text-blue-500 mb-2 tracking-widest">Productivity Architecture</h2>
              <h3 className="text-3xl md:text-4xl font-bold text-white">What's Inside the System</h3>
           </div>
+          
           <div className="hidden md:flex flex-row gap-12">
             <div className="w-1/3 space-y-2">
               {features.map((feature, idx) => (
                 <button key={idx} onClick={() => setActiveFeature(idx)} className={`w-full text-left p-6 border transition-all duration-300 flex items-center justify-between group relative overflow-hidden ${activeFeature === idx ? 'bg-slate-900 border-blue-500 text-white shadow-[inset_3px_0_0_0_#3b82f6]' : 'bg-transparent border-slate-800 text-slate-500 hover:border-slate-700 hover:text-slate-300'}`}>
-                  <div className="relative z-10"><span className="font-bold tracking-wide block text-lg mb-1">{feature.title}</span><span className={`text-xs ${activeFeature === idx ? 'text-slate-400' : 'text-slate-600'} block font-normal`}>{feature.desc}</span></div>
+                  <div className="relative z-10">
+                    <span className="font-bold tracking-wide block text-lg mb-1">{feature.title}</span>
+                    <span className={`text-xs ${activeFeature === idx ? 'text-slate-400' : 'text-slate-600'} block font-normal`}>{feature.desc}</span>
+                  </div>
                   {activeFeature === idx && <ChevronRight className="w-5 h-5 flex-shrink-0 text-blue-500" />}
                 </button>
               ))}
             </div>
             <div className="w-2/3 grid grid-cols-2 bg-[#111827] border border-slate-800 min-h-[600px] relative">
                <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(59, 130, 246, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.2) 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
+               
                <div className="p-10 flex flex-col justify-center border-r border-slate-800/50 relative z-10">
                   <div className="mb-8 text-slate-100">{features[activeFeature].icon}</div>
                   <h3 className="text-3xl font-bold text-white mb-6">{features[activeFeature].title}</h3>
                   <p className="text-lg text-slate-400 mb-10 leading-relaxed">{features[activeFeature].longDesc}</p>
                   <div className="space-y-4">
                     {features[activeFeature].details.map((detail, i) => (
-                      <div key={i} className="flex items-center gap-3 text-slate-300 border-b border-slate-800 pb-3"><div className="w-1.5 h-1.5 bg-blue-500"></div><span className="font-mono text-sm uppercase tracking-wider">{detail}</span></div>
+                      <div key={i} className="flex items-center gap-3 text-slate-300 border-b border-slate-800 pb-3">
+                        <div className="w-1.5 h-1.5 bg-blue-500"></div>
+                        <span className="font-mono text-sm uppercase tracking-wider">{detail}</span>
+                      </div>
                     ))}
                   </div>
                </div>
+
                <div className="p-8 flex items-center justify-center bg-[#0b101b] overflow-hidden relative">
                   <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle, #3b82f6 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
-                  <div className="w-full aspect-[3/4] transition-all duration-500 hover:scale-[1.02] z-10">{renderFeatureMockup(activeFeature)}</div>
+                  <div className="w-full aspect-[3/4] transition-all duration-500 hover:scale-[1.02] z-10">
+                     <img 
+                       src={features[activeFeature].image} 
+                       alt={features[activeFeature].title} 
+                       className="w-full h-full object-cover object-top rounded-lg shadow-2xl border border-slate-700/50"
+                     />
+                  </div>
                </div>
             </div>
           </div>
+          
           <div className="md:hidden space-y-16">
             {features.map((feature, idx) => (
               <div key={idx} className="border-t border-slate-800 pt-8">
-                 <div className="flex items-center gap-3 mb-4 text-slate-100">{feature.icon}<h3 className="text-2xl font-bold text-white">{feature.title}</h3></div>
+                 <div className="flex items-center gap-3 mb-4 text-slate-100">
+                   {feature.icon}
+                   <h3 className="text-2xl font-bold text-white">{feature.title}</h3>
+                 </div>
                  <p className="text-slate-400 mb-6 leading-relaxed">{feature.longDesc}</p>
-                 <div className="space-y-3 mb-8">{feature.details.map((detail, i) => (<div key={i} className="flex items-center gap-3 text-slate-500 border-b border-slate-800 pb-2"><div className="w-1 h-1 bg-blue-600"></div><span className="font-mono text-xs uppercase tracking-wider">{detail}</span></div>))}</div>
-                  <div className="w-full bg-[#111827] p-6 border border-slate-800 flex items-center justify-center relative overflow-hidden h-[400px]">
-                     <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #3b82f6 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
-                     <div className="w-full h-full shadow-2xl z-10">{renderFeatureMockup(idx)}</div>
-                  </div>
+                 <div className="space-y-3 mb-8">
+                   {feature.details.map((detail, i) => (
+                     <div key={i} className="flex items-center gap-3 text-slate-500 border-b border-slate-800 pb-2">
+                       <div className="w-1 h-1 bg-blue-600"></div>
+                       <span className="font-mono text-xs uppercase tracking-wider">{detail}</span>
+                     </div>
+                   ))}
+                 </div>
+                 <div className="w-full bg-[#111827] p-6 border border-slate-800 flex items-center justify-center relative overflow-hidden h-[400px]">
+                    <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #3b82f6 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
+                    <div className="w-full h-full shadow-2xl z-10">
+                      <img 
+                         src={feature.image} 
+                         alt={feature.title} 
+                         className="w-full h-full object-cover object-top rounded-md border border-slate-700/50"
+                      />
+                    </div>
+                 </div>
               </div>
             ))}
           </div>
@@ -446,7 +363,7 @@ const Home = () => {
 
       <section className="py-24 px-6 bg-[#0a0a0a] border-t border-slate-900">
          <div className="max-w-3xl mx-auto">
-            <div className="flex items-center justify-between mb-8"><h3 className="text-xl font-bold text-white">System Specifications</h3><span className="text-xs font-mono text-slate-500">REF: YBP-2026</span></div>
+            <div className="flex items-center justify-between mb-8"><h3 className="text-xl font-bold text-white">System Specifications</h3></div>
             <div className="border border-slate-800">
                {specs.map((spec, i) => (<div key={i} className={`flex justify-between p-4 ${i !== specs.length - 1 ? 'border-b border-slate-800' : ''} hover:bg-slate-900/30 transition-colors`}><span className="font-mono text-sm text-slate-400">{spec.label}</span><span className="font-mono text-sm text-blue-400 font-bold">{spec.value}</span></div>))}
             </div>
@@ -463,7 +380,6 @@ const Home = () => {
 
             {!isSubmitted ? (
               <form onSubmit={handleJoinWaitlist} className="max-w-md mx-auto flex flex-col gap-6">
-                
                 <div className="flex flex-col sm:flex-row gap-4">
                   <div className="relative flex-1">
                     <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-500 w-5 h-5" />
@@ -481,7 +397,6 @@ const Home = () => {
                   </button>
                 </div>
 
-                {/* CHECKBOX PRIVACY */}
                 <div className="flex items-start justify-center gap-3 text-left">
                   <input
                     type="checkbox"
