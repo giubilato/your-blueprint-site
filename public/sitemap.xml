@@ -1,52 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-   
-   <!-- HOME PAGE -->
    <url>
       <loc>https://yourblueprint.co/</loc>
-      <lastmod>2026-02-18</lastmod>
+      <lastmod>2026-02-21</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
-
-   <!-- PAGINA ARTICOLI (INDICE) -->
    <url>
       <loc>https://yourblueprint.co/articles</loc>
-      <lastmod>2026-02-18</lastmod>
+      <lastmod>2026-02-21</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
    </url>
-
-   <!-- PAGINA PRIVACY -->
    <url>
       <loc>https://yourblueprint.co/privacy</loc>
       <lastmod>2026-02-14</lastmod>
       <changefreq>yearly</changefreq>
       <priority>0.3</priority>
    </url>
-
-   <!-- ARTICOLO 1: Calendar Guide -->
    <url>
       <loc>https://yourblueprint.co/articles/ultimate-remarkable-2-paper-pro-calendar-guide-2026-2028</loc>
       <lastmod>2026-02-14</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
-
-   <!-- ARTICOLO 2: Templates Guide -->
    <url>
       <loc>https://yourblueprint.co/articles/remarkable-2-paper-pro-templates-2026-guide</loc>
       <lastmod>2026-02-14</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
-
-   <!-- ARTICOLO 3: Ultimate Planners Guide (NUOVO) -->
    <url>
       <loc>https://yourblueprint.co/articles/ultimate-guide-remarkable-2-planners-2026-2028</loc>
       <lastmod>2026-02-18</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
    </url>
-
+   <url>
+      <loc>https://yourblueprint.co/articles/remarkable-2-experience-2026-review</loc>
+      <lastmod>2026-02-21</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
 </urlset>
