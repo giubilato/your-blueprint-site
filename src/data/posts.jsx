@@ -335,6 +335,7 @@ export const BLOG_POSTS = [
           </table>
         </div>
 
+        {/* SEZIONE FREE DOWNLOAD 
         <h2 className="text-3xl font-bold text-white mt-12 mb-6 tracking-tight">Essential 2026-2028 Templates (Free Downloads)</h2>
         <p className="mb-6 text-slate-300 leading-relaxed text-lg">
           We have consolidated our library to the two most requested layouts for the new year.
@@ -352,6 +353,7 @@ export const BLOG_POSTS = [
                 <a href="#" className="text-blue-400 hover:text-blue-300 font-bold text-sm uppercase tracking-wide">Download PDF &rarr;</a>
             </div>
         </div>
+        */}
 
         <h2 className="text-3xl font-bold text-white mt-12 mb-6 tracking-tight">How to Install Custom Templates</h2>
         <p className="mb-6 text-slate-300 leading-relaxed text-lg">
@@ -361,7 +363,7 @@ export const BLOG_POSTS = [
         <ul className="list-decimal pl-6 mb-8 space-y-4 text-slate-300">
           <li className="leading-relaxed">
             <strong>The Official Desktop App (Easiest):</strong><br/>
-            Download the app from <a href="https://remarkable.com/using-remarkable/download-apps" target="_blank" rel="noreferrer" className="text-blue-400 hover:underline">my.remarkable.com</a>. Simply drag and drop your `.pdf` file into the window. It will sync via cloud to your tablet instantly.
+            Download the app from <a href="https://my.remarkable.com/" target="_blank" rel="noreferrer" className="text-blue-400 hover:underline">my.remarkable.com</a>. Simply drag and drop your `.pdf` file into the window. It will sync via cloud to your tablet instantly.
           </li>
           <li className="leading-relaxed">
             <strong>The Web Interface (No App needed):</strong><br/>
@@ -374,7 +376,7 @@ export const BLOG_POSTS = [
           </li>
           <li className="leading-relaxed">
             <strong>For System-Level Hacks (Advanced):</strong><br/>
-            If you want to change the native background layers (PNGs), you will need third-party tools like <a href="http://www.davisr.com/rcu/" target="_blank" rel="noreferrer" className="text-blue-400 hover:underline">RCU (reMarkable Connection Utility)</a>. <em>Note: This is not officially supported by reMarkable.</em>
+            If you want to change the native background layers (PNGs), you will need third-party tools like <a href="https://www.davisr.me/projects/rcu/" target="_blank" rel="noreferrer" className="text-blue-400 hover:underline">RCU (reMarkable Connection Utility)</a>. <em>Note: This is not officially supported by reMarkable.</em>
           </li>
         </ul>
 
