@@ -2,7 +2,81 @@ import React from 'react';
 
 export const BLOG_POSTS = [
     {
-      id: 1,
+    id: 1,
+    slug: "remarkable-daily-news-guide",
+    title: "How to Use Your reMarkable for Daily News: From Web Articles to PDF Newspapers",
+    excerpt: "Transform your reMarkable tablet into a distraction-free news hub. Learn how to automate daily digests, use browser extensions, and convert digital newspapers into a focused reading experience.",
+    date: "07 MAR 2026",
+    readTime: "3 min read",
+    content: (
+      <>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          We live in an era of infinite scroll. Trying to catch up on the morning news on a smartphone
+          or laptop often leads to "doomscrolling," eye strain, and a barrage of pop-up ads that break
+          your focus. You bought your reMarkable to escape the noise, but the device's lack of a web
+          browser or native news apps can make it feel disconnected from current events.
+        </p>
+
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          It doesn't have to be that way. While the reMarkable isn't designed for breaking news
+          tickers, it is arguably the best device on the market for thoughtful, deep reading of
+          long-form journalism and daily digests. Whether you want to save a single article for your
+          commute or automate a daily delivery of a major newspaper, there is a workflow that fits.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          Why the reMarkable is Perfect for Distraction-Free News
+        </h3>
+
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          Reading the news on an LCD screen puts you in a reactive state. Blue light fatigues your
+          eyes, and the constant ping of notifications turns reading into a battle for your attention.
+          The reMarkable offers a distinct advantage: Deep Reading. By moving your news consumption to
+          an E-Ink display, you strip away the clutter and transform information gathering into a
+          deliberate, focused activity.
+        </p>
+
+        <div className="my-12">
+          <img 
+            src="/images/blog/remarkable-daily-news.jpg" 
+            alt="A side-by-side comparison showing a cluttered news website with sale banners and ads on a MacBook laptop on the left, versus the same article displayed in a clean, distraction-free typography layout on a reMarkable e-ink tablet held in hand on the right." 
+            className="w-full h-auto rounded-xl border border-slate-800 shadow-2xl"
+          />
+          <p className="text-center text-sm text-slate-500 mt-4 italic">
+            A side-by-side comparison image showing a cluttered news website with ads on a laptop versus the clean, typography-focused reading interface on the reMarkable tablet.
+          </p>
+        </div>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          The "Read on reMarkable" Extension
+        </h3>
+
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          The simplest way to get news onto your device is using the official tool provided by
+          reMarkable. This method is ideal for "curating as you go"—saving long-form articles or
+          opinion pieces you find during the day to read later in the evening.
+        </p>
+
+        <ul className="list-disc pl-6 mb-8 space-y-3 text-slate-300">
+          <li className="leading-relaxed">
+            Install the "Read on reMarkable" extension in your Chrome or Edge browser.
+          </li>
+          <li className="leading-relaxed">
+            Navigate to any article and click the extension icon to send the text directly to your cloud.
+          </li>
+          <li className="leading-relaxed">
+            Choose the "Text" format over "PDF" to ensure you can adjust font sizes and line spacing
+            on the tablet.
+          </li>
+          <li className="leading-relaxed">
+            Sync your device over Wi-Fi to find the article in your recently added files.
+          </li>
+        </ul>
+      </>
+    )
+  },
+    {
+      id: 2,
       slug: "ai-remarkable-transcription-workflow",
       title: "How to Use AI to Perfectly Transcribe Your ReMarkable Notes: The Ultimate Workflow",
       excerpt: "Struggling with messy handwriting conversion on your tablet? Discover the secret workflow using Google Gemini and ChatGPT to turn handwritten PDFs into polished digital documents.",
@@ -20,7 +94,6 @@ export const BLOG_POSTS = [
       You don't need a better stylus; you need a smarter workflow.
     </p>
 
-    {/* PRIMA IMMAGINE INSERITA */}
     <div className="my-12">
       <img 
         src="/images/blog/1-How to Use AI to Perfectly Transcribe Your ReMarkable Notes The Ultimate Workflow.jpg" 
@@ -114,7 +187,7 @@ export const BLOG_POSTS = [
       )
     },
     {
-        id: 2,
+        id: 3,
         slug: "remarkable-2-experience-2026-review",
         title: "My Experience with reMarkable 2 After 1 Year: The Honest Truth (2026 Update)",
         excerpt: "A deep-dive review of the reMarkable 2 after twelve months of daily professional use. Does it still hold up in 2026, or is the new Paper Pro a mandatory upgrade?",
@@ -251,7 +324,7 @@ export const BLOG_POSTS = [
         )
   },
   {
-    id: 3,
+    id: 4,
     slug: "remarkable-2-paper-pro-templates-2026-guide",
     title: "The Ultimate Guide to reMarkable 2 & Paper Pro Templates (2026-2028 Edition)",
     excerpt: "Discover how to transform your reMarkable experience with custom templates. From 2026-2028 hyperlinked planners to color-optimized layouts for the Paper Pro, this is the definitive technical guide.",
