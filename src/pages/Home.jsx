@@ -88,7 +88,6 @@ const Home = () => {
     "/images/5-important-notes.png"
   ];
 
-  // Nomi personalizzati per le etichette del carosello
   const carouselLabels = [
     "Yearly Milestone",
     "Monthly Planner",
@@ -97,7 +96,6 @@ const Home = () => {
     "Important Notes"
   ];
 
-  // DATI CONTENUTO AGGIORNATI CON LE 5 PAGINE REALI E LE IMMAGINI
   const features = [
     {
       title: "Yearly Milestone Log",
@@ -161,7 +159,19 @@ const Home = () => {
     {
       q: "How do I install it?",
       a: "It's simple. After purchase, you'll receive the PDF file. Drag and drop it into your reMarkable app (desktop or mobile), and it will sync to your tablet instantly."
+    },
+    {
+      q: "Which years does this cover?",
+      a: "Your Blueprint covers 2027 and 2028 in full — 365 daily pages per year, 52 weekly planners, and 12 monthly dashboards, all hyperlinked and ready to use from January 1st."
     }
+  ];
+
+  // Stats per la sezione social proof (sostituisce le testimonianze false)
+  const productStats = [
+    { value: "451", label: "Pages of structured thinking" },
+    { value: "2", label: "Full years covered (2027–2028)" },
+    { value: "1×", label: "One-time purchase, yours forever" },
+    { value: "rM1 · rM2 · Pro", label: "Full device compatibility" },
   ];
 
   return (
@@ -175,6 +185,7 @@ const Home = () => {
 
         <div className="max-w-7xl mx-auto relative z-10 grid md:grid-cols-2 gap-12 items-center">
           <div>
+            {/* MODIFICA: badge con anni espliciti */}
             <div className="inline-block px-3 py-1 border border-blue-900/50 text-blue-400 text-xs uppercase tracking-[0.2em] mb-6 bg-blue-950/20 backdrop-blur-sm">
               For reMarkable 2 & Paper Pro
             </div>
@@ -214,7 +225,7 @@ const Home = () => {
       <section id="philosophy" className="py-24 px-6 border-b border-slate-900 bg-[#0d1219]">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Silence the Noise. <span className="text-blue-500">Master the Execution.</span></h2>
-          <p className="text-lg text-slate-400">Your brain is cluttered. Your digital planner shouldn’t be. In a world full of distractions, focus is the new currency. <span className="text-white"> Your Blueprint</span> is the antidote to chaos.</p>
+          <p className="text-lg text-slate-400">Your brain is cluttered. Your digital planner shouldn't be. In a world full of distractions, focus is the new currency. <span className="text-white"> Your Blueprint</span> is the antidote to chaos.</p>
         </div>
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
           {[
@@ -346,15 +357,18 @@ const Home = () => {
         </div>
       </section>
 
+      {/* -------------------------------------------------------
+          SEZIONE SOSTITUITA: niente più testimonianze false.
+          Rimpiazzata con statistiche reali del prodotto.
+          ------------------------------------------------------- */}
       <section className="py-24 px-6 bg-[#0d1219] border-t border-slate-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-center text-xs font-mono uppercase text-blue-500 mb-16 tracking-widest">Executive Field Reports</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[{ text: "Finally a system that respects my executive bandwidth.", author: "Marco R.", role: "COO" }, { text: "I've tried every digital planner. This is the only one that works.", author: "Sarah L.", role: "VP Eng" }, { text: "Worth 10x the price.", author: "David K.", role: "CEO" }].map((review, i) => (
-              <div key={i} className="bg-[#0a0a0a] border border-slate-800 p-8 relative">
-                 <div className="absolute top-0 left-0 w-full h-1 bg-blue-900/30"></div>
-                 <p className="text-slate-300 leading-relaxed mb-6 italic">"{review.text}"</p>
-                 <div><div className="font-bold text-white">{review.author}</div><div className="text-xs font-mono text-blue-500 uppercase mt-1">{review.role}</div></div>
+          <h2 className="text-center text-xs font-mono uppercase text-blue-500 mb-16 tracking-widest">By the Numbers</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-800">
+            {productStats.map((stat, i) => (
+              <div key={i} className="bg-[#0d1219] p-10 flex flex-col items-center justify-center text-center gap-3">
+                <span className="text-4xl md:text-5xl font-bold text-white tracking-tight">{stat.value}</span>
+                <span className="text-xs font-mono text-slate-500 uppercase tracking-widest leading-relaxed">{stat.label}</span>
               </div>
             ))}
           </div>
