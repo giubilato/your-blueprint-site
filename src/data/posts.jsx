@@ -2,11 +2,90 @@ import React from 'react';
 
 export const BLOG_POSTS = [
     {
-    id: 1,
+      id: 1,
+        slug: "which-remarkable-is-right-for-you-2026-guide",
+        title: "Which reMarkable is Right for You? The 2026 Definitive Guide & Community Insights",
+        excerpt: "With the new reMarkable Move, the Paper Pro, and a massive community AMA revealing the 2026 roadmap, choosing a digital notebook has never been more complex—or more exciting.",
+        date: "Mar 12, 2026",
+        readTime: "8 min read",
+        content: (
+          <>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        If you have been on the fence about buying a reMarkable tablet, or you already own one and are wondering what comes next, the past few weeks have been unusually revealing. Between a massive AMA (Ask Me Anything) with the reMarkable team and dozens of threads from users sharing real-world experiences, the landscape of digital paper has shifted significantly in early 2026.
+      </p>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        Choosing between the classic reMarkable 2, the high-end Paper Pro, and the newly released reMarkable Move is no longer just a matter of price—it is about which specific workflow philosophy you subscribe to. We have distilled hundreds of hours of community feedback and official developer responses to help you decide.
+      </p>
+
+      <div className="my-12">
+        <img 
+          src="/images/blog/A three-way comparison.jpg" 
+          alt="A three-way comparison photo showing the reMarkable 2 (monochrome), the Paper Pro (large color), and the reMarkable Move (compact color) side-by-side." 
+          className="w-full h-auto rounded-xl border border-slate-800 shadow-2xl"
+        />
+        <p className="text-center text-sm text-slate-500 mt-4 italic">
+          A three-way comparison photo showing the reMarkable 2 (monochrome), the Paper Pro (large color), and the reMarkable Move (compact color) side-by-side.
+        </p>
+      </div>
+
+      <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+        The 2026 Roadmap: What the AMA Actually Told Us
+      </h3>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        The reMarkable team recently took to Reddit for an AMA that generated nearly 700 comments. For a company known for its relative silence, this was a watershed moment. The community was eager, and for the first time, we have a clear view of the upcoming software ecosystem.
+      </p>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        Here is what is officially confirmed to be entering the pipeline for 2026:
+      </p>
+      <ul className="list-disc pl-6 mb-8 space-y-3 text-slate-300">
+        <li className="leading-relaxed"><strong>Google and Microsoft Calendar Integration:</strong> Native syncing for your schedule is finally on the horizon.</li>
+        <li className="leading-relaxed"><strong>Image Insertion:</strong> The ability to add photos or screenshots directly into your notebooks.</li>
+        <li className="leading-relaxed"><strong>Enhanced ePub Reading:</strong> Major improvements to font scaling and rendering for ebooks.</li>
+        <li className="leading-relaxed"><strong>New Third-Party Integrations:</strong> Expanding beyond just Drive, Dropbox, and OneDrive.</li>
+        <li className="leading-relaxed"><strong>Web App Screen Sharing:</strong> Real-time collaboration via the browser.</li>
+      </ul>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        While these updates are exciting, the community reaction was mixed. Many long-requested features, such as split-screen multitasking and document linking, remain in the "maybe someday" category. Developers cited the difficulty of maintaining the signature performance latency while adding these complex layers of UI.
+      </p>
+      <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+        The Device Trio: Choosing Your Hardware
+      </h3>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        With three distinct hardware profiles now available, the choice depends heavily on your mobility and visual needs:
+      </p>
+      <ul className="list-disc pl-6 mb-8 space-y-3 text-slate-300">
+        <li className="leading-relaxed"><strong>reMarkable 2 ($399):</strong> The legacy favorite. It remains the gold standard for pure, monochrome writing feel. If you don’t need color or a backlighting system, it is still the most elegant distraction-free tool on the market.</li>
+        <li className="leading-relaxed"><strong>reMarkable Paper Pro ($579):</strong> The powerhouse. Featuring an 11.8-inch Canvas Color display and an active frontlight, it is designed for heavy-duty professional use. It is heavier than the others, but essential for those working with architectural plans or complex color-coded notes.</li>
+        <li className="leading-relaxed"><strong>reMarkable Move ($449):</strong> The newcomer. It brings color to a smaller, more portable form factor. It is rapidly becoming the favorite for daily planners and people who carry their notebooks to every meeting.</li>
+      </ul>
+
+      <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+        Durability and Real-World Survival
+      </h3>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        One recent community story highlighted the rugged—and sometimes precarious—nature of these devices. A student shared a viral post about dropping their reMarkable 2 just days before finals, resulting in a stuck power button. In a display of extreme DIY spirit, they repaired it using a Dremel tool at a campus makerspace.
+      </p>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        While we don’t recommend power tools for repairs, it serves as a reminder: despite the premium aluminum builds, these are high-precision electronics. The community consensus is that a folio or a protective case is non-negotiable, especially for the larger Paper Pro, which has more screen real estate prone to flex.
+      </p>
+      <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+        Adapting Your Workflow for 2026
+      </h3>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        With calendar integration and image support arriving soon, your choice of templates matters more than ever. Instead of using rigid PDFs that might break with new software layers, the community is moving toward "dynamic-ready" layouts—simpler templates that leave room for upcoming calendar widgets or photo spaces.
+      </p>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        Whether you choose the ultra-thin reMarkable 2, the expansive Paper Pro, or the agile Move, the ecosystem is finally evolving into a more connected tool. The key is to choose the hardware that matches your hand today, rather than waiting for the perfect software update tomorrow. The reMarkable journey has always been about the writing experience first, and as 2026 unfolds, that remains the core of its appeal.
+      </p>
+    </>
+        )
+      },
+    {
+    id: 2,
     slug: "remarkable-daily-news-guide",
     title: "How to Use Your reMarkable for Daily News: From Web Articles to PDF Newspapers",
     excerpt: "Transform your reMarkable tablet into a distraction-free news hub. Learn how to automate daily digests, use browser extensions, and convert digital newspapers into a focused reading experience.",
-    date: "07 MAR 2026",
+    date: "Mar 7, 2026",
     readTime: "3 min read",
     content: (
       <>
@@ -76,7 +155,7 @@ export const BLOG_POSTS = [
     )
   },
     {
-      id: 2,
+      id: 3,
       slug: "ai-remarkable-transcription-workflow",
       title: "How to Use AI to Perfectly Transcribe Your ReMarkable Notes: The Ultimate Workflow",
       excerpt: "Struggling with messy handwriting conversion on your tablet? Discover the secret workflow using Google Gemini and ChatGPT to turn handwritten PDFs into polished digital documents.",
@@ -187,7 +266,7 @@ export const BLOG_POSTS = [
       )
     },
     {
-        id: 3,
+        id: 4,
         slug: "remarkable-2-experience-2026-review",
         title: "My Experience with reMarkable 2 After 1 Year: The Honest Truth (2026 Update)",
         excerpt: "A deep-dive review of the reMarkable 2 after twelve months of daily professional use. Does it still hold up in 2026, or is the new Paper Pro a mandatory upgrade?",
@@ -324,7 +403,7 @@ export const BLOG_POSTS = [
         )
   },
   {
-    id: 4,
+    id: 5,
     slug: "remarkable-2-paper-pro-templates-2026-guide",
     title: "The Ultimate Guide to reMarkable 2 & Paper Pro Templates (2026-2028 Edition)",
     excerpt: "Discover how to transform your reMarkable experience with custom templates. From 2026-2028 hyperlinked planners to color-optimized layouts for the Paper Pro, this is the definitive technical guide.",
@@ -480,257 +559,4 @@ export const BLOG_POSTS = [
       </>
     )
   },
-    /*{
-    id: 2,
-    slug: "ultimate-guide-remarkable-2-planners-2026-2028",
-    title: "The Ultimate Guide to reMarkable 2 Planners: Best Templates for 2026, 2027 & 2028",
-    excerpt: "Unlock the full potential of your reMarkable 2 or Paper Pro with hyperlinked digital planners. Discover the best templates for professional organization through 2028.",
-    date: "Feb 17, 2026",
-    readTime: "12 min read",
-    content: (
-      <>
-        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          You bought the reMarkable 2—or perhaps the vibrant new Paper Pro—for that distraction-free, paper-like feel. Hardware-wise, these devices are unmatched in the e-ink market. But if you are trying to organize a complex professional life using the device's default templates, you have likely hit a digital wall.
-        </p>
-        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          The built-in templates are excellent for quick sketches or linear note-taking, but they fail at serious long-term scheduling. As we move through 2026 and look toward 2027 and 2028, the need for a structured, interconnected digital agenda has never been higher.
-        </p>
-        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          To truly unlock the productivity potential of your device, you need to move beyond the default "notebook" concept and enter the world of <strong>hyperlinked digital planners</strong>. Whether you are a project manager needing a 2026 daily organizer or a teacher planning out the 2027-2028 academic year, the right template turns your e-ink tablet into a dynamic personal assistant.
-        </p>
-        <div className="my-12 p-8 border-2 border-dashed border-slate-800 rounded-3xl bg-slate-900/40 flex flex-col items-center text-center group hover:border-blue-500/50 transition-colors">
-          <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center mb-4 group-hover:bg-blue-500/10 transition-colors">
-            <svg className="w-6 h-6 text-slate-500 group-hover:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-          </div>
-          <p className="text-sm font-semibold text-slate-400 uppercase tracking-widest mb-1">Suggested Visual</p>
-          <p className="text-xs text-slate-500 max-w-sm">[DESCRIPTION: A high-resolution photo of a reMarkable Paper Pro displaying a 2026 color-coded planner interface with visible side tabs for months and dedicated sections for Goals, Budget, and Daily Logs.]</p>
-        </div>
-        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
-          Native vs. Third-Party Planners: What’s the Difference?
-        </h3>
-        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          If you are new to the digital planning community, you might be wondering why you should invest in a paid planner when the reMarkable comes with free templates. The answer lies in the file architecture: Background Layers versus Hyperlinked PDFs.
-        </p>
-        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
-          The limitations of reMarkable's built-in templates
-        </h3>
-        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          The templates provided natively—such as "Week Planner" or "Checklist"—are static background images. They act like a single sheet of paper that repeats.
-        </p>
-        <ul className="list-disc pl-6 mb-8 space-y-3 text-slate-300">
-          <li className="leading-relaxed"><strong>No Internal Navigation:</strong> You cannot click on a date to see that day's notes.</li>
-          <li className="leading-relaxed"><strong>Manual Dating:</strong> You must write in every date for the year 2026 manually.</li>
-          <li className="leading-relaxed"><strong>Isolation:</strong> Your notes for Monday are not "linked" to your monthly goals page.</li>
-        </ul>
-        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
-          The power of Hyperlinked PDFs
-        </h3>
-        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          Third-party planners are high-performance PDF documents. They use internal links (invisible buttons) that allow you to jump between thousands of pages instantly.
-        </p>
-        <div className="my-12 p-8 border-2 border-dashed border-slate-800 rounded-3xl bg-slate-900/40 flex flex-col items-center text-center group hover:border-blue-500/50 transition-colors">
-          <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center mb-4 group-hover:bg-blue-500/10 transition-colors">
-            <svg className="w-6 h-6 text-slate-500 group-hover:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-          </div>
-          <p className="text-sm font-semibold text-slate-400 uppercase tracking-widest mb-1">Suggested Visual</p>
-          <p className="text-xs text-slate-500 max-w-sm">[DESCRIPTION: A close-up GIF showing a stylus tapping the "October" tab on a reMarkable screen, showing the instantaneous transition to the monthly overview with minimal e-ink ghosting.]</p>
-        </div>
-        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
-          Top-Rated Digital Planners for reMarkable (2026-2028)
-        </h3>
-        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          As we look at the best creators for the upcoming years, three names consistently dominate the market due to their optimization for the reMarkable's specific processor and screen refresh rate.
-        </p>
-        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
-          1. Key2Success: Best for Professionals
-        </h3>
-        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          Key2Success is more than a planner; it is a professional management system. Designed for CEOs and project managers, their 2026 and 2027 versions include sections for goal setting, habit tracking, and quarterly reviews. It is specifically balanced to ensure the PDF file size doesn't slow down the reMarkable 2's hardware.
-        </p>
-        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
-          2. OnPlanners: Best for Customization
-        </h3>
-        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          OnPlanners offers a unique "builder" interface. Before you download, you can choose your start date (e.g., July 2026 for academic years), your layout (vertical vs. horizontal), and even the thickness of the lines. This is the gold standard for those who want a bespoke digital agenda.
-        </p>
-        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
-          3. Etsy Creators: Best for Aesthetics
-        </h3>
-        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          For those who want a minimalist, "Boho," or clean aesthetic, Etsy shops like <i>EinkDesign</i> provide beautifully crafted planners. These often feature "paper textures" that make the reMarkable screen look even more like a physical Moleskine notebook.
-        </p>
-        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
-          Specialized Planners by Category
-        </h3>
-        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          The market has evolved beyond general scheduling. You can now find niche-specific hyperlinked PDFs designed for particular workflows:
-        </p>
-        <ul className="list-disc pl-6 mb-8 space-y-3 text-slate-300">
-          <li className="leading-relaxed"><strong>Teacher Planners:</strong> Includes grading sheets, seating charts, and lesson plan templates linked to the 2026/27 academic calendar.</li>
-          <li className="leading-relaxed"><strong>Budget & Finance:</strong> Dedicated ledgers for tracking expenses, debt snowball worksheets, and tax-prep checklists.</li>
-          <li className="leading-relaxed"><strong>Health & Fitness:</strong> Log your workouts, track macros, and monitor sleep patterns with integrated monthly review pages.</li>
-        </ul>
-        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
-          How to Install Custom Planners on Your reMarkable
-        </h3>
-        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          Installing a third-party planner is a straightforward process, but it requires the official reMarkable software on your computer or mobile device.
-        </p>
-        <ul className="list-decimal pl-6 mb-8 space-y-3 text-slate-300">
-          <li className="leading-relaxed"><strong>Download:</strong> Save your purchased planner (a .PDF file) to your computer.</li>
-          <li className="leading-relaxed"><strong>Open Desktop App:</strong> Launch the reMarkable desktop application.</li>
-          <li className="leading-relaxed"><strong>Drag and Drop:</strong> Simply drag the PDF file into the application window. It will begin syncing immediately.</li>
-          <li className="leading-relaxed"><strong>Sync Device:</strong> Ensure your reMarkable is connected to Wi-Fi. The planner will appear in your "My Files" section within seconds.</li>
-        </ul>
-        <div className="my-12 p-8 border-2 border-dashed border-slate-800 rounded-3xl bg-slate-900/40 flex flex-col items-center text-center group hover:border-blue-500/50 transition-colors">
-          <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center mb-4 group-hover:bg-blue-500/10 transition-colors">
-            <svg className="w-6 h-6 text-slate-500 group-hover:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-          </div>
-          <p className="text-sm font-semibold text-slate-400 uppercase tracking-widest mb-1">Suggested Visual</p>
-          <p className="text-xs text-slate-500 max-w-sm">[DESCRIPTION: A screenshot of the reMarkable Desktop App interface with a '2027 Executive Planner.pdf' file being dragged into the sync window.]</p>
-        </div>
-        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
-          FAQ: Hyperlinks, Layers, and Compatibility
-        </h3>
-        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          <strong>Do hyperlinks work with the Marker?</strong> Yes. On the reMarkable 2, you typically need to use the "Finger Touch" or ensure you are in navigation mode to trigger the links, while the Marker handles the writing.
-        </p>
-        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          <strong>Will these work on the Paper Pro?</strong> Absolutely. In fact, many 2026 planners are now being optimized with color-coded tabs specifically to take advantage of the Paper Pro's Canvas Color display.
-        </p>
-        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          <strong>Can I add pages?</strong> You can duplicate pages within the PDF, but be careful not to delete the original hyperlinked pages, as this can break the navigation structure of the document.
-        </p>
-      </>
-    )
-  },
-
-  {
-    id: 3,
-    slug: "ultimate-remarkable-2-paper-pro-calendar-guide-2026-2028",
-    title: "The Ultimate Guide to reMarkable 2 & Paper Pro Calendars (2026-2028 Edition)",
-    excerpt: "Upgrade your reMarkable experience with hyperlinked PDF calendars. Discover why native notes aren't enough and how to install 2026-2028 planners for the reMarkable 2 and Paper Pro.",
-    date: "Feb 14, 2026",
-    readTime: "7 min read",
-    content: (
-      <>
-        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          You bought the reMarkable to replace your clutter, not your schedule. While the <strong>reMarkable 2</strong> and the new color-enabled <strong>reMarkable Paper Pro</strong> offer an unrivaled distraction-free writing experience, they don't come with a fully functional, interactive agenda out of the box.
-        </p>
-        
-        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          If you are tired of manually writing dates on blank pages or losing track of your weekly goals in a sea of "Quick Sheets," you are looking for a <strong>hyperlinked PDF calendar</strong>. This guide explores the transition into the 2026-2028 planning cycle, ensuring your workflow remains seamless across the next three years.
-        </p>
-        
-        <img 
-          src="/images/blog/remarkable-2-pro-digital-planner-templates-menu.jpg" 
-          alt="Close-up of a reMarkable display illustrating various digital template options like grids and dot layouts by Your Blueprint, with blurred black headphones in the background." 
-          className="w-full h-auto rounded-xl border border-slate-800 my-8 shadow-2xl"
-        />
-
-        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
-          Native Calendar vs. PDF Planners: What’s the Difference?
-        </h3>
-        
-        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          With the release of the Paper Pro and recent software updates including Type Folio support, the reMarkable ecosystem is more powerful than ever. However, there is still a massive gap between the device's native note-taking features and a dedicated planning system.
-        </p>
-        
-        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          <strong>The Native Software Experience:</strong> Using the built-in templates means managing a linear series of pages. There is no automated way to jump from a monthly view to a specific daily page. While the new "Checklist" and "Heading" features make manual notes cleaner, they don't provide the structural framework required for long-term time management.
-        </p>
-        
-        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          <strong>The Hyperlinked PDF Planner:</strong> These are custom-built documents with thousands of invisible "buttons." When you tap a specific date on a calendar grid, the device instantly renders the page for that day. This turns your tablet into a responsive application, bridging the gap between digital speed and the tactile feel of paper.
-        </p>
-
-        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
-          Top Features to Look for in a 2026-2028 Calendar
-        </h3>
-        
-        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          Not all planners are created equal. When selecting a template for the next three years, look for these key performance indicators:
-        </p>
-        
-        <ul className="list-disc pl-6 mb-8 space-y-3 text-slate-300">
-          <li className="leading-relaxed">
-            <strong>Smart Hyperlinks:</strong> Every date, week number, and month tab should be interactive. A high-quality planner will have over 10,000 internal links.
-          </li>
-          <li className="leading-relaxed">
-            <strong>Orientation Options:</strong> Do you prefer <strong>Landscape</strong> (best for desk work and split-screen feel) or <strong>Portrait</strong> (best for holding like a traditional notebook)?
-          </li>
-          <li className="leading-relaxed">
-            <strong>Multi-Year Bundles:</strong> To maintain consistency, choose a planner that includes 2026, 2027, and 2028 in a single file or a coordinated set.
-          </li>
-          <li className="leading-relaxed">
-            <strong>Paper Pro Optimization:</strong> If you own the Paper Pro, ensure the PDF supports color highlights and has high-contrast lines that pop on the new 11.8-inch display.
-          </li>
-        </ul>
-
-        <div className="my-12 p-8 border-2 border-dashed border-slate-800 rounded-3xl bg-slate-900/40 flex flex-col items-center text-center group hover:border-blue-500/50 transition-colors">
-          <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center mb-4 group-hover:bg-blue-500/10 transition-colors">
-            <svg className="w-6 h-6 text-slate-500 group-hover:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-          </div>
-          <p className="text-sm font-semibold text-slate-400 uppercase tracking-widest mb-1">
-            Suggested Visual
-          </p>
-          <p className="text-xs text-slate-500 max-w-sm">
-            [DESCRIPTION: An infographic showing a hand tapping a 'Weekly View' tab on the screen and the interface instantly updating to a pre-filled grid layout, demonstrating the speed of hyperlinks.]
-          </p>
-        </div>
-
-        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
-          How to Install Digital Planners on reMarkable (Step-by-Step)
-        </h3>
-        
-        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          Installing your new 2026-2028 calendar is straightforward, but it requires the official reMarkable companion app. Follow these steps:
-        </p>
-        
-        <ul className="list-disc pl-6 mb-8 space-y-3 text-slate-300">
-          <li className="leading-relaxed">
-            <strong>Step 1: Download your PDF.</strong> Save your purchased or free calendar file to your computer or mobile device.
-          </li>
-          <li className="leading-relaxed">
-            <strong>Step 2: Open the reMarkable App.</strong> Open the desktop app (Mac/PC) or the mobile app (iOS/Android).
-          </li>
-          <li className="leading-relaxed">
-            <strong>Step 3: Import the File.</strong> Click the "Import" button (or the '+' icon) and select your calendar PDF.
-          </li>
-          <li className="leading-relaxed">
-            <strong>Step 4: Syncing.</strong> Ensure your tablet is connected to Wi-Fi. The file will appear in your "My Files" section almost instantly.
-          </li>
-          <li className="leading-relaxed">
-            <strong>Paper Pro Tip:</strong> If the file looks slightly dim, use the Paper Pro's front-light settings to enhance the contrast of the digital ink.
-          </li>
-        </ul>
-
-        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
-          Frequently Asked Questions
-        </h3>
-        
-        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          <strong>Do hyperlinks work on reMarkable 2?</strong> Yes, perfectly. Ensure you are in "Read Mode" (the finger icon) to click links, or simply tap with your finger instead of the Marker.
-        </p>
-        
-        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          <strong>Can I sync my Google Calendar to reMarkable?</strong> You cannot live-sync a Google Calendar into a PDF. These planners are static documents that you write on manually. However, you can view your Google Calendar on the device via the 'Integrations' tab, but it won't be editable like these PDF planners.
-        </p>
-        
-        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          <strong>Will my 2026 calendar work on the 2028 hardware?</strong> Absolutely. Standard PDF formats are universal across the reMarkable lineup, including the reMarkable 1, reMarkable 2, and Paper Pro.
-        </p>
-      </>
-    )
-  },
-
-  */
 ];
