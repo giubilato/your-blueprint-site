@@ -1,8 +1,103 @@
 import React from 'react';
 
 export const BLOG_POSTS = [
+      {
+        id: 1,
+        slug: "remarkable-2-vs-paper-pro-user-consensus",
+        title: "reMarkable 2 vs. Paper Pro: What Real Users Actually Think Right Now",
+        excerpt: "A deep dive into community sentiment, the rumored 'reMarkable Pure,' and why the latest software updates are leaving power users cold.",
+        date: "Mar 19, 2026",
+        readTime: "7 min read",
+        content: (
+          <>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        If you are debating whether to buy the new reMarkable Paper Pro or stick with the tried-and-true reMarkable 2, you are not alone. As of March 2026, the tech world is currently flooded with spec-heavy comparisons and glowing day-one unboxings. But what happens after the honeymoon phase? 
+      </p>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        We scraped through hundreds of long-term Reddit threads, Trustpilot reviews, and brutally honest community teardowns to find out what daily users actually think. We bypassed the official marketing to find the unfiltered consensus on performance, portability, and the long-term viability of the reMarkable ecosystem.
+      </p>
+
+      <div className="my-12">
+        <img 
+          src="/images/blog/comparison.jpg" 
+          alt="Comparison table showing 'Real-World Sentiment Scores' for metrics like Writing Feel, Portability, Display, and Battery Life between the rM2 and the Paper Pro." 
+          className="w-full h-auto rounded-xl border border-slate-800 shadow-2xl"
+        />
+        <p className="text-center text-sm text-slate-500 mt-4 italic">
+          Comparison table showing 'Real-World Sentiment Scores' for metrics like Writing Feel, Portability, Display, and Battery Life between the rM2 and the Paper Pro.
+        </p>
+      </div>
+
+      <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+        Whispers of the "reMarkable Pure"
+      </h3>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        The most discussed topic in the community right now isn't what's on store shelves, but what might be coming next. Rumors of a new device, leaked as the "reMarkable Pure," have surfaced via Gizmodo and leaker evleaks. 
+      </p>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        Early reports suggest the "Pure" is aimed at a broader, mainstream audience—potentially a smaller, more affordable entry point into the e-ink world. For current owners, this raises massive questions: should you invest $600+ in a Paper Pro now, or wait to see if the Pure offers a more streamlined, distraction-free experience at a lower price point?
+      </p>
+      <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+        The Paper Pro: Why Power Users Stay
+      </h3>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        For heavy daily users who rely on color-coding notes or editing complex PDFs, the Paper Pro remains a justifiable business expense. The custom Canvas Color display fundamentally changes how professionals interact with technical drawings and multi-layered diagrams.
+      </p>
+      <ul className="list-disc pl-6 mb-8 space-y-3 text-slate-300">
+        <li className="leading-relaxed">The Backlight: Finally, the ability to work in low-light environments without an external light source is the #1 feature praised by frequent travelers.</li>
+        <li className="leading-relaxed">The Screen Real Estate: The 11.8-inch screen feels significantly closer to a standard A4 page, reducing the constant need to zoom or scroll.</li>
+        <li className="leading-relaxed">Reduced Latency: The response time on the Pro is noticeably snappier, making the digital ink feel almost indistinguishable from physical pens.</li>
+      </ul>
+
+      <div className="my-12">
+        <img 
+          src="/images/blog/ppi-display.jpg" 
+          alt="A side-by-side macro photo of the reMarkable 2 and Paper Pro screens showing the difference in pixel density and color saturation." 
+          className="w-full h-auto rounded-xl border border-slate-800 shadow-2xl"
+        />
+        <p className="text-center text-sm text-slate-500 mt-4 italic">
+          A side-by-side macro photo of the reMarkable 2 and Paper Pro screens showing the difference in pixel density and color saturation.
+        </p>
+      </div>
+
+      <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+        The "Dealbreakers" for Long-Time Fans
+      </h3>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        Despite the upgrades, some users are returning their Paper Pros in favor of keeping their old rM2s. The complaints are grounded in practical, everyday friction that spec sheets don't mention:
+      </p>
+      <ul className="list-disc pl-6 mb-8 space-y-3 text-slate-300">
+        <li className="leading-relaxed">Battery Anxiety: While the rM2 can go weeks, the Paper Pro often requires a charge every 3-5 days depending on backlight usage.</li>
+        <li className="leading-relaxed">Color Ghosting: The refresh "flash" required to clear color e-ink artifacts is more aggressive than the monochrome refresh, which some find jarring.</li>
+        <li className="leading-relaxed">The Subscription Wall: The "Connect" model continues to be a point of contention. Users feel restricted when trying to export notes for free.</li>
+      </ul>
+      <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+        PDF and Export: The Persistent Frustration
+      </h3>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        A recurring theme in the community is the failure to modernize PDF handling. Highlights on reMarkable are still rendered as geometric shapes layered beneath the text. When you export these to a computer, they often appear as solid blocks or misaligned boxes rather than native PDF highlights. 
+      </p>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        For professionals who need to share annotated documents with colleagues using Acrobat or Preview, this remains a significant hurdle that has not been addressed in years of software updates.
+      </p>
+      <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+        Software Update 3.26: A Lukewarm Reception
+      </h3>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        The latest software release, version 3.26, has left power users underwhelmed. The headline feature—expanded web app access—was largely seen as a rehash of previous announcements. More concerning are reports that the Miro integration is currently broken for many. Users attempt to "Send to Miro," only for the action to succeed on the device but never appear on the board. Trust in the software cadence is starting to wear thin.
+      </p>
+
+      <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+        What This Means for Template Users
+      </h3>
+      <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+        If you use custom templates, the message from the community is clear: reliability and clean export are the top priorities. Because the software remains quirksome, high-quality PDF templates that work across both notebook and document formats are more valuable than ever. Users are looking for workflows that bridge the gap between reMarkable's "distraction-free" hardware and the messy reality of cross-platform collaboration.
+      </p>
+    </>
+        )
+      },
     {
-      id: 1,
+      id: 2,
         slug: "which-remarkable-is-right-for-you-2026-guide",
         title: "Which reMarkable is Right for You? The 2026 Definitive Guide & Community Insights",
         excerpt: "With the new reMarkable Move, the Paper Pro, and a massive community AMA revealing the 2026 roadmap, choosing a digital notebook has never been more complex—or more exciting.",
@@ -81,7 +176,7 @@ export const BLOG_POSTS = [
         )
       },
     {
-    id: 2,
+    id: 3,
     slug: "remarkable-daily-news-guide",
     title: "How to Use Your reMarkable for Daily News: From Web Articles to PDF Newspapers",
     excerpt: "Transform your reMarkable tablet into a distraction-free news hub. Learn how to automate daily digests, use browser extensions, and convert digital newspapers into a focused reading experience.",
@@ -155,7 +250,7 @@ export const BLOG_POSTS = [
     )
   },
     {
-      id: 3,
+      id: 4,
       slug: "ai-remarkable-transcription-workflow",
       title: "How to Use AI to Perfectly Transcribe Your ReMarkable Notes: The Ultimate Workflow",
       excerpt: "Struggling with messy handwriting conversion on your tablet? Discover the secret workflow using Google Gemini and ChatGPT to turn handwritten PDFs into polished digital documents.",
@@ -266,7 +361,7 @@ export const BLOG_POSTS = [
       )
     },
     {
-        id: 4,
+        id: 5,
         slug: "remarkable-2-experience-2026-review",
         title: "My Experience with reMarkable 2 After 1 Year: The Honest Truth (2026 Update)",
         excerpt: "A deep-dive review of the reMarkable 2 after twelve months of daily professional use. Does it still hold up in 2026, or is the new Paper Pro a mandatory upgrade?",
@@ -403,7 +498,7 @@ export const BLOG_POSTS = [
         )
   },
   {
-    id: 5,
+    id: 6,
     slug: "remarkable-2-paper-pro-templates-2026-guide",
     title: "The Ultimate Guide to reMarkable 2 & Paper Pro Templates (2026-2028 Edition)",
     excerpt: "Discover how to transform your reMarkable experience with custom templates. From 2026-2028 hyperlinked planners to color-optimized layouts for the Paper Pro, this is the definitive technical guide.",
