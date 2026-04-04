@@ -1,8 +1,83 @@
 import React from 'react';
 
 export const BLOG_POSTS = [
+        {
+          id: 1,
+          slug: "remarkable-stylus-tips-replacement-guide",
+          title: "reMarkable Stylus Tips: When to Replace Them & Why It Matters",
+          excerpt: "Learn the 3 unmistakable signs that it's time to replace your reMarkable nibs and why ignoring wear can damage your screen.",
+          date: "Apr 4, 2026",
+          readTime: "5 min",
+          content: (
+            <>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          You invested in a reMarkable tablet for one primary reason: that flawless, paper-like writing experience. But if you’ve been using your device for a while, you might have noticed that writing just doesn't feel quite right anymore. The secret to that signature friction lies in the Marker tips (also known as nibs).
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          Because they are designed to mimic real paper resistance, they naturally wear down over time. While official support pages offer very brief guidelines, real-world users know that the lifespan of a tip varies wildly depending on your writing style and the amount of pressure you apply during daily use.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          In this ultimate guide, we combine official reMarkable directives with real experiences from the user community. You'll learn exactly when to swap your nib, why ignoring a worn tip could damage your E-ink display, and actionable tricks to make your tips last significantly longer.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          3 Clear Signs It’s Time to Change Your reMarkable Marker Tip
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          When should you replace your reMarkable tip? Look for these 3 main indicators to ensure your tablet stays in peak condition:
+        </p>
+        <ul className="list-disc pl-6 mb-8 space-y-3 text-slate-300">
+          <li className="leading-relaxed">
+            <strong>Visual wear:</strong> The tip looks physically blunt, frayed, or flattened at the end.
+          </li>
+          <li className="leading-relaxed">
+            <strong>Tactile changes:</strong> The writing experience feels unusually scratchy, rough, or loses its smooth glide.
+          </li>
+          <li className="leading-relaxed">
+            <strong>Performance drops:</strong> You experience inconsistent pen strokes, skipping lines, or accuracy issues.
+          </li>
+        </ul>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          1. The "Scratchy" Feel and Loss of Smoothness
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          The reMarkable Marker and Marker Plus are engineered to provide a very specific amount of friction against the E-ink display. When a nib wears down, the first thing you will likely notice is a change in tactile feedback. Instead of a smooth, satisfying glide, the stylus might suddenly feel overly "scratchy" or harsh. If writing starts to feel less like a premium pen on paper and more like dragging a broken pencil across a rough surface, the tip's structural integrity is compromised.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          2. Visual Cues: Blunt, Frayed, or "Mushrooming" Nibs
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          You don't always have to feel the difference—usually, you can just look at it. A brand-new reMarkable nib has a distinct, perfectly rounded point. As you apply writing pressure over weeks or months, the tip will physically flatten. Users frequently refer to severe wear as "mushrooming," where the material spreads outward.
+        </p>
+
+        <div className="my-12">
+          <img 
+            src="/images/blog/reMarkable-pencil-stylus-replacement.jpg" 
+            alt="A high-resolution macro-photography comparison about reMarkable pencil." 
+            className="w-full h-auto rounded-xl border border-slate-800 shadow-2xl"
+          />
+          <p className="text-center text-sm text-slate-500 mt-4 italic">
+            A high-resolution macro-photography comparison about reMarkable pencil.
+          </p>
+        </div>
+
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          <strong>Warning:</strong> Continuing to use a frayed or flattened tip isn't just annoying. Once the soft, felt-like outer layer wears away, the harder inner core is exposed, which drastically increases the risk of permanently scratching your expensive E-ink display screen.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          3. Inconsistent Pen Strokes and Accuracy Issues
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          The tip of your Marker interacts with the tablet's electromagnetic resonance (EMR) technology to register pressure sensitivity and tilt. When a nib becomes too blunt or unevenly worn, you might start experiencing digital glitches like skipping lines, inconsistent stroke thickness, or the tablet registering a mark before the pen even touches the glass surface.
+        </p>
+      </>
+          )
+        },
       {
-        id: 1,
+        id: 2,
         slug: "remarkable-2-vs-paper-pro-user-consensus",
         title: "reMarkable 2 vs. Paper Pro: What Real Users Actually Think Right Now",
         excerpt: "A deep dive into community sentiment, the rumored 'reMarkable Pure,' and why the latest software updates are leaving power users cold.",
@@ -97,7 +172,7 @@ export const BLOG_POSTS = [
         )
       },
     {
-      id: 2,
+      id: 3,
         slug: "which-remarkable-is-right-for-you-2026-guide",
         title: "Which reMarkable is Right for You? The 2026 Definitive Guide & Community Insights",
         excerpt: "With the new reMarkable Move, the Paper Pro, and a massive community AMA revealing the 2026 roadmap, choosing a digital notebook has never been more complex—or more exciting.",
@@ -176,7 +251,7 @@ export const BLOG_POSTS = [
         )
       },
     {
-    id: 3,
+    id: 4,
     slug: "remarkable-daily-news-guide",
     title: "How to Use Your reMarkable for Daily News: From Web Articles to PDF Newspapers",
     excerpt: "Transform your reMarkable tablet into a distraction-free news hub. Learn how to automate daily digests, use browser extensions, and convert digital newspapers into a focused reading experience.",
@@ -250,7 +325,7 @@ export const BLOG_POSTS = [
     )
   },
     {
-      id: 4,
+      id: 5,
       slug: "ai-remarkable-transcription-workflow",
       title: "How to Use AI to Perfectly Transcribe Your ReMarkable Notes: The Ultimate Workflow",
       excerpt: "Struggling with messy handwriting conversion on your tablet? Discover the secret workflow using Google Gemini and ChatGPT to turn handwritten PDFs into polished digital documents.",
@@ -361,7 +436,7 @@ export const BLOG_POSTS = [
       )
     },
     {
-        id: 5,
+        id: 6,
         slug: "remarkable-2-experience-2026-review",
         title: "My Experience with reMarkable 2 After 1 Year: The Honest Truth (2026 Update)",
         excerpt: "A deep-dive review of the reMarkable 2 after twelve months of daily professional use. Does it still hold up in 2026, or is the new Paper Pro a mandatory upgrade?",
@@ -498,7 +573,7 @@ export const BLOG_POSTS = [
         )
   },
   {
-    id: 6,
+    id: 7,
     slug: "remarkable-2-paper-pro-templates-2026-guide",
     title: "The Ultimate Guide to reMarkable 2 & Paper Pro Templates (2026-2028 Edition)",
     excerpt: "Discover how to transform your reMarkable experience with custom templates. From 2026-2028 hyperlinked planners to color-optimized layouts for the Paper Pro, this is the definitive technical guide.",
