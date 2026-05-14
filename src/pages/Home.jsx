@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  Target, ChevronRight, Briefcase, TrendingUp, Layers, CheckSquare, 
-  ArrowRight, Shield, Clock, Zap, MoveHorizontal, Feather, Layout, Plus, Minus, Mail 
+import {
+  Target, ChevronRight, Briefcase, TrendingUp, Layers, CheckSquare,
+  ArrowRight, Shield, Clock, Zap, MoveHorizontal, Feather, Layout, Plus, Minus, Mail
 } from 'lucide-react';
 
 const Home = () => {
@@ -50,7 +50,7 @@ const Home = () => {
   };
 
   const handleScrollToWaitlist = (e) => {
-    if(e) e.preventDefault();
+    if (e) e.preventDefault();
     const element = document.getElementById('waitlist-section');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -70,7 +70,7 @@ const Home = () => {
         if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
           scrollContainer.scrollLeft = 0;
         } else {
-          scrollContainer.scrollLeft += 1; 
+          scrollContainer.scrollLeft += 1;
         }
       }
       animationFrameId = requestAnimationFrame(scroll);
@@ -162,14 +162,14 @@ const Home = () => {
     },
     {
       q: "Which years does this cover?",
-      a: "Your Blueprint covers 2027 and 2028 in full — 365 daily pages per year, 52 weekly planners, and 12 monthly dashboards, all hyperlinked and ready to use from January 1st."
+      a: "Your Blueprint covers 2026, 2027 and 2028 in full — 365 daily pages per year, 52 weekly planners, and 12 monthly dashboards, all hyperlinked and ready to use from January 1st."
     }
   ];
 
   // Stats per la sezione social proof (sostituisce le testimonianze false)
   const productStats = [
-    { value: "451", label: "Pages of structured thinking" },
-    { value: "2", label: "Full years covered (2027–2028)" },
+    { value: "1,300+", label: "Pages of structured thinking" },
+    { value: "3", label: "Full years covered (2026–2028)" },
     { value: "1×", label: "One-time purchase, yours forever" },
     { value: "rM1 · rM2 · Pro", label: "Full device compatibility" },
   ];
@@ -179,8 +179,8 @@ const Home = () => {
       {/* Hero Section */}
       <header className="relative pt-32 pb-20 md:pt-48 md:pb-20 px-6 border-b border-slate-900">
         <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
-           <div className="w-full h-full" style={{ backgroundImage: 'linear-gradient(rgba(59, 130, 246, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.15) 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
-           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent"></div>
+          <div className="w-full h-full" style={{ backgroundImage: 'linear-gradient(rgba(59, 130, 246, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.15) 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent"></div>
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10 grid md:grid-cols-2 gap-12 items-center">
@@ -190,17 +190,17 @@ const Home = () => {
               For reMarkable 2 & Paper Pro
             </div>
             <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-8 drop-shadow-lg">
-              Stop Reacting. <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-400 to-blue-500">Start Orchestrating.</span>
+              Stop Reacting. <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-400 to-blue-500">Start Orchestrating.</span>
             </h1>
             <h2 className="text-lg font-bold text-slate-300 uppercase tracking-wider mb-6">
-              The Ultimate Productivity System for reMarkable 2 & Paper Pro.
+              The productivity system for reMarkable 2 & Paper Pro.
             </h2>
             <p className="text-lg text-slate-400 mb-6 max-w-lg leading-relaxed">
-              Most digital planners are just endless pages of blank lines. They let you write, but they don't help you build. 
+              Most digital planners are just endless pages of blank lines. They let you write, but they don't help you build.
               <span className="text-blue-400 font-medium"> Your Blueprint</span> is different. It is a complete Productivity Architecture designed for high-performers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button 
+              <button
                 onClick={handleScrollToWaitlist}
                 className="bg-slate-100 text-[#0f172a] px-8 py-4 font-bold uppercase tracking-wide hover:bg-blue-600 hover:text-white transition-all flex items-center justify-center gap-2 group shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(37,99,235,0.4)] cursor-pointer"
               >
@@ -211,13 +211,13 @@ const Home = () => {
           </div>
 
           <div className="relative h-[650px] w-full hidden md:flex items-center justify-center">
-             <div className="absolute top-[5%] right-0 w-[85%] h-[90%] rotate-[-2deg] hover:rotate-0 transition-transform duration-700 group">
-                <img 
-                   src="/images/daily-performance.png" 
-                   alt="Daily Performance Layout" 
-                   className="w-full h-full object-cover object-top rounded-xl opacity-90 group-hover:opacity-100 transition-opacity duration-500"
-                />
-             </div>
+            <div className="absolute top-[5%] right-0 w-[85%] h-[90%] rotate-[-2deg] hover:rotate-0 transition-transform duration-700 group">
+              <img
+                src="/images/daily-performance.png"
+                alt="Daily Performance Layout"
+                className="w-full h-full object-cover object-top rounded-xl opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+              />
+            </div>
           </div>
         </div>
       </header>
@@ -245,44 +245,44 @@ const Home = () => {
 
       {/* --- CAROSELLO --- */}
       <section className="py-20 bg-[#0a0a0a] border-b border-slate-900 overflow-hidden">
-         <div className="max-w-7xl mx-auto px-6 mb-10">
-           <h3 className="text-xs font-mono uppercase text-blue-500 tracking-widest mb-2">Technical Schematics</h3>
-           <p className="text-2xl font-bold text-white">Full System Overview</p>
-         </div>
-         <div 
-           ref={scrollRef} 
-           className="flex gap-8 px-6 overflow-x-auto pb-8 no-scrollbar cursor-grab active:cursor-grabbing" 
-           onMouseEnter={() => setIsPaused(true)} 
-           onMouseLeave={() => setIsPaused(false)} 
-           onTouchStart={() => setIsPaused(true)} 
-           onTouchEnd={() => setIsPaused(false)}
-         >
-            {[...carouselImages, ...carouselImages, ...carouselImages].map((imgSrc, i) => (
-              <div key={i} className="flex-shrink-0 w-[280px] h-[360px] border border-slate-800 bg-[#0d1219] p-4 relative group hover:border-blue-500/50 transition-colors overflow-hidden">
-                 <div className="w-full h-full opacity-60 group-hover:opacity-100 transition-opacity duration-300">
-                    <img 
-                      src={imgSrc} 
-                      alt={`Layout ${(i % 5) + 1}`} 
-                      className="w-full h-full object-cover object-top rounded-sm bg-white/5"
-                      loading="lazy"
-                    />
-                 </div>
-                 <div className="absolute bottom-4 left-4 z-10 bg-[#0d1219]/90 px-3 py-1.5 text-xs font-bold text-slate-300 rounded shadow-xl backdrop-blur-sm border border-slate-800">
-                    {carouselLabels[i % 5]}
-                 </div>
+        <div className="max-w-7xl mx-auto px-6 mb-10">
+          <h3 className="text-xs font-mono uppercase text-blue-500 tracking-widest mb-2">Technical Schematics</h3>
+          <p className="text-2xl font-bold text-white">Full System Overview</p>
+        </div>
+        <div
+          ref={scrollRef}
+          className="flex gap-8 px-6 overflow-x-auto pb-8 no-scrollbar cursor-grab active:cursor-grabbing"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={() => setIsPaused(true)}
+          onTouchEnd={() => setIsPaused(false)}
+        >
+          {[...carouselImages, ...carouselImages, ...carouselImages].map((imgSrc, i) => (
+            <div key={i} className="flex-shrink-0 w-[280px] h-[360px] border border-slate-800 bg-[#0d1219] p-4 relative group hover:border-blue-500/50 transition-colors overflow-hidden">
+              <div className="w-full h-full opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                <img
+                  src={imgSrc}
+                  alt={`Layout ${(i % 5) + 1}`}
+                  className="w-full h-full object-cover object-top rounded-sm bg-white/5"
+                  loading="lazy"
+                />
               </div>
-            ))}
-         </div>
+              <div className="absolute bottom-4 left-4 z-10 bg-[#0d1219]/90 px-3 py-1.5 text-xs font-bold text-slate-300 rounded shadow-xl backdrop-blur-sm border border-slate-800">
+                {carouselLabels[i % 5]}
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* --- ARCHITECTURE SECTION --- */}
       <section id="system" className="py-24 px-6 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 md:mb-16">
-             <h2 className="text-xs font-mono uppercase text-blue-500 mb-2 tracking-widest">Productivity Architecture</h2>
-             <h3 className="text-3xl md:text-4xl font-bold text-white">What's Inside the System</h3>
+            <h2 className="text-xs font-mono uppercase text-blue-500 mb-2 tracking-widest">Productivity Architecture</h2>
+            <h3 className="text-3xl md:text-4xl font-bold text-white">What's Inside the System</h3>
           </div>
-          
+
           <div className="hidden md:flex flex-row gap-12">
             <div className="w-1/3 space-y-2">
               {features.map((feature, idx) => (
@@ -296,61 +296,61 @@ const Home = () => {
               ))}
             </div>
             <div className="w-2/3 grid grid-cols-2 bg-[#111827] border border-slate-800 min-h-[600px] relative">
-               <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(59, 130, 246, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.2) 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
-               
-               <div className="p-10 flex flex-col justify-center border-r border-slate-800/50 relative z-10">
-                  <div className="mb-8 text-slate-100">{features[activeFeature].icon}</div>
-                  <h3 className="text-3xl font-bold text-white mb-6">{features[activeFeature].title}</h3>
-                  <p className="text-lg text-slate-400 mb-10 leading-relaxed">{features[activeFeature].longDesc}</p>
-                  <div className="space-y-4">
-                    {features[activeFeature].details.map((detail, i) => (
-                      <div key={i} className="flex items-center gap-3 text-slate-300 border-b border-slate-800 pb-3">
-                        <div className="w-1.5 h-1.5 bg-blue-500"></div>
-                        <span className="font-mono text-sm uppercase tracking-wider">{detail}</span>
-                      </div>
-                    ))}
-                  </div>
-               </div>
+              <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(59, 130, 246, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.2) 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
 
-               <div className="p-8 flex items-center justify-center bg-[#0b101b] overflow-hidden relative">
-                  <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle, #3b82f6 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
-                  <div className="w-full aspect-[3/4] transition-all duration-500 hover:scale-[1.02] z-10">
-                     <img 
-                       src={features[activeFeature].image} 
-                       alt={features[activeFeature].title} 
-                       className="w-full h-full object-cover object-top rounded-lg shadow-2xl border border-slate-700/50"
-                     />
-                  </div>
-               </div>
+              <div className="p-10 flex flex-col justify-center border-r border-slate-800/50 relative z-10">
+                <div className="mb-8 text-slate-100">{features[activeFeature].icon}</div>
+                <h3 className="text-3xl font-bold text-white mb-6">{features[activeFeature].title}</h3>
+                <p className="text-lg text-slate-400 mb-10 leading-relaxed">{features[activeFeature].longDesc}</p>
+                <div className="space-y-4">
+                  {features[activeFeature].details.map((detail, i) => (
+                    <div key={i} className="flex items-center gap-3 text-slate-300 border-b border-slate-800 pb-3">
+                      <div className="w-1.5 h-1.5 bg-blue-500"></div>
+                      <span className="font-mono text-sm uppercase tracking-wider">{detail}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="p-8 flex items-center justify-center bg-[#0b101b] overflow-hidden relative">
+                <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle, #3b82f6 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
+                <div className="w-full aspect-[3/4] transition-all duration-500 hover:scale-[1.02] z-10">
+                  <img
+                    src={features[activeFeature].image}
+                    alt={features[activeFeature].title}
+                    className="w-full h-full object-cover object-top rounded-lg shadow-2xl border border-slate-700/50"
+                  />
+                </div>
+              </div>
             </div>
           </div>
-          
+
           <div className="md:hidden space-y-16">
             {features.map((feature, idx) => (
               <div key={idx} className="border-t border-slate-800 pt-8">
-                 <div className="flex items-center gap-3 mb-4 text-slate-100">
-                   {feature.icon}
-                   <h3 className="text-2xl font-bold text-white">{feature.title}</h3>
-                 </div>
-                 <p className="text-slate-400 mb-6 leading-relaxed">{feature.longDesc}</p>
-                 <div className="space-y-3 mb-8">
-                   {feature.details.map((detail, i) => (
-                     <div key={i} className="flex items-center gap-3 text-slate-500 border-b border-slate-800 pb-2">
-                       <div className="w-1 h-1 bg-blue-600"></div>
-                       <span className="font-mono text-xs uppercase tracking-wider">{detail}</span>
-                     </div>
-                   ))}
-                 </div>
-                 <div className="w-full bg-[#111827] p-6 border border-slate-800 flex items-center justify-center relative overflow-hidden h-[400px]">
-                    <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #3b82f6 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
-                    <div className="w-full h-full shadow-2xl z-10">
-                      <img 
-                         src={feature.image} 
-                         alt={feature.title} 
-                         className="w-full h-full object-cover object-top rounded-md border border-slate-700/50"
-                      />
+                <div className="flex items-center gap-3 mb-4 text-slate-100">
+                  {feature.icon}
+                  <h3 className="text-2xl font-bold text-white">{feature.title}</h3>
+                </div>
+                <p className="text-slate-400 mb-6 leading-relaxed">{feature.longDesc}</p>
+                <div className="space-y-3 mb-8">
+                  {feature.details.map((detail, i) => (
+                    <div key={i} className="flex items-center gap-3 text-slate-500 border-b border-slate-800 pb-2">
+                      <div className="w-1 h-1 bg-blue-600"></div>
+                      <span className="font-mono text-xs uppercase tracking-wider">{detail}</span>
                     </div>
-                 </div>
+                  ))}
+                </div>
+                <div className="w-full bg-[#111827] p-6 border border-slate-800 flex items-center justify-center relative overflow-hidden h-[400px]">
+                  <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #3b82f6 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
+                  <div className="w-full h-full shadow-2xl z-10">
+                    <img
+                      src={feature.image}
+                      alt={feature.title}
+                      className="w-full h-full object-cover object-top rounded-md border border-slate-700/50"
+                    />
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -376,80 +376,80 @@ const Home = () => {
       </section>
 
       <section className="py-24 px-6 bg-[#0a0a0a] border-t border-slate-900">
-         <div className="max-w-3xl mx-auto">
-            <div className="flex items-center justify-between mb-8"><h3 className="text-xl font-bold text-white">System Specifications</h3></div>
-            <div className="border border-slate-800">
-               {specs.map((spec, i) => (<div key={i} className={`flex justify-between p-4 ${i !== specs.length - 1 ? 'border-b border-slate-800' : ''} hover:bg-slate-900/30 transition-colors`}><span className="font-mono text-sm text-slate-400">{spec.label}</span><span className="font-mono text-sm text-blue-400 font-bold">{spec.value}</span></div>))}
-            </div>
-         </div>
+        <div className="max-w-3xl mx-auto">
+          <div className="flex items-center justify-between mb-8"><h3 className="text-xl font-bold text-white">System Specifications</h3></div>
+          <div className="border border-slate-800">
+            {specs.map((spec, i) => (<div key={i} className={`flex justify-between p-4 ${i !== specs.length - 1 ? 'border-b border-slate-800' : ''} hover:bg-slate-900/30 transition-colors`}><span className="font-mono text-sm text-slate-400">{spec.label}</span><span className="font-mono text-sm text-blue-400 font-bold">{spec.value}</span></div>))}
+          </div>
+        </div>
       </section>
 
       {/* WAITLIST SECTION */}
       <section id="waitlist-section" className="py-24 px-6 bg-[#0d1219] border-t border-slate-900">
         <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-white mb-6">The Blueprint is coming.</h2>
-            <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-              We are finalizing the architecture. Join the waitlist to receive a <span className="text-blue-400 font-bold">special launch price</span> when we go live.
-            </p>
+          <h2 className="text-4xl font-bold text-white mb-6">The Blueprint is coming.</h2>
+          <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+            We are finalizing the architecture. Join the waitlist to receive a <span className="text-blue-400 font-bold">special launch price</span> when we go live.
+          </p>
 
-            {!isSubmitted ? (
-              <form onSubmit={handleJoinWaitlist} className="max-w-md mx-auto flex flex-col gap-6">
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <div className="relative flex-1">
-                    <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-500 w-5 h-5" />
-                    <input
-                      type="email"
-                      placeholder="Enter your email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                      className="w-full bg-[#0a0a0a] border border-slate-700 text-white pl-12 pr-6 py-4 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder-slate-600 font-sans"
-                    />
-                  </div>
-                  <button type="submit" className="bg-slate-100 text-[#0f172a] px-8 py-4 font-bold uppercase tracking-wide hover:bg-blue-600 hover:text-white transition-all whitespace-nowrap shadow-[0_0_15px_rgba(255,255,255,0.05)] hover:shadow-[0_0_25px_rgba(37,99,235,0.4)]">
-                    Notify Me
-                  </button>
-                </div>
-
-                <div className="flex items-start justify-center gap-3 text-left">
+          {!isSubmitted ? (
+            <form onSubmit={handleJoinWaitlist} className="max-w-md mx-auto flex flex-col gap-6">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <div className="relative flex-1">
+                  <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-500 w-5 h-5" />
                   <input
-                    type="checkbox"
-                    id="privacy-check"
-                    checked={privacyAccepted}
-                    onChange={(e) => setPrivacyAccepted(e.target.checked)}
-                    className="mt-1 w-4 h-4 accent-blue-600 bg-[#0a0a0a] border-slate-700 rounded focus:ring-blue-500 focus:ring-2 cursor-pointer"
+                    type="email"
+                    placeholder="Enter your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="w-full bg-[#0a0a0a] border border-slate-700 text-white pl-12 pr-6 py-4 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all placeholder-slate-600 font-sans"
                   />
-                  <label htmlFor="privacy-check" className="text-xs text-slate-400 cursor-pointer select-none">
-                    I consent to receive a notification <strong>solely regarding the availability</strong> of Your Blueprint.
-                    <Link to="/privacy" className="text-blue-500 hover:underline ml-1">Read Privacy Policy</Link>.
-                  </label>
                 </div>
-              </form>
-            ) : (
-              <div className="bg-blue-900/10 border border-blue-900/50 text-blue-400 p-8 max-w-md mx-auto backdrop-blur-sm animate-fade-in">
-                 <p className="font-bold text-lg mb-2">You're on the list!</p>
-                 <p className="text-sm text-slate-300">We'll be in touch soon with your early access invite.</p>
+                <button type="submit" className="bg-slate-100 text-[#0f172a] px-8 py-4 font-bold uppercase tracking-wide hover:bg-blue-600 hover:text-white transition-all whitespace-nowrap shadow-[0_0_15px_rgba(255,255,255,0.05)] hover:shadow-[0_0_25px_rgba(37,99,235,0.4)]">
+                  Notify Me
+                </button>
               </div>
-            )}
-            
-            <p className="mt-8 text-xs text-slate-600 uppercase tracking-widest flex items-center justify-center gap-2">
-              <Shield className="w-3 h-3" /> No spam. Secure data processing.
-            </p>
+
+              <div className="flex items-start justify-center gap-3 text-left">
+                <input
+                  type="checkbox"
+                  id="privacy-check"
+                  checked={privacyAccepted}
+                  onChange={(e) => setPrivacyAccepted(e.target.checked)}
+                  className="mt-1 w-4 h-4 accent-blue-600 bg-[#0a0a0a] border-slate-700 rounded focus:ring-blue-500 focus:ring-2 cursor-pointer"
+                />
+                <label htmlFor="privacy-check" className="text-xs text-slate-400 cursor-pointer select-none">
+                  I consent to receive a notification <strong>solely regarding the availability</strong> of Your Blueprint.
+                  <Link to="/privacy" className="text-blue-500 hover:underline ml-1">Read Privacy Policy</Link>.
+                </label>
+              </div>
+            </form>
+          ) : (
+            <div className="bg-blue-900/10 border border-blue-900/50 text-blue-400 p-8 max-w-md mx-auto backdrop-blur-sm animate-fade-in">
+              <p className="font-bold text-lg mb-2">You're on the list!</p>
+              <p className="text-sm text-slate-300">We'll be in touch soon with your early access invite.</p>
+            </div>
+          )}
+
+          <p className="mt-8 text-xs text-slate-600 uppercase tracking-widest flex items-center justify-center gap-2">
+            <Shield className="w-3 h-3" /> No spam. Secure data processing.
+          </p>
         </div>
       </section>
 
       <section className="py-24 px-6 bg-[#0a0a0a] border-t border-slate-900">
-         <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-white mb-10 text-center">Frequently Asked Questions</h2>
-            <div className="space-y-4">
-               {faqs.map((faq, i) => (
-                  <div key={i} className="border border-slate-800 bg-[#0d1219]">
-                     <button onClick={() => toggleFaq(i)} className="w-full flex justify-between items-center p-6 text-left hover:bg-slate-900/50 transition-colors"><span className="font-bold text-slate-200">{faq.q}</span>{openFaq === i ? <Minus className="w-5 h-5 text-blue-500"/> : <Plus className="w-5 h-5 text-slate-500"/>}</button>
-                     {openFaq === i && (<div className="px-6 pb-6 text-slate-400 text-sm leading-relaxed border-t border-slate-900 pt-4">{faq.a}</div>)}
-                  </div>
-               ))}
-            </div>
-         </div>
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-white mb-10 text-center">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            {faqs.map((faq, i) => (
+              <div key={i} className="border border-slate-800 bg-[#0d1219]">
+                <button onClick={() => toggleFaq(i)} className="w-full flex justify-between items-center p-6 text-left hover:bg-slate-900/50 transition-colors"><span className="font-bold text-slate-200">{faq.q}</span>{openFaq === i ? <Minus className="w-5 h-5 text-blue-500" /> : <Plus className="w-5 h-5 text-slate-500" />}</button>
+                {openFaq === i && (<div className="px-6 pb-6 text-slate-400 text-sm leading-relaxed border-t border-slate-900 pt-4">{faq.a}</div>)}
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
     </>
   );

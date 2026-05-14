@@ -1,0 +1,14 @@
+{
+  "name": "Your Blueprint",
+  "short_name": "Blueprint",
+  "description": "A productivity system for reMarkable 2 and Paper Pro. 2026, 2027 and 2028 — hyperlinked end-to-end.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#2563EB",
+  "icons": [
+    { "src": "/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/favicon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
