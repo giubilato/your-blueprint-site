@@ -43,6 +43,8 @@ const Layout = () => {
           </Link>
           
           <div className="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest text-slate-400">
+            <Link to="/sample" className="hover:text-white transition-colors">SAMPLE</Link>
+
             {/* LOGICA MENU ALTO: Nascondi Articles se siamo in Home */}
             {!isHome && (
               <Link to="/articles" className="hover:text-white transition-colors">ARTICLES</Link>
@@ -65,6 +67,8 @@ const Layout = () => {
         {/* Menu Mobile */}
         {isMenuOpen && (
           <div className="absolute top-full left-0 w-full bg-[#0a0a0a] border-b border-slate-800 p-6 flex flex-col gap-6 md:hidden shadow-2xl">
+            <Link to="/sample" className="text-left font-bold text-slate-300 py-2 border-b border-slate-800">SAMPLE</Link>
+
             {/* Anche qui nascondiamo Articles se siamo in home */}
             {!isHome && (
                <Link to="/articles" className="text-left font-bold text-slate-300 py-2 border-b border-slate-800">ARTICLES</Link>

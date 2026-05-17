@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import Privacy from './pages/Privacy';
+import Sample from './pages/Sample';
 
 const App = () => {
   return (
@@ -16,7 +17,10 @@ const App = () => {
         
         {/* NUOVA ROTTA PRIVACY */}
         <Route path="privacy" element={<Privacy />} />
-        
+
+        {/* Lead magnet landing — see docs/03-product/lead-magnet.md */}
+        <Route path="sample" element={<Sample />} />
+
         <Route path="*" element={<Home />} />
       </Route>
     </Routes>
