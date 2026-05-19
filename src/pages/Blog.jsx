@@ -21,7 +21,9 @@ const Blog = () => {
           <div className="grid gap-8">
              {/* Controllo di sicurezza: se non ci sono post, mostra un messaggio */}
              {BLOG_POSTS && BLOG_POSTS.length > 0 ? (
-               BLOG_POSTS.map(post => (
+               [...BLOG_POSTS]
+                 .sort((a, b) => new Date(b.date) - new Date(a.date))
+                 .map(post => (
                   <Link to={`/articles/${post.slug}`} key={post.id} className="group bg-[#0d1219] border border-slate-800 hover:border-blue-500/50 transition-all p-8 flex flex-col md:flex-row gap-8 relative overflow-hidden cursor-pointer block">
                      <div className="absolute top-0 right-0 w-20 h-20 bg-blue-500/5 rounded-full blur-2xl group-hover:bg-blue-500/10 transition-colors"></div>
                      

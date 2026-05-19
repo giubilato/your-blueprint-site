@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const BLOG_POSTS = [
         {
@@ -571,6 +572,334 @@ export const BLOG_POSTS = [
       </div>
     </>
         )
+  },
+  {
+    id: 8,
+    slug: "remarkable-pro-planner-2026-guide",
+    title: "The reMarkable Pro Planner: A 2026 Setup Guide for Real Work",
+    excerpt: "How to turn the reMarkable Pro into a real planner — multi-year, hyperlinked, opinionated. The four-layer system we use every day.",
+    date: "May 19, 2026",
+    readTime: "13 min read",
+    content: (
+      <>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          The reMarkable Pro is the best digital paper device on the market. It costs around $580. Most people who own one use roughly 10% of what it can do.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          The pattern is familiar: someone reads about the device, justifies the spend ("it'll replace my notebook"), buys it, uses it for a few weeks on the default templates, then quietly drifts back to Notion or paper. The friction isn't the hardware. It's that the device ships with no system. You get a blank grid, a few lined pages, and that's it.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          This guide is about what to do instead. It's a 2026 setup for turning the <strong>reMarkable Pro</strong> into a real planner — not a sketchpad, not a glorified notebook, but a multi-year operating system for the way knowledge workers actually plan.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          Three things upfront:
+        </p>
+        <ul className="list-disc pl-6 mb-8 space-y-3 text-slate-300">
+          <li className="leading-relaxed">We're talking about the reMarkable Pro specifically. Most of this applies to the reMarkable 2 too, but the Pro's color rendering and refresh rate make some of the moves below cleaner.</li>
+          <li className="leading-relaxed">This isn't a list of templates to download. It's a structural argument about what a planner system needs and how to build one.</li>
+          <li className="leading-relaxed">We built one ourselves — <strong>Your Blueprint</strong>, covering 2026 through 2028 — and there's a free sample at the end if you want to see the structure in practice.</li>
+        </ul>
+
+        <div className="my-12">
+          <img
+            src="/images/blog/custom-remarkable-templates-productivity-workspace.jpg"
+            alt="A reMarkable Pro on a minimalist workspace with a custom planner template open on the screen"
+            className="w-full h-auto rounded-xl border border-slate-800 shadow-2xl"
+          />
+          <p className="text-center text-sm text-slate-500 mt-4 italic">
+            A reMarkable Pro set up as a real planner — not a sketchpad.
+          </p>
+        </div>
+
+        <h2 className="text-3xl font-bold text-white mt-12 mb-6 tracking-tight">Why most reMarkable owners never set up a real planner</h2>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          You buy the device, sideload a few PDFs you found on Reddit, fill three or four pages, and the device starts living on your desk untouched. This happens to almost everyone. Three reasons.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          The default templates are sketchpads, not systems
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          The pre-installed templates are good for capturing notes. A grid, lined paper, a checklist. They're not built for planning. Planning is a directed activity: you set a goal at one timescale (a year, a quarter), break it down at smaller timescales (a month, a week, a day), and review it. None of that lives in a blank grid.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          A capture tool and a planning tool are different products. The reMarkable ships with the first, not the second. People often confuse the two — they grab the device thinking "I'll plan my year on this" and end up with disconnected pages of unrelated thoughts.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          Free PDFs online are designed for the iPad, not for e-ink
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          There are hundreds of free planner PDFs floating around — most of them are repurposed iPad/GoodNotes templates. They share a common set of problems on a reMarkable Pro:
+        </p>
+        <ul className="list-disc pl-6 mb-8 space-y-3 text-slate-300">
+          <li className="leading-relaxed">Stroke widths set for retina screens look thin or disappear on e-ink contrast.</li>
+          <li className="leading-relaxed">Decorative elements (gradients, soft shadows) render as muddy patches.</li>
+          <li className="leading-relaxed">Hyperlinks are inconsistent — sometimes the dates tap-jump, sometimes they don't.</li>
+          <li className="leading-relaxed">Page sizes don't match the Pro's aspect ratio, leaving awkward margins.</li>
+          <li className="leading-relaxed">Single-year coverage forces you to re-buy every December.</li>
+        </ul>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          Free templates are fine for a weekend experiment. They're not built for a year of daily use.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          Building your own takes hours you don't have
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          Some people decide to design their own in InDesign or Affinity. It's a deep rabbit hole. You need to handle:
+        </p>
+        <ul className="list-disc pl-6 mb-8 space-y-3 text-slate-300">
+          <li className="leading-relaxed">Hyperlinking 365 daily pages back to their week, back to the month, back to the year.</li>
+          <li className="leading-relaxed">Cross-references for end-of-day reflection that jumps to a weekly review page.</li>
+          <li className="leading-relaxed">Notes pages that index correctly.</li>
+          <li className="leading-relaxed">Aspect-ratio and contrast testing on the actual device.</li>
+        </ul>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          A serious template takes 80+ hours to build from scratch — and most people abandon it halfway. The work isn't visible to anyone else, and you'd rather be doing your real job.
+        </p>
+
+        <h2 className="text-3xl font-bold text-white mt-12 mb-6 tracking-tight">What a real reMarkable Pro planner needs</h2>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          If you skip the templates-on-Reddit pattern and the build-your-own pattern, what are you left with? A planner system that meets four criteria.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          One file, not a stack of PDFs
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          A planner is a single working document, not a folder. When the year, month, week, and day are scattered across separate files, navigation becomes friction. You don't want to think "where did I put the May review page?" — you want to tap once and be there.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          The reMarkable Pro handles a single multi-hundred-page PDF beautifully. There's no reason to fragment the planner into multiple files.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          Hyperlinks that work like an app
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          Every date, every section header, every back button needs to be tappable. This isn't optional. A non-hyperlinked digital planner is a worse experience than paper — you have to scroll through hundreds of pages to find a specific date.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          When hyperlinks are wired correctly, the device starts to feel like an app. Tap a date in the year overview, you're on that day. Tap the date header in the day view, you're back at the year. This pattern is what makes the Pro feel native, not like a PDF reader.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          A layout designed for the e-ink display
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          The Pro's screen is high-contrast e-ink at roughly 11.8 inches. Stroke widths, margins, type sizes, and contrast levels all need to be tuned for it. Practical rules:
+        </p>
+        <ul className="list-disc pl-6 mb-8 space-y-3 text-slate-300">
+          <li className="leading-relaxed">Body type at 9–11 pt is the sweet spot.</li>
+          <li className="leading-relaxed">Stroke widths between 0.4 and 0.8 pt for grids.</li>
+          <li className="leading-relaxed">Avoid thin gray accents that render as nothing on e-ink.</li>
+          <li className="leading-relaxed">Margins of at least 12 mm so handwriting has space.</li>
+          <li className="leading-relaxed">Single-color layouts (or sparing color use on the Paper Pro) to avoid refresh-rate flicker.</li>
+        </ul>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          Most iPad-first templates ignore all of this.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          An opinionated system, not a blank canvas
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          A planner without a point of view is just a notebook. Real productivity systems take a stance — David Allen has GTD, Cal Newport has time-blocking, Tiago Forte has PARA. Your planner should encode one of these, or its own variant, so you don't have to re-invent the system every Sunday.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          We use a four-layer system (year → month → week → day) anchored by a weekly review. It's not the only way, but it's the one we've stress-tested for years.
+        </p>
+
+        <h2 className="text-3xl font-bold text-white mt-12 mb-6 tracking-tight">The four-layer system: year, month, week, day</h2>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          A planner has to work at four time-scales. Each scale serves a different cognitive role.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          Year — milestones and themes
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          The yearly page is the longest zoom-out. It's not a calendar — it's a map of what matters. Two parts:
+        </p>
+        <ul className="list-disc pl-6 mb-8 space-y-3 text-slate-300">
+          <li className="leading-relaxed">A 12-month overview with anchor weeks marked (vacations, launches, quarter boundaries).</li>
+          <li className="leading-relaxed">A short list of three to five milestones for the year, each with a target month.</li>
+        </ul>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          This page is the answer to the question "what is this year for?" You revisit it monthly to re-anchor.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          Month — focus areas and OKRs
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          The monthly page narrows the year into 30 actionable days. Use it to:
+        </p>
+        <ul className="list-disc pl-6 mb-8 space-y-3 text-slate-300">
+          <li className="leading-relaxed">Declare a focus area for the month (one thing — not five).</li>
+          <li className="leading-relaxed">Break each yearly milestone into a monthly subgoal.</li>
+          <li className="leading-relaxed">Mark fixed dates (travel, deadlines, family commitments).</li>
+          <li className="leading-relaxed">Leave room for a monthly review at the bottom.</li>
+        </ul>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          A month page is reviewed at the start (planning) and end (reflecting) of the month. Not in between.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          Week — time-blocking and review
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          The week is the most important scale. It's where intention meets reality.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          A useful weekly page is a two-page spread:
+        </p>
+        <ul className="list-disc pl-6 mb-8 space-y-3 text-slate-300">
+          <li className="leading-relaxed"><strong>Left page:</strong> the seven days of the week with time blocks. You're not filling in tasks — you're allocating attention. Deep work blocks, meetings, family time, recovery. Everything gets a slot or it doesn't get done.</li>
+          <li className="leading-relaxed"><strong>Right page:</strong> the weekly review (more on this below). Four questions answered honestly on Sunday evening.</li>
+        </ul>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          The weekly view is where most planners fail. They give you a blank grid and call it "weekly." The right move is to make the review page as prominent as the planning page — because the review is the lever.
+        </p>
+
+        <div className="my-12">
+          <img
+            src="/images/blog/remarkable-2-pro-templates-your-blueprint-desk-setup.jpg"
+            alt="A reMarkable Pro on a wood desk with the weekly planner spread open"
+            className="w-full h-auto rounded-xl border border-slate-800 shadow-2xl"
+          />
+          <p className="text-center text-sm text-slate-500 mt-4 italic">
+            The weekly spread on a reMarkable Pro: time-blocking on the left, review on the right.
+          </p>
+        </div>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          Day — intention, priorities, reflection
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          The daily page is the smallest unit. It should be short and structured. We use four blocks:
+        </p>
+        <ul className="list-decimal pl-6 mb-8 space-y-3 text-slate-300">
+          <li className="leading-relaxed"><strong>Intention.</strong> One sentence at the top, written first thing. "Today I'm finishing the proposal." Not a to-do list. An anchor.</li>
+          <li className="leading-relaxed"><strong>Three priorities.</strong> The only three tasks that actually matter today. Anything beyond three is wishful thinking.</li>
+          <li className="leading-relaxed"><strong>Time-blocked schedule.</strong> A compact hour-by-hour grid showing where attention goes.</li>
+          <li className="leading-relaxed"><strong>End-of-day reflection.</strong> One or two sentences before closing the device. What worked, what didn't, what changes tomorrow.</li>
+        </ul>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          A daily page that's longer than this becomes a notebook. A planner is opinionated about what counts as "the day."
+        </p>
+
+        <h2 className="text-3xl font-bold text-white mt-12 mb-6 tracking-tight">The Sunday-evening weekly review</h2>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          If a planner is going to change how you work, this is the page where it happens. Not the daily, not the year — the weekly review.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          Most planners give you a blank "reflection" box and call it done. That's not a system. A useful weekly review answers four specific questions:
+        </p>
+        <ul className="list-decimal pl-6 mb-8 space-y-3 text-slate-300">
+          <li className="leading-relaxed"><strong>What did I commit to last week, and how did it actually go?</strong> Open last week's page. Compare the time-blocked schedule to what really happened. Don't judge — just notice.</li>
+          <li className="leading-relaxed"><strong>What did I learn — about the work, or about myself working?</strong> This is the question most people skip. A week without a learning is a week of execution without growth. Force yourself to name one thing.</li>
+          <li className="leading-relaxed"><strong>What's the one thing that matters next week?</strong> Not the five things. The one. If you only got one thing done next week, what would it be? Write it at the top of next week's page.</li>
+          <li className="leading-relaxed"><strong>What am I delaying that I shouldn't be?</strong> The honest list. Three items max. Now decide: do it Monday, schedule it, or formally drop it.</li>
+        </ul>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          The whole review takes 15 to 20 minutes. It feels slow on Sunday and saves hours on Wednesday.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          Two practical notes about doing it on a reMarkable Pro:
+        </p>
+        <ul className="list-disc pl-6 mb-8 space-y-3 text-slate-300">
+          <li className="leading-relaxed">The Sunday-evening review benefits from the device's lack of notifications. There's no Slack ping, no email red badge, no temptation to "check one thing real quick." It's the right surface for the right activity.</li>
+          <li className="leading-relaxed">Keep the review page on a separate physical page from the time-blocking grid. When they share a page, both get cramped and neither gets done well.</li>
+        </ul>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          A pattern that works: the weekly review pages from previous weeks become a quiet archive of self-knowledge over a year. Six months in, you can flip back and see what you were committed to in March, what you learned in May, what you delayed in June. That's a record no app gives you.
+        </p>
+
+        <h2 className="text-3xl font-bold text-white mt-12 mb-6 tracking-tight">Common mistakes when planning on a reMarkable Pro</h2>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          Years of watching people set up their devices, here are the patterns that fail.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          Designing for the iPad instead of the e-ink screen
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          You pick a planner that looks beautiful on a phone screenshot and load it on the Pro. The decorative elements turn muddy. The thin gray accent lines disappear. The typography that looked elegant looks weak. Always preview the template on the actual device before committing to a year of daily use.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          Trying to do too much per page
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          A page that asks you to fill in 12 boxes (mood, weather, water intake, gratitude, top three, schedule, reflection, learning, habits, sleep, exercise, top win) doesn't get used. It gets abandoned by day five. The discipline of a good planner is the discipline of saying no to features. Pick three to five things you'll fill out every day. Cut the rest.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          Forgetting it's a multi-year tool
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          A single-year planner ends in December. Then you're shopping for a new one, restoring habits, learning a new layout. A multi-year system removes that friction. The reMarkable Pro is meant to be on your desk for years, not for the calendar year — your planner should match its lifespan.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          Using it as a notebook instead of a planner
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          The reMarkable is great for capturing notes. It is also great for planning. These are different activities and they want different files. If you mix them — using your planner as a journal, or your journal as a planner — both get worse. Keep the planner clean. Capture random thoughts in a separate notebook on the device.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          Skipping the weekly review
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          The single biggest predictor of whether someone keeps using a planner past month two is whether they do the weekly review consistently. The daily page is easy to maintain. The weekly review is the discipline. If you only have 20 minutes per week to spend on this, spend them all on Sunday evening.
+        </p>
+
+        <div className="my-12">
+          <img
+            src="/images/blog/remarkable-2-template-gallery-selection-your-blueprint.jpg"
+            alt="A gallery of reMarkable planner templates with the four-layer system visible"
+            className="w-full h-auto rounded-xl border border-slate-800 shadow-2xl"
+          />
+          <p className="text-center text-sm text-slate-500 mt-4 italic">
+            Year, month, week, day — four pages, one system.
+          </p>
+        </div>
+
+        <h2 className="text-3xl font-bold text-white mt-12 mb-6 tracking-tight">A note on the multi-year approach</h2>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          Most digital planners are sold as single-year products. They end in December. You buy a new one in January. The friction of switching layouts every twelve months is a quiet productivity tax — every transition costs a week of "where did the X go?" disorientation.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          A multi-year planner removes that tax. The 2026 → 2027 → 2028 transition happens inside the same file, on the same device, with the same hyperlink patterns and weekly review structure. You don't re-learn how to plan in January. You just keep planning.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          This matters more on a reMarkable than on paper. A physical notebook ends when it runs out of pages — that's a natural break. A digital device doesn't have that constraint, so there's no natural reason to switch layouts. Sticking with one system across years compounds.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          The trade-off is upfront work: a multi-year planner is a larger file with more pages, and the build effort is significant. But you only need one — once you have it set up, you're good for three years of planning. The math works out heavily in favor of doing the harder build once.
+        </p>
+
+        <h2 className="text-3xl font-bold text-white mt-12 mb-6 tracking-tight">A planner you would actually open</h2>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          The reMarkable Pro is one of the best tools on the market for thinking on paper. The blocker is almost never the device. It's having a system that's worth opening every day, for three years.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          If you want to build one yourself, the structure in this guide is a complete starting point — pick a four-layer model (year → month → week → day), wire up the hyperlinks, design for the e-ink screen, commit to the weekly review.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          If you'd rather skip the 80 hours of build work, <strong>Your Blueprint</strong> is the multi-year planner system we built for the reMarkable. It covers 2026, 2027 and 2028 in a single hyperlinked PDF. The structure described above is exactly what's inside.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          You can download a <Link to="/sample" className="text-blue-400 hover:text-blue-300 underline">free sample of July 2026</Link> — 41 pages, full hyperlinks, no email tricks. If it resonates, the full system is one purchase away.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          The device deserves a system. Now you know what one looks like.
+        </p>
+      </>
+    )
   },
   {
     id: 7,
