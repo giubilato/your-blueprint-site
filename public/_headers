@@ -1,0 +1,8 @@
+# Cloudflare Pages — HTTP headers per path
+# Docs: https://developers.cloudflare.com/pages/configuration/headers/
+
+# Sample PDF (lead magnet) — protected from search indexing
+/sample/*.pdf
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Content-Disposition: attachment
+  Cache-Control: public, max-age=3600, must-revalidate

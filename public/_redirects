@@ -1,0 +1,6 @@
+# Cloudflare Pages — SPA fallback
+# Docs: https://developers.cloudflare.com/pages/configuration/redirects/
+# Any path that's NOT a static asset is rewritten to index.html so React Router
+# can resolve the route client-side.
+
+/*    /index.html   200
