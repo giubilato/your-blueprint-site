@@ -6,6 +6,7 @@ import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import Privacy from './pages/Privacy';
 import Sample from './pages/Sample';
+import Setup from './pages/Setup';
 
 const App = () => {
   return (
@@ -20,6 +21,9 @@ const App = () => {
 
         {/* Lead magnet landing — see docs/03-product/lead-magnet.md */}
         <Route path="sample" element={<Sample />} />
+
+        {/* Install guide — reached from /sample, indexable for "how to add template to remarkable" */}
+        <Route path="setup" element={<Setup />} />
 
         <Route path="*" element={<Home />} />
       </Route>

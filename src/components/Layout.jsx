@@ -99,6 +99,8 @@ const Layout = () => {
           </Link>
           
           <div className="flex items-center gap-6">
+             <Link to="/sample" className="hover:text-blue-400 transition-colors">Sample</Link>
+             <Link to="/setup" className="hover:text-blue-400 transition-colors">Setup</Link>
              <Link to="/articles" className="hover:text-blue-400 transition-colors">Articles</Link>
              <Link to="/privacy" className="hover:text-blue-400 transition-colors">Privacy Policy</Link>
              {/* Facebook icon */}

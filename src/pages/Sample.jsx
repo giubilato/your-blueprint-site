@@ -211,12 +211,19 @@ const Sample = () => {
                   Your sample is downloading
                 </h2>
                 <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                  The PDF should appear in your downloads folder. If nothing happened, use the button below.
+                  The PDF should appear in your downloads folder. Next: get it onto your reMarkable.
                 </p>
+                <Link
+                  to="/setup"
+                  className="inline-flex items-center justify-center gap-2 bg-slate-100 text-[#0f172a] hover:bg-blue-600 hover:text-white px-6 py-3 font-bold uppercase tracking-wide transition w-full mb-3"
+                >
+                  How to install it
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
                 <a
                   href={SAMPLE_PDF_URL}
                   download="your-blueprint-sample-july-2026.pdf"
-                  className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 font-bold uppercase tracking-wide transition"
+                  className="inline-flex items-center justify-center gap-2 bg-transparent border border-slate-700 hover:border-blue-500 text-slate-300 hover:text-blue-400 px-6 py-3 font-bold uppercase tracking-wide transition w-full"
                 >
                   <Download className="w-4 h-4" />
                   Download again
