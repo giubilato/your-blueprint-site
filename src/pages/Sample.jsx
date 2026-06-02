@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Mail, Download, Shield, ArrowRight, Layout as LayoutIcon } from 'lucide-react';
 
 /**
@@ -92,6 +93,12 @@ const Sample = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Free sample — Your Blueprint planner for reMarkable</title>
+        <meta name="description" content="A 41-page sample from the full Your Blueprint system. Year overview, monthly planner, weekly spreads, 31 daily pages — hyperlinked end-to-end. Drop your email and download instantly." />
+        <link rel="canonical" href="https://yourblueprint.co/sample" />
+      </Helmet>
+
       {/* HERO + FORM */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-24 px-6 border-b border-slate-900">
         {/* Subtle grid background, matches homepage hero */}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { BLOG_POSTS } from '../data/posts';
 
@@ -13,8 +14,21 @@ const BlogPost = () => {
     return <Navigate to="/articles" replace />;
   }
 
+  const canonicalUrl = `https://yourblueprint.co/articles/${post.slug}`;
+
   return (
      <div className="pt-32 pb-24 px-6 min-h-screen bg-[#0a0a0a]">
+        <Helmet>
+          <title>{`${post.title} — Your Blueprint`}</title>
+          <meta name="description" content={post.excerpt} />
+          <link rel="canonical" href={canonicalUrl} />
+          <meta property="og:title" content={post.title} />
+          <meta property="og:description" content={post.excerpt} />
+          <meta property="og:url" content={canonicalUrl} />
+          <meta property="og:type" content="article" />
+          <meta name="twitter:title" content={post.title} />
+          <meta name="twitter:description" content={post.excerpt} />
+        </Helmet>
         <article className="max-w-3xl mx-auto">
            <Link to="/articles" className="group flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-slate-500 mb-8 hover:text-blue-400 transition-colors">
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Log

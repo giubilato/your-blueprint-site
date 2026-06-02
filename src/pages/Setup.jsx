@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Download, CheckCircle2, AlertCircle, Layout as LayoutIcon } from 'lucide-react';
 
 /**
@@ -27,6 +28,12 @@ const Setup = () => {
 
   return (
     <>
+      <Helmet>
+        <title>How to install Your Blueprint on your reMarkable — Setup guide</title>
+        <meta name="description" content="Step-by-step guide to install the Your Blueprint planner on your reMarkable 2 or Paper Pro via my.remarkable.com. Plus how to start using it: weekly review, daily intention, hyperlink navigation." />
+        <link rel="canonical" href="https://yourblueprint.co/setup" />
+      </Helmet>
+
       {/* HERO */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 px-6 border-b border-slate-900">
         <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">

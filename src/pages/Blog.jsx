@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { ArrowRight } from 'lucide-react';
 // Assicurati che il percorso sia corretto e il file esista in src/data/posts.jsx
 import { BLOG_POSTS } from '../data/posts';
@@ -7,6 +8,11 @@ import { BLOG_POSTS } from '../data/posts';
 const Blog = () => {
   return (
     <div className="pt-32 pb-24 px-6 min-h-screen bg-[#0a0a0a]">
+      <Helmet>
+        <title>Articles — Your Blueprint</title>
+        <meta name="description" content="Thoughts on planning, weekly reviews, and using the reMarkable as a long-term thinking tool. Guides, system breakdowns, and behind-the-design notes from the Your Blueprint studio." />
+        <link rel="canonical" href="https://yourblueprint.co/articles" />
+      </Helmet>
        <div className="max-w-4xl mx-auto">
           {/* Header della sezione Blog */}
           <div className="mb-16 text-center">

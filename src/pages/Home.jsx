@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import {
   Target, ChevronRight, Briefcase, TrendingUp, Layers, CheckSquare,
   ArrowRight, Shield, Clock, Zap, MoveHorizontal, Feather, Layout, Plus, Minus, Mail
@@ -176,6 +177,12 @@ const Home = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Your Blueprint — A productivity system for reMarkable 2 & Paper Pro</title>
+        <meta name="description" content="A multi-year hyperlinked planner for the reMarkable. Two full years of planning ahead (2027 and 2028) plus the rest of 2026, in one PDF. Every date, week and section tappable." />
+        <link rel="canonical" href="https://yourblueprint.co/" />
+      </Helmet>
+
       {/* Hero Section */}
       <header className="relative pt-32 pb-20 md:pt-48 md:pb-20 px-6 border-b border-slate-900">
         <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">

@@ -1,8 +1,15 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Privacy = () => {
   return (
     <div className="pt-32 pb-24 px-6 min-h-screen bg-[#0a0a0a] text-slate-300">
+      <Helmet>
+        <title>Privacy Policy — Your Blueprint</title>
+        <meta name="description" content="How Your Blueprint handles your data — waitlist, GDPR rights, and data processors." />
+        <meta name="robots" content="noindex, follow" />
+        <link rel="canonical" href="https://yourblueprint.co/privacy" />
+      </Helmet>
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold text-white mb-8">Privacy Policy</h1>
         
