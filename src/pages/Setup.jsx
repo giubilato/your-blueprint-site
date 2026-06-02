@@ -193,7 +193,7 @@ const Setup = () => {
               },
               {
                 q: 'Some links jump to the wrong place or do nothing (in the free sample)',
-                a: 'The free sample is one month extracted from the full planner. Links that point to months outside July won\'t go anywhere — that\'s expected. Inside July, everything is fully navigable. The complete planner has all links live across all three years.',
+                a: 'The free sample is one month extracted from the full planner. Links that point to months outside July won\'t go anywhere — that\'s expected. Inside July, everything is fully navigable. The complete planner has all links live across the full file (rest of 2026 + all of 2027 and 2028).',
               },
               {
                 q: 'The pages look faint',
@@ -225,10 +225,10 @@ const Setup = () => {
             <LayoutIcon className="w-6 h-6 text-white" />
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            Like the sample? The full system covers three years.
+            Like the sample? The full system runs through end of 2028.
           </h2>
           <p className="text-slate-400 max-w-xl mx-auto mb-8 leading-relaxed">
-            2026, 2027 and 2028 in one hyperlinked file. Over 1,300 pages. One purchase, yours forever.
+            Two full years of planning ahead (2027 and 2028), plus the rest of 2026 included. One hyperlinked file. Over 1,300 pages. One purchase, yours forever.
           </p>
           <Link
             to="/"

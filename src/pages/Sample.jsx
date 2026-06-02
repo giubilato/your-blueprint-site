@@ -250,10 +250,10 @@ const Sample = () => {
             <LayoutIcon className="w-6 h-6 text-white" />
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            The full system covers 2026, 2027 and 2028.
+            The full system runs through end of 2028.
           </h2>
           <p className="text-slate-400 max-w-xl mx-auto mb-8 leading-relaxed">
-            Over 1,300 pages, hyperlinked end-to-end. One purchase, yours forever. Designed for the reMarkable 1, 2 and Paper Pro.
+            Two full years of planning ahead (2027 and 2028), plus the rest of 2026 included. Over 1,300 hyperlinked pages, one purchase, yours forever. Designed for the reMarkable 1, 2 and Paper Pro.
           </p>
           <Link
             to="/"

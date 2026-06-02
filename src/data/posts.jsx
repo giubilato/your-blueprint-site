@@ -574,6 +574,190 @@ export const BLOG_POSTS = [
         )
   },
   {
+    id: 9,
+    slug: "multi-year-planner-default",
+    title: "Why a Multi-Year Planner Is the Right Default",
+    excerpt: "Most digital planners end in December. That's a design choice — and it's costing you a week of friction every January. Here's why we built a system that doesn't end.",
+    date: "Jun 2, 2026",
+    readTime: "7 min read",
+    content: (
+      <>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          Every December, something quietly expensive happens. You close the planner you've been using for twelve months — the one you finally figured out how to use around June — and you start over.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          You buy a new one. Different layout. Different week structure. Different daily prompts. Spend a week re-orienting. Re-write your habits onto the new pages. Get back into rhythm by mid-February.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          This is the December tax. It isn't unique to you. Almost every annual planner is designed this way, and it isn't an accident.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          A single-year planner is a recurring purchase. The friction of switching layouts every twelve months is the friction that keeps you buying.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          For physical paper planners, this somewhat makes sense — a physical notebook has finite pages, and you genuinely need a new one when the year ends. For digital planners, the constraint is artificial. A PDF doesn't run out of pages. There's no physical reason to switch every December.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          We built <strong>Your Blueprint</strong> as a multi-year file — two full years of planning ahead (2027 and 2028), plus what remains of the current year (2026). The artificial December reset annoyed us. This article is the argument for why this should be the default.
+        </p>
+
+        <div className="my-12">
+          <img
+            src="/images/blog/remarkable-pro-digital-planner-templates-menu.jpg"
+            alt="A reMarkable Pro showing the year-spanning navigation of a multi-year digital planner"
+            className="w-full h-auto rounded-xl border border-slate-800 shadow-2xl"
+          />
+          <p className="text-center text-sm text-slate-500 mt-4 italic">
+            One file. No December reset.
+          </p>
+        </div>
+
+        <h2 className="text-3xl font-bold text-white mt-12 mb-6 tracking-tight">Why single-year planners are designed to fail you</h2>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          Three patterns most single-year planners share:
+        </p>
+        <ul className="list-decimal pl-6 mb-8 space-y-4 text-slate-300">
+          <li className="leading-relaxed"><strong>Identical layout, year over year.</strong> The 2027 version of your favorite planner is the 2026 version with the dates changed. The actual structure — the daily page, the weekly review prompts, the monthly grid — is identical. You're paying again for the same thing.</li>
+          <li className="leading-relaxed"><strong>Time-pressured marketing in November and December.</strong> "Get your 2027 planner before they sell out." Urgency triggers re-purchase, even when nothing changed.</li>
+          <li className="leading-relaxed"><strong>No portability across years.</strong> Your annotations, your weekly reviews, your monthly themes from 2026 don't roll over. Each new planner is a fresh start, by force.</li>
+        </ul>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          This last point is the most quietly damaging. Half the value of a planning system comes from looking back. Where were you six months ago? What did you commit to in March? How did the third quarter actually go? When the previous year is locked in a different file (or worse, a different physical book on your shelf), that lookback is real work — opening, scanning, re-orienting.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          In a multi-year file, the review is one tap. The June 2026 weekly review is right there next to the June 2027 one. You can compare across years on the same screen. Patterns become obvious.
+        </p>
+
+        <h2 className="text-3xl font-bold text-white mt-12 mb-6 tracking-tight">What changes when you stop re-buying every year</h2>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          Three things shift.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          The system stops re-onboarding
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          Every new layout costs about a week. You're re-learning where the daily page boxes are, what the weekly review asks, where the notes section sits. That week is the "where did the X go?" disorientation tax we mentioned at the start. Multi-year removes it. You opened your 2026 planner in January? Same file, same layout in January 2028. Zero re-learning.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          Patterns become visible
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          A planning system gains most of its value in retrospect. Three weeks after a quarterly review, the value is marginal. Three years after, it's compounding — you can see how your priorities drifted, which yearly milestones actually mattered, what kind of weeks consistently went off the rails. With separate single-year planners, this kind of pattern recognition requires deliberate effort. With multi-year, it's a tap.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          The device matches the tool
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          The reMarkable Pro is a device you keep for years. You didn't buy it for 2026 — you bought it as a long-term writing tool. The planner inside it should match that horizon. A multi-year planner is the natural fit for a multi-year device.
+        </p>
+
+        <h2 className="text-3xl font-bold text-white mt-12 mb-6 tracking-tight">The three objections (and the answers)</h2>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          "What if my system changes mid-year?"
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          It will. A weekly review template that worked in January might feel cramped by June. Your priorities shift. Your roles change.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          The good news: a multi-year planner doesn't lock you into one way of using each page. You can write differently inside the same template (use the boxes differently, ignore prompts that don't serve you, add your own notation). Multi-year doesn't mean "use the same way for 1,000 days." It means "use one file for 1,000 days."
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          If the layout itself becomes wrong, the answer is the same as with any annual planner: switch. You're not penalized — you've already paid for the multi-year file. The cost of a system change is the same whether you're in year one or year three.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          "What if I lose interest?"
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          Then you've lost $29 instead of $20-something. The downside of a multi-year planner is bounded. The first months decide whether you keep using it; the forward years (2027 and 2028) are bonus runway if you do.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          A more realistic worry: you'll keep using it, but only the daily pages, not the weekly review. That's fine. The system tolerates partial use. The pages you don't fill in are still there next year when you might.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          "What about 2029 and 2030?"
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          When we get there, we ship an extension. Your file remains usable through end of 2028 — those years stay where they are. The 2029-2030 extension is a smaller paid update for existing customers when the time comes.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          You're not locked into a single horizon. You have a planning baseline that runs through 2028, with optional extensions after.
+        </p>
+
+        <div className="my-12">
+          <img
+            src="/images/blog/custom-remarkable-templates-productivity-workspace.jpg"
+            alt="A workspace with a reMarkable Pro and a multi-year planner open on the device"
+            className="w-full h-auto rounded-xl border border-slate-800 shadow-2xl"
+          />
+          <p className="text-center text-sm text-slate-500 mt-4 italic">
+            A multi-year planner on a multi-year device — the natural fit.
+          </p>
+        </div>
+
+        <h2 className="text-3xl font-bold text-white mt-12 mb-6 tracking-tight">How to build a multi-year planner architecturally</h2>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          If you're thinking about building one yourself instead of buying, three architectural choices matter most.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          Single file, not three
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          Don't structure as "2026.pdf, 2027.pdf, 2028.pdf, all in a folder." Build as one PDF. Cross-year navigation lives only inside a single file — across separate PDFs, navigation breaks at the year boundary.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          Hyperlinking by named destination, not by page index
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          PDF hyperlinks can point either to a specific page index or to a named destination. Use named destinations. Why: as you build the file, page indices shift constantly (you add eight pages of monthly review, every page after that moves). Named destinations stay stable. You'll save days of relinking work over the build process.
+        </p>
+
+        <h3 className="text-2xl font-bold text-white mt-10 mb-5 tracking-tight border-b border-slate-800 pb-2">
+          A consistent structure per year, not custom per year
+        </h3>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          The temptation when building a multi-year file is to make each year slightly different ("for 2027 I'll add this extra page type"). Resist it. Identical structure across years is what makes the system feel coherent — the muscle memory of opening a planner page should be the same whether it's January 2026 or December 2028.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          When customers use the planner years in, that consistency is what makes it disappear into the background. They don't think about the layout. They just use it.
+        </p>
+
+        <h2 className="text-3xl font-bold text-white mt-12 mb-6 tracking-tight">The boring answer</h2>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          A multi-year planner is the boring, obvious answer to a problem nobody questions enough.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          If you bought your reMarkable Pro to be a long-term writing tool, your planner should be a long-term planning tool. Single-year planners exist because they made sense for physical paper and convenient for sellers. Neither of those reasons applies to a digital file.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          Build one, buy one, or use ours — but stop re-buying every December.
+        </p>
+
+        <h2 className="text-3xl font-bold text-white mt-12 mb-6 tracking-tight">If you'd rather not build from scratch</h2>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          <strong>Your Blueprint</strong> is a single hyperlinked PDF that runs through end of 2028 — two full years of planning ahead (2027 and 2028), plus the rest of 2026 included so you don't have to wait until January to start. Designed for the reMarkable Pro, with the architectural choices above already made.
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          The full method behind the layout is in{' '}
+          <Link to="/articles/remarkable-pro-planner-2026-guide" className="text-blue-400 hover:text-blue-300 underline">
+            The reMarkable Pro Planner: A 2026 Setup Guide
+          </Link>
+          .
+        </p>
+        <p className="mb-6 text-slate-300 leading-relaxed text-lg">
+          You can download a <Link to="/sample" className="text-blue-400 hover:text-blue-300 underline">free sample of July 2026</Link> — 41 pages, full hyperlinks, no email tricks. The structure described above is exactly what you'll see.
+        </p>
+      </>
+    )
+  },
+  {
     id: 8,
     slug: "remarkable-pro-planner-2026-guide",
     title: "The reMarkable Pro Planner: A 2026 Setup Guide for Real Work",
@@ -879,18 +1063,18 @@ export const BLOG_POSTS = [
           This matters more on a reMarkable than on paper. A physical notebook ends when it runs out of pages — that's a natural break. A digital device doesn't have that constraint, so there's no natural reason to switch layouts. Sticking with one system across years compounds.
         </p>
         <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          The trade-off is upfront work: a multi-year planner is a larger file with more pages, and the build effort is significant. But you only need one — once you have it set up, you're good for three years of planning. The math works out heavily in favor of doing the harder build once.
+          The trade-off is upfront work: a multi-year planner is a larger file with more pages, and the build effort is significant. But you only need one — once you have it set up, you're good for years of forward planning. The math works out heavily in favor of doing the harder build once.
         </p>
 
         <h2 className="text-3xl font-bold text-white mt-12 mb-6 tracking-tight">A planner you would actually open</h2>
         <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          The reMarkable Pro is one of the best tools on the market for thinking on paper. The blocker is almost never the device. It's having a system that's worth opening every day, for three years.
+          The reMarkable Pro is one of the best tools on the market for thinking on paper. The blocker is almost never the device. It's having a system that's worth opening every day, year after year.
         </p>
         <p className="mb-6 text-slate-300 leading-relaxed text-lg">
           If you want to build one yourself, the structure in this guide is a complete starting point — pick a four-layer model (year → month → week → day), wire up the hyperlinks, design for the e-ink screen, commit to the weekly review.
         </p>
         <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          If you'd rather skip the 80 hours of build work, <strong>Your Blueprint</strong> is the multi-year planner system we built for the reMarkable. It covers 2026, 2027 and 2028 in a single hyperlinked PDF. The structure described above is exactly what's inside.
+          If you'd rather skip the 80 hours of build work, <strong>Your Blueprint</strong> is the multi-year planner system we built for the reMarkable. It runs through end of 2028 — two full years of planning ahead (2027 and 2028) plus the rest of 2026 included — in a single hyperlinked PDF. The structure described above is exactly what's inside.
         </p>
         <p className="mb-6 text-slate-300 leading-relaxed text-lg">
           You can download a <Link to="/sample" className="text-blue-400 hover:text-blue-300 underline">free sample of July 2026</Link> — 41 pages, full hyperlinks, no email tricks. If it resonates, the full system is one purchase away.
@@ -916,7 +1100,7 @@ export const BLOG_POSTS = [
           You bought a reMarkable to escape the noise, not to get lost searching for the right tools. If you’ve browsed the web recently, you’ve likely been frustrated by results showing generic project management software rather than actual, downloadable files for your e-ink tablet.
         </p>
         <p className="mb-6 text-slate-300 leading-relaxed text-lg">
-          <strong>This guide is different.</strong> We aren't talking about SaaS workflows; we are talking about the specific <strong>.pdf and .png files</strong> you need to transform your device into a productivity powerhouse, specifically optimized for the hardware cycles of 2026, 2027 and 2028.
+          <strong>This guide is different.</strong> We aren't talking about SaaS workflows; we are talking about the specific <strong>.pdf and .png files</strong> you need to transform your device into a productivity powerhouse, optimized for the multi-year hardware cycle covering the rest of 2026 plus 2027 and 2028.
         </p>
 
         <div className="my-12">

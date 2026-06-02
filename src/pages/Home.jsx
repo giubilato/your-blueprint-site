@@ -162,14 +162,14 @@ const Home = () => {
     },
     {
       q: "Which years does this cover?",
-      a: "Your Blueprint covers 2026, 2027 and 2028 in full — 365 daily pages per year, 52 weekly planners, and 12 monthly dashboards, all hyperlinked and ready to use from January 1st."
+      a: "Your Blueprint runs through end of 2028. You get two full years of planning ahead (2027 and 2028) plus the rest of 2026 — so you don't have to wait until January to start. 365 daily pages per year, 52 weekly planners per year, and 12 monthly dashboards per year, all hyperlinked."
     }
   ];
 
   // Stats per la sezione social proof (sostituisce le testimonianze false)
   const productStats = [
     { value: "1,300+", label: "Pages of structured thinking" },
-    { value: "3", label: "Full years covered (2026–2028)" },
+    { value: "2027–28", label: "Full years ahead (plus rest of 2026)" },
     { value: "1×", label: "One-time purchase, yours forever" },
     { value: "rM1 · rM2 · Pro", label: "Full device compatibility" },
   ];
