@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Download, CheckCircle2, AlertCircle, Layout as LayoutIcon } from 'lucide-react';
@@ -17,15 +17,8 @@ import { ArrowRight, Download, CheckCircle2, AlertCircle, Layout as LayoutIcon }
  */
 
 const SAMPLE_PDF_URL = '/sample/your-blueprint-sample-july-2026.pdf';
-const PAGE_TITLE = 'How to install Your Blueprint on your reMarkable';
 
 const Setup = () => {
-  useEffect(() => {
-    const prev = document.title;
-    document.title = PAGE_TITLE;
-    return () => { document.title = prev; };
-  }, []);
-
   return (
     <>
       <Helmet>

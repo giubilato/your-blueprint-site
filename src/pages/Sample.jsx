@@ -26,7 +26,6 @@ import { Mail, Download, Shield, ArrowRight, Layout as LayoutIcon } from 'lucide
 
 const SAMPLE_FORM_ID = 'mwvygzwa';
 const SAMPLE_PDF_URL = '/sample/your-blueprint-sample-july-2026.pdf';
-const PAGE_TITLE = 'Free sample — Your Blueprint planner for reMarkable';
 
 const Sample = () => {
   const [email, setEmail] = useState('');
@@ -34,13 +33,6 @@ const Sample = () => {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
-
-  // Per-page document title — until a proper react-helmet-async setup is in place
-  useEffect(() => {
-    const prev = document.title;
-    document.title = PAGE_TITLE;
-    return () => { document.title = prev; };
-  }, []);
 
   // Auto-trigger the PDF download once the form is successfully submitted
   useEffect(() => {
