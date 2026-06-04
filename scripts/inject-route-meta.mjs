@@ -157,15 +157,20 @@ function injectMeta(html, route) {
   return out;
 }
 
-// ---- 5. Write dist/<route>/index.html for each route ----
+// ---- 5. Write dist/<route>.html for each route ----
+// We write .html files (not directories with index.html) so Cloudflare Pages
+// serves them directly without a 308 trailing-slash redirect, keeping the
+// canonical URL clean (`/setup` not `/setup/`).
 let written = 0;
 for (const route of routes) {
   const html = injectMeta(baseHtml, route);
-  const routeDir = path.join(DIST, route.path);
-  fs.mkdirSync(routeDir, { recursive: true });
-  fs.writeFileSync(path.join(routeDir, 'index.html'), html);
+  // strip leading slash and append .html
+  const relPath = `${route.path.replace(/^\//, '')}.html`;
+  const targetFile = path.join(DIST, relPath);
+  fs.mkdirSync(path.dirname(targetFile), { recursive: true });
+  fs.writeFileSync(targetFile, html);
   written += 1;
-  console.log(`  ✓ ${route.path}/index.html  ${route.noindex ? '[noindex]' : ''}`);
+  console.log(`  ✓ ${relPath}  ${route.noindex ? '[noindex]' : ''}`);
 }
 
 console.log(`\n✓ Pre-rendered ${written} route(s) with per-page meta.`);
